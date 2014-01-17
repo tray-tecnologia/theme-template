@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Reset de produto (produto.php)
+   ========================================================================== */
+
+/* escondendo elementos */
+#NavLateralEsquerda,
+#NavLateralDireita,
+.bottom,
+.topBorder,
+.leftCorner2,
+.bLeft,
+.bRight,
+#miniad{
+    display: none;
+}
+
+/* limpando elementos */
+.container,
+.container2,
+.container3,
+#title,
+#esquerda,
+#direita,
+#visualAbas,
+#visualAbas li,
+#visualAbas li a,
+#foto_p,
+#colFotos,
+#colVideo,
+#col3D,
+#ProdAbas,
+.prodBox,
+#ProdAbas li,
+#ProdAbas .aberta,
+#ProdAbas li a,
+#ProdAbas .aberta a{
+    background: none;
+    border: 0;
+}
+
+/* corrigindo display: table */
+#visualAbas{
+    display: block;
+    width: auto;
+}
+
+    #visualAbas li{
+        display: inline-block;
+        float: none;
+    }
+
+#colFotos,
+#colVideo,
+#col3D{
+    display: block;
+    width: auto;
+}
+
+#foto_p{
+    width: auto;
+}
+
+#ProdAbas,
+#ProdBlock{
+    display: block;
+    width: auto;
+}
+
+    #ProdAbas li,
+    #ProdAbas .aberta{
+        display: inline-block;
+        float: none;
+    }
+
+/* ==========================================================================
+   Personalização de produto (produto.php)
+   ========================================================================== */

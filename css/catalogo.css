@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Reset de catalogo (view_catalogo.php)
+   ========================================================================== */
+
+/* ocultando elementos */
+.bottom,
+.topBorder,
+hr{
+    display: none;
+}
+
+/* limpando elementos */
+.container3,
+.container2{
+    background: none;
+    border: none;
+}
+
+/* bread-crumb */
+.breadcrumb,
+.catalogo-nome{
+    /* inline-block cross-browser */
+        display: -moz-inline-stack;
+        display: inline-block;
+        *display: inline;
+        vertical-align: top;
+        zoom: 1;
+}
+
+/* Removendo e adicionando espaçamento */
+.board {
+    margin: 10px 0;
+}
+
+/* filtros */
+.catalogo-filtros{
+    line-height: 45px;
+}
+
+    .catalogo-filtros .filtros {
+        float: left;
+        margin: 0 5px 0 0;
+    }
+
+/* ==========================================================================
+   Personalização de catalogo (view_catalogo.php)
+   ========================================================================== */
