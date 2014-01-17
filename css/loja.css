@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Vitrine Página Inicial (home.php)
+   ========================================================================== */
+
+.vitrine-geral li{
+    width: 33%;
+}
+
+    .vitrine-imagem{
+        max-width: 100%;
+        min-height: 180px;
+        padding: 2px 0;
+        text-align:center;
+    }
+
+    .vitrine-botoes{
+        display: block;
+        padding: 5px 0;
+    }
+
+    .vitrine-geral .botoes-extras{
+        display: block;
+        text-align: center;
+    }
+
+        .vitrine-geral .botoes-extras img {
+            display: block;
+            padding: 2px 0;
+        }
+
+    .vitrine-nome{
+        color: #000;
+        display: block;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .vitrine-descricao{
+        color: #ccc;
+        display: block;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .vitrine-preco{
+        display: block;
+        padding: 5px 0;
+    }
+
+        /* apague os seletores se não for utilizá-los */
+
+        .vitrine-geral .de-preco{}
+
+            .vitrine-geral .de-preco .v-preco{}
+
+                .vitrine-geral .de-preco .v-preco span{}
+
+        .vitrine-geral .por-preco{}
+
+            .vitrine-geral .por-preco .v-preco{}
+
+                .vitrine-geral .por-preco .v-preco span{}
+
+    .vitrine-parcela{}
+
+        .vitrine-parcela strong,
+        .vitrine-parcela .precoAvista,
+        .vitrine-parcela .color{
+            font-weight: bold;
+        }
+
+    .vitrine-parcela br:first-child,
+    .vitrine-mais-detalhes{
+        display:none;
+    }
