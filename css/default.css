@@ -123,6 +123,14 @@ button{
 /* ==========================================================================
    Global classes
    ========================================================================== */
+*,
+*:before,
+*:after {
+   /* Adicionando box-sizing a todos os elementos */
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+               box-sizing: border-box;
+}
 
 .clear{
     clear:both;
