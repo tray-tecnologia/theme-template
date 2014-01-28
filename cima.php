@@ -5,7 +5,7 @@
     # css por pagina
     $sheets = array('loja');
     # css em todas as paginas
-    $loadSheets = array('default', 'animations');
+    $loadSheets = array('default', 'animations', 'carousel');
     
     if(in_array($ag->funcoes()->page(), $sheets)){
         $loadSheets[] = $ag->funcoes()->page();
