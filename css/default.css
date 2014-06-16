@@ -1,0 +1,239 @@
+/* ==========================================================================
+   Reset Cross-browser
+   ========================================================================== */
+
+/* 
+*   Global Reset
+*   http://meyerweb.com/eric/tools/css/reset/ 
+*   v2.0 | 20110126
+*   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+/*table,*/ caption, /*tbody, tfoot, thead, tr, th, td,*/
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /**
+    * Propriedades comentadas do reset original para compatibilidade
+    *
+    * font-size: 100%;
+    * font: inherit;
+    * vertical-align: baseline;
+    **/
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+/*
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}*/
+
+img{
+    max-width: 100%;
+}
+
+/* Adicionando ponteiro nos botões */
+input[type="submit"],
+button{
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Estruturas
+   ========================================================================== */
+#Body{
+    min-width: 1001px;
+}
+
+    #NavSuperior{
+        position: relative;
+        z-index: 2;
+    }
+
+    #div1bg{
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+        #div2bg{ 
+            /* apague o seletor se não utilizá-lo */
+        }
+
+            #NavLateralEsquerda{ 
+                position: relative;
+                z-index: 2;
+            }
+
+            #NavLateralDireita{
+                position: relative;
+                z-index: 2;
+            }
+
+            #NavCentral{
+                display:block;
+                margin: 0;
+                overflow:hidden;
+                position: relative;
+                width:auto;
+                z-index: 1;
+            }
+
+                
+                #Page{
+                    display: block;
+                    width: auto;
+                }
+
+    #NavInferior{
+        /* apague o seletor se não utilizá-lo */
+    }
+
+/* ==========================================================================
+   Global classes
+   ========================================================================== */
+
+.clear{
+    clear:both;
+    display:block;
+}
+
+.overflow,
+.caixa-overflow{
+    display:block;
+    overflow:hidden;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.center{
+    margin: 0 auto;
+    width: 1001px;
+}
+
+.inline-block,
+.inline-block > ul{
+    /* resetando font-size para os navegadores */
+    font-size: 0;
+}
+
+    .inline-block > li,
+    .inline-block > ul > li{
+        /* inline-block cross-browser */
+        display: -moz-inline-stack;
+        display: inline-block;
+        *display: inline;
+        vertical-align: top;
+        zoom: 1;
+
+        /* adicionando font-size */
+        font-size: 11px;
+    }
+
+*, *:before, *:after {
+    /* box-sizing em todos os elementos */
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Banners
+   ========================================================================== */
+
+.banner-baixo,
+.banner-home,
+.banner-extra1,
+.banner-extra2,
+.banner-extra3,
+.banner-extra4,
+.banner-extra5,
+.banner-extra6,
+.banner-extra7,
+.banner-extra8,
+.banner-extra9,
+.banner-extra10,
+.banner-esquerdo{
+    display:block;
+    clear:both; 
+    padding: 5px 0;
+    text-align:center;
+}
+
+/* full banner */
+.banner-home{
+    /* apague o seletor se não utilizá-lo */
+}
+
+/* banner regua */
+.banner-extra1{
+    /* apague o seletor se não utilizá-lo */
+}
+
+
+/* ==========================================================================
+   Cabeçalho (cima.php)
+   ========================================================================== */
+
+.cabecalho{
+    background-image: url('../images/bg.png?v=1');
+}
+
+/* ==========================================================================
+   Lateral Esquerda (esquerdo.php)
+   ========================================================================== */
+
+.menu-esquerdo{
+
+}
+
+/* ==========================================================================
+   Lateral Direita (direito.php)
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   Rodapé (baixo.php)
+   ========================================================================== */
+
+.rodape{
+    
+}

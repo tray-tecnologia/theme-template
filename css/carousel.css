@@ -1,0 +1,87 @@
+.menu-marcas .jcarousel-direction-rtl{
+	direction: rtl;
+}
+
+.jcarousel-container {
+    margin: 0 auto;
+    width: 1001px;
+
+    -webkit-user-select: none;  
+       -moz-user-select: none;    
+        -ms-user-select: none;      
+            user-select: none;
+}
+
+.menu-marcas .jcarousel-clip{
+    overflow: hidden;
+}
+
+.menu-marcas .jcarousel-list {
+    font-size: 0;
+}
+
+
+.jcarousel-item a {
+    display: block;
+}
+
+.menu-marcas .jcarousel-item:first-child {
+    margin-left: 0;
+}
+
+.menu-marcas .jcarousel-clip-horizontal {
+    width: auto;
+}
+
+/**
+ *  Horizontal Buttons VITRINE
+ */
+.menu-marcas .jcarousel-next-horizontal,
+.menu-marcas .jcarousel-prev-horizontal{
+    cursor: pointer;
+    height: 100%;
+    position: absolute;   
+}
+.menu-marcas .jcarousel-next-horizontal,
+.menu-marcas .jcarousel-prev-horizontal{
+    background: url("../images/marcas/seta-ativo.png") no-repeat right top;
+}
+
+.menu-marcas .jcarousel-next-horizontal{
+    background-position: -31px 0;
+    right: 0;
+}
+
+.menu-marcas .jcarousel-prev-horizontal{
+    background-position: 0 0;
+    left: 0;
+}
+
+
+#Body .jcarousel-prev-horizontal:hover, 
+#Body .jcarousel-prev-horizontal:focus,
+#Body .jcarousel-prev-horizontal:active,{
+    background-position: 0 0;
+}
+#Body .jcarousel-next-horizontal:hover,
+#Body .jcarousel-next-horizontal:focus,
+#Body .jcarousel-next-horizontal:active{
+    background-position: -31px 0;
+}
+
+#Body .jcarousel-prev-disabled-horizontal,
+#Body .jcarousel-prev-disabled-horizontal:hover,
+#Body .jcarousel-prev-disabled-horizontal:focus,
+#Body .jcarousel-prev-disabled-horizontal:active{
+    cursor: default;
+    background: url("../images/marcas/seta-inativo.png") no-repeat left top;
+}
+
+#Body .jcarousel-next-disabled-horizontal,
+#Body .jcarousel-next-disabled-horizontal:hover,
+#Body .jcarousel-next-disabled-horizontal:focus,
+#Body .jcarousel-next-disabled-horizontal:active{
+    cursor: default;
+    background: url("../images/marcas/seta-inativo.png") no-repeat right top;
+}
+
