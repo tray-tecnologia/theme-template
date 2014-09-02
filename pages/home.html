@@ -1,4 +1,8 @@
+{% set products = Products({
+    'filter': 'featured'
+}) %}
+
 {{ _view.element('snippets/showcase', {
     "showcaseTitle": "Destaques",
-    "products": products.featured
+    "products": products
 }) }}
