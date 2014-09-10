@@ -1,9 +1,9 @@
-<h2>Páginas da loja</h2>
+<h2>PÃ¡ginas da loja</h2>
 
 <div class="row">
     {% if pages.custom|length > 0 %}
     <div class="col-sm-3">
-        <h5>Páginas Institucionais</h5>
+        <h5>PÃ¡ginas Institucionais</h5>
         <ul class="list-unstyled">
             {% for custom in pages.custom %}
             <li><a href="{{ custom.url }}">{{ custom.name }}</a></li>
