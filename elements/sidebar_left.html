@@ -1,0 +1,15 @@
+<aside class="col-sm-2">
+    <div id="dive7rLeftTop"></div>
+
+    <h3>Categorias</h3>
+    {{ _view.element('snippets/categories_list') }}
+
+    <div id="dive7rLeftMiddle"></div>
+    <div id="dive7rLeftBottom"></div>
+
+    {% if banner.side %}
+        <div class="banner banner-side">
+            {{ banner.side }}
+        </div>
+    {% endif %}
+</aside>

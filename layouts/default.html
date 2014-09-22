@@ -1,5 +1,9 @@
+{% set showHeader = not getLayout or (getLayout and 'header' in elementsToLoad) %}
+{% set showFooter = not getLayout or (getLayout and 'footer' in elementsToLoad) %}
+{% set showLeft = not getLayout or (getLayout and 'left' in elementsToLoad) %}
+{% set showRight = not getLayout or (getLayout and 'right' in elementsToLoad) %}
 <!doctype html>
-<html lang="pt-br" data-store="{{ store.id }}">
+<html lang="pt-br" data-store="{{ store.id }}" class="page-{{ pages.current }}">
 <head>
     {{ html.charset() }}
     {{ tray.meta }}
@@ -10,26 +14,65 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oswald:400,300,700">
     <link rel="stylesheet" href="{{ themePath }}css/theme.min.css?{{ utils.assets_version }}">
     {{ tray.scripts }}
+    {{ googleTagManager.header(pages.current, tagManagerData) }}
 </head>
 <body>
+    {{ googleTagManager.top(pages.current, tagManagerData) }}
 
-    {{ _view.element('header') }}
+    {% if showHeader %}
+        
+        {{ _view.element('header') }}
+        {% if pages.current == 'home' and banner.home %}
+            {{ banner.home }}
+        {% endif %}
 
-    {% if banner.home %}
-        {{ banner.home }}
     {% endif %}
 
-    <div class="container{% if pages.current == 'home' %}-fluid{% endif %}">
+    <div class="container">
         <div class="content row">
-            <div class="col-sm-12">
+
+            {% if showLeft %}
+                {{ _view.element('sidebar_left') }}
+            {% endif %}
+
+            <section class="col-sm-8">
                 {{ content_for_layout }}
-            </div>
+            </section>
+
+            {% if showRight %}
+                {{ _view.element('sidebar_right') }}
+            {% endif %}
+
         </div>
     </div>
     
-    {{ _view.element('footer') }}
+    {% if showFooter %}
+
+        {% if banner.bottom %}
+            <div class="banner banner-bottom">
+                {{ banner.bottom }}
+            </div>
+        {% endif %}
+
+        {{ _view.element('footer') }}
+
+        {% if banner.footer %}
+            <div class="banner banner-footer">
+                {{ banner.footer }}
+            </div>
+        {% endif %}
+
+        {% if pages.current == 'home' %}
+            {{ banner.popup ~ banner.floating }}
+        {% endif %}
+
+    {% endif %}
+
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
 
     {{ html.script('dist/application.min.js?' ~ utils.assets_version) }}
+
+    {{ _view.element('snippets/pageview') }}
 
 </body>
 </html>

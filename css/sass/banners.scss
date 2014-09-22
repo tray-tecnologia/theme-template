@@ -2,34 +2,7 @@
  * Banners
  */
 
-.banner-main {
-    position: relative;
-    max-height: 350px;
-    overflow: hidden;
-    
-    .banner-categories {
-        position: absolute;
-        top: 10%;
-        height: 80%;
-        left: 1%;
-        overflow: hidden;
-
-        a {
-            background: #fff;
-            background: rgba(255, 255, 255, 0.2);
-            font: bold 1.5em $primary-font;
-            text-transform: uppercase;
-            display: inline-block;
-            padding: 10px 7px;
-            margin: 10px;
-            -webkit-transition: all 0.1s;
-                 -o-transition: all 0.1s;
-                    transition: all 0.1s;
-
-            &:hover {
-                padding-right: 35px;
-                text-decoration: none;
-            }
-        }
-    }
+.banner {
+    margin: 0 auto;
+    text-align: center;
 }

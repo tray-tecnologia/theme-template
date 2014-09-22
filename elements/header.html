@@ -1,13 +1,17 @@
-<header class="header container-fluid">
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 text-left">
-            <a class="brand" href="{{ links.home }}" title="{{ store.name }}">{{ store.name }}</a>
-        </div>
-        <div class="hidden-xs col-sm-4 header-customer text-right">
-            {{ _view.element('snippets/customer') }}
-        </div>
-        <div class="col-xs-12 col-sm-4 text-right">
-            {{ _view.element('snippets/search') }}
+{{ _view.element('snippets/messages') }}
+
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 text-left">
+                <a class="brand" href="{{ links.home }}" title="{{ store.name }}">{{ store.name }}</a>
+            </div>
+            <div class="hidden-xs col-sm-4 header-customer text-right">
+                {{ _view.element('snippets/customer') }}
+            </div>
+            <div class="col-xs-12 col-sm-4 text-right">
+                {{ _view.element('snippets/search') }}
+            </div>
         </div>
     </div>
 </header>

@@ -9,3 +9,9 @@ body {
     background: #fff;
     color: $primary-color;
 }
+
+// adaptative images
+img {
+    height: auto;
+    max-width: 100%;
+}
