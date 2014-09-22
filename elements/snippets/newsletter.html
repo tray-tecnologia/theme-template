@@ -1,6 +1,6 @@
-<form action="{{ links.newsletter }}">
+<form action="{{ links.newsletter }}" method="POST">
     <div class="form-group">
-        <input type="text" placeholder="email@templateshop.com" class="form-control" id="news-email"/>
+        <input name="email" type="text" placeholder="email@templateshop.com" class="form-control" id="news-email"/>
     </div>
     <div class="form-group">
         <button class="btn btn-default btn-block news-button">Cadastrar</button>
