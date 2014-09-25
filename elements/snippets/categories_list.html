@@ -1,4 +1,4 @@
-<ul class="list-unstyled">
+<ul>
     {% for category in categories %}
         {% if loop.index <= limit or not limit %}
             <li><a href="{{ category.link }}">{{ category.name }}</a></li>
