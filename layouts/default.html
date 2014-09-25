@@ -23,7 +23,9 @@
         
         {{ _view.element('header') }}
         {% if pages.current == 'home' and banner.home %}
-            {{ banner.home }}
+            <div class="banner banner-home">
+                {{ banner.home }}
+            </div>
         {% endif %}
 
     {% endif %}
