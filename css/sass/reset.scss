@@ -2,11 +2,12 @@
  * Tray Commerce Reset
  */
 
-.container.produto-wrapper {
+// bootstrap .container conflict
+.page-container .container {
     width: auto;
 }
 
- /* hiding elements */
+// hiding elements
 .bottom,
 .topBorder,
 .leftCorner2,
@@ -17,7 +18,7 @@
     display: none;
 }
 
-/* cleaning elements */
+// cleaning elements
 .container,
 .container2,
 .container3,
@@ -42,7 +43,7 @@
     border: 0;
 }
 
-/* fixing display: table */
+// fixing display: table
 #visualAbas {
     display: block;
     width: auto;
