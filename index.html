@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Tray OpenCode by tray-tecnologia</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Tray OpenCode</h1>
+        <h2>Modelo para desenvolvimento de temas da plataforma de e-commerce Tray</h2>
+        <a href="https://github.com/tray-tecnologia/theme-template" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="tray-opencode" class="anchor" href="#tray-opencode"><span class="octicon octicon-link"></span></a>Tray OpenCode</h1>
+
+<p>Encontre tudo o que você precisa para desenvolver seu próprio tema utilizando a plataforma Tray. Se preferir poderá baixar o nosso modelo inicial disponível no <a href="https://github.com/tray-tecnologia/theme-template/archive/master.zip">Github</a> ou cloná-lo: </p>
+
+<p><code>git clone git@github.com:tray-tecnologia/theme-template.git nome-tema</code></p>
+
+<p>Disponibilizamos também a instalação pelo Bower:</p>
+
+<p><code>bower install tray-theme-template</code></p>
+
+<p><strong>Importante:</strong> <em>Não nos responsabilizamos pelo uso de variáveis, helpers e funções que não estão documentadas aqui. Elas podem passar por ajustes e mudanças sem aviso prévio.</em></p>
+
+<p>Seja cuidadoso ao utilizar variáveis ou parâmetros que estão com a nomenclatura em português, provavelmente será alterado para o inglês assim que possível. Avisaremos com antecedência sobre essas mudanças.</p>
+
+<h2>
+<a name="estrutura-do-tema" class="anchor" href="#estrutura-do-tema"><span class="octicon octicon-link"></span></a>Estrutura do tema</h2>
+
+<p>Para manter o desenvolvimento dos temas bem organizado, disponibilizamos uma estrutura enxuta e simples para seus arquivos. Veja a estrutura inicial:</p>
+
+<pre><code>elements/ -&gt; trechos de código e componentes reutilizáveis
+layouts/  -&gt; estrutura do seu tema, código que será carregado em todas as páginas
+pages/    -&gt; conteúdo de cada página da sua loja
+css/      -&gt; você pode inserir suas folhas de estilo e webfonts
+js/       -&gt; você pode inserir seus plugins js
+img/      -&gt; pasta de imagens
+configs/  -&gt; opções da sua loja virtual
+</code></pre>
+
+<h3>
+<a name="codifica%C3%A7%C3%A3o-de-arquivos" class="anchor" href="#codifica%C3%A7%C3%A3o-de-arquivos"><span class="octicon octicon-link"></span></a>Codificação de arquivos</h3>
+
+<p>Utilize a codificação dos seus arquivos sempre UTF-8.</p>
+
+<h2>
+<a name="vari%C3%A1veis-e-helpers" class="anchor" href="#vari%C3%A1veis-e-helpers"><span class="octicon octicon-link"></span></a>Variáveis e Helpers</h2>
+
+<p>Todas as variáveis utilizam o seguinte padrão: <code>myVariable.variable_key</code>. Para exibir o nome do produto, você simplesmente fará a seguinte chamada: <code>{{ product.name }}</code>.
+Mas, o que são esses caracteres <code>{{ }}</code>?</p>
+
+<p>Nós utilizamos um <a href="http://en.wikipedia.org/wiki/Template_processor">Template Engine</a> para renderização das views. Você precisará lembrar apenas de dois tipos de chamadas: <code>{{ }}</code> e <code>{% %}</code>. Veja os exemplos de utilização abaixo:</p>
+
+<h5>
+<a name="exemplos" class="anchor" href="#exemplos"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<p>Imprimindo variáveis:</p>
+
+<pre lang="twig"><code>{{ product.name }}
+</code></pre>
+
+<p><code>if</code>:</p>
+
+<pre><code>{% if product.name %}
+    {{ product.name }}
+{% endif %}
+</code></pre>
+
+<p><code>for</code>:</p>
+
+<pre><code>{% for image in product.images %}
+    &lt;img src="{{ image.src }}" alt="{{ product.name }}"&gt;
+{% endfor %}
+</code></pre>
+
+<p>Declarando variáveis:</p>
+
+<pre lang="twig"><code>{% set company = 'Tray' %}
+</code></pre>
+
+<p>Se quiser mais informações sobre a utilização do Template Engine, visite a seguinte página: <a href="http://twig.sensiolabs.org/doc/templates.html">Documentação - Twig</a></p>
+
+<p>Veja agora quais são as variáveis que você pode utilizar no seu tema:</p>
+
+<table>
+<thead><tr>
+<th>Variável</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>banners</td>
+<td>Lista de banners</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>Lista de categorias</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>Dados contidos no carrinho (total de itens e valor total)</td>
+</tr>
+<tr>
+<td>customer</td>
+<td>Dados a respeito do consumidor que está navegando na loja</td>
+</tr>
+<tr>
+<td>links</td>
+<td>Links das páginas da loja (contato, login, etc...)</td>
+</tr>
+<tr>
+<td>pages</td>
+<td>Lista de páginas cadastradas no Painel Administrativo (Páginas Personalizadas)</td>
+</tr>
+<tr>
+<td>paymentMethods</td>
+<td>Lista de formas de pagamento configuradas no Painel Administrativo</td>
+</tr>
+<tr>
+<td>products</td>
+<td>Lista de produtos</td>
+</tr>
+<tr>
+<td>seals</td>
+<td>Selos de segurança que possuem integração com a Tray (ebit, hackersafe)</td>
+</tr>
+<tr>
+<td>settings</td>
+<td>Opções da loja</td>
+</tr>
+<tr>
+<td>store</td>
+<td>Dados da loja</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Lista de palavras mais buscadas</td>
+</tr>
+<tr>
+<td>themePath</td>
+<td>Caminho absoluto do tema</td>
+</tr>
+<tr>
+<td>utils</td>
+<td>Utilidades técnicas (hash para assets, etc...)</td>
+</tr>
+</tbody>
+</table><table>
+<thead><tr>
+<th>Helper</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>banner</td>
+<td>Exibe um banner pela posição solicitada</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>Mostra uma imagem</td>
+</tr>
+<tr>
+<td>Translation</td>
+<td>Mostra um texto de acordo com o idioma configurado</td>
+</tr>
+</tbody>
+</table><h4>
+<a name="banners" class="anchor" href="#banners"><span class="octicon octicon-link"></span></a>Banners</h4>
+
+<p>Para imprimir um banner, você poderá utilizar o helper de banner, utilizando a seguinte chamada:</p>
+
+<pre lang="twig"><code>{{ banner.home }}
+{{ banner.footer }}
+</code></pre>
+
+<p><code>home</code> e <code>footer</code> são as posições em que o banner foi cadastrado. Veja a lista de posições disponíveis: <code>home</code>, <code>footer</code>, <code>bottom</code>, <code>side</code>, <code>title</code>, <code>floating</code>, <code>popup</code>, <code>extra1</code>, <code>extra2</code>, <code>extra3</code>, <code>extra4</code></p>
+
+<p>Se você deseja criar um banner da sua maneira, poderá trabalhar com as seguintes informações:</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único do banner</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Tipo do banner, valores possíveis: "javascript", "image", "flash", "gallery"</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Descrição do banner</td>
+</tr>
+<tr>
+<td>src</td>
+<td>URL do banner</td>
+</tr>
+<tr>
+<td>link</td>
+<td>Link do banner (apenas nos tipos "javascript" e "image")</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Largura da imagem ou do objeto flash</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Altura da imagem</td>
+</tr>
+<tr>
+<td>alt_text</td>
+<td>Texto alternativo para a imagem do banner</td>
+</tr>
+<tr>
+<td>target</td>
+<td>Se o link vai abrir em uma nova janela ou na mesma</td>
+</tr>
+<tr>
+<td>banner_alt</td>
+<td>Banner alternativo caso não tenha suporte ao flash (apenas quando o tipo for "flash"), possui as chaves "src", "link", "target"</td>
+</tr>
+<tr>
+<td>margin_top</td>
+<td>Especifica a posição do banner referente ao topo da página (apenas banner "floating")</td>
+</tr>
+<tr>
+<td>margin_left</td>
+<td>Especifica a posição do banner referente ao lado esquerdo da página</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-1" class="anchor" href="#exemplos-1"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<p>Lembrando que o padrão de chamada é sempre: <code>banners.{position}.{key}</code>. Veja exemplos utilizando a posição <code>home</code>:</p>
+
+<pre lang="twig"><code>{{ banners.home.id }}
+{{ banners.home.type }}
+{{ banners.home.description }}
+{{ banners.home.src }}
+{{ banners.home.link }}
+{{ banners.home.width }}
+{{ banners.home.height }}
+{{ banners.home.alt_text }}
+{{ banners.home.target }}
+{{ banners.home.banner_alt.src }}
+{{ banners.home.banner_alt.link }}
+{{ banners.home.banner_alt.target }}
+</code></pre>
+
+<h4>
+<a name="cart" class="anchor" href="#cart"><span class="octicon octicon-link"></span></a>Cart</h4>
+
+<p>Informações do carrinho de compras.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Total de produtos no carrinho</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Valor total à pagar</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-2" class="anchor" href="#exemplos-2"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>{{ cart.amount }}
+{{ cart.price }}
+</code></pre>
+
+<h4>
+<a name="categories" class="anchor" href="#categories"><span class="octicon octicon-link"></span></a>Categories</h4>
+
+<p>Informações sobre as categorias cadastradas no Painel Administrativo.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da categoria</td>
+</tr>
+<tr>
+<td>parent</td>
+<td>Identificador único da categoria mãe</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Nome da categoria</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Descrição da categoria</td>
+</tr>
+<tr>
+<td>children</td>
+<td>Categorias filhas</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-3" class="anchor" href="#exemplos-3"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>{% for category in categories %}
+    {{ category.id }}
+    {{ category.parent }}
+    {{ category.name }}
+    {{ category.description }}
+    {{ category.link }}
+{% endfor %}
+</code></pre>
+
+<h4>
+<a name="customer" class="anchor" href="#customer"><span class="octicon octicon-link"></span></a>Customer</h4>
+
+<p>Dados do consumidor que está navegando na loja.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único do cliente (se estiver logado)</td>
+</tr>
+<tr>
+<td>logged</td>
+<td>Retorna se está logado ou não</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Nome completo do cliente</td>
+</tr>
+<tr>
+<td>email</td>
+<td>E-mail do cliente</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-4" class="anchor" href="#exemplos-4"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>{{ customer.logged }}
+{{ customer.name }}
+{{ customer.id }}
+{{ customer.email }}
+</code></pre>
+
+<h4>
+<a name="images" class="anchor" href="#images"><span class="octicon octicon-link"></span></a>Images</h4>
+
+<p>Use esse helper para exibir uma imagem cadastrada no Painel Administrativo ou uma imagem que está na pasta <code>img/</code> do seu tema.</p>
+
+<h5>
+<a name="exemplos-5" class="anchor" href="#exemplos-5"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>&lt;img src="{{ Image('logo') }}" alt="{{ store.name }}"&gt;
+&lt;img src="{{ Image('buttons/my-button.png') }}" alt=""&gt;
+</code></pre>
+
+<h4>
+<a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h4>
+
+<p>Utilize juntamente com a tag <code>&lt;a&gt;</code>, ex: <code>&lt;a href="{{ links.home }}"&gt;Página Inicial&lt;/a&gt;</code>.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>search</td>
+<td>Página de busca</td>
+</tr>
+<tr>
+<td>search_by_brand</td>
+<td>Página de busca por marca</td>
+</tr>
+<tr>
+<td>home</td>
+<td>Página inicial</td>
+</tr>
+<tr>
+<td>company</td>
+<td>Página com informações sobre a loja/empresa</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>Página de contato</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>Página do carrinho de compras</td>
+</tr>
+<tr>
+<td>info</td>
+<td>Página de informações gerais sobre os processos da loja</td>
+</tr>
+<tr>
+<td>info_buy</td>
+<td>Âncora de informações sobre compra</td>
+</tr>
+<tr>
+<td>security</td>
+<td>Âncora de informações sobre segurança</td>
+</tr>
+<tr>
+<td>warranty</td>
+<td>Âncora de informações sobre garantia</td>
+</tr>
+<tr>
+<td>send</td>
+<td>Âncora de informações sobre envio</td>
+</tr>
+<tr>
+<td>payment</td>
+<td>Âncora de informações sobre pagamento</td>
+</tr>
+<tr>
+<td>newsletter</td>
+<td>Página de cadastro de newletter</td>
+</tr>
+<tr>
+<td>map</td>
+<td>Página mapa do site</td>
+</tr>
+<tr>
+<td>sign_in</td>
+<td>Página de cadastro</td>
+</tr>
+<tr>
+<td>central</td>
+<td>Página da central do cliente</td>
+</tr>
+<tr>
+<td>login</td>
+<td>Página de login</td>
+</tr>
+<tr>
+<td>orders</td>
+<td>Página de pedidos</td>
+</tr>
+<tr>
+<td>orders_tracking</td>
+<td>Página de rastreio de pedidos</td>
+</tr>
+<tr>
+<td>orders_return</td>
+<td>Página de trocas/devoluções</td>
+</tr>
+<tr>
+<td>payment_confirm</td>
+<td>Página de confirmação de pagamento</td>
+</tr>
+<tr>
+<td>account</td>
+<td>Página central do cliente</td>
+</tr>
+<tr>
+<td>account_password</td>
+<td>Página de alteração de senha</td>
+</tr>
+<tr>
+<td>logout</td>
+<td>Página de logout</td>
+</tr>
+</tbody>
+</table><pre lang="twig"><code>&lt;a href="{{ links.search }}"&gt;Buscar&lt;/a&gt;
+&lt;a href="{{ links.search_by_brand }}tray"&gt;Buscar pela marca "tray"&lt;/a&gt;
+&lt;a href="{{ links.home }}"&gt;Página Inicial&lt;/a&gt;
+&lt;a href="{{ links.company }}"&gt;Empresa&lt;/a&gt;
+&lt;a href="{{ links.contact }}"&gt;Fale conosco&lt;/a&gt;
+&lt;a href="{{ links.cart }}"&gt;Carrinho de compras&lt;/a&gt;
+&lt;a href="{{ links.info }}"&gt;Mais informações&lt;/a&gt;
+&lt;a href="{{ links.info_buy }}"&gt;Como comprar&lt;/a&gt;
+&lt;a href="{{ links.security }}"&gt;Segurança&lt;/a&gt;
+&lt;a href="{{ links.warranty }}"&gt;Garantia&lt;/a&gt;
+&lt;a href="{{ links.send }}"&gt;Envio&lt;/a&gt;
+&lt;a href="{{ links.payment }}"&gt;Pagamento&lt;/a&gt;
+&lt;a href="{{ links.newsletter }}"&gt;Inscreva-se para receber novidades&lt;/a&gt;
+&lt;a href="{{ links.map }}"&gt;Mapa do site&lt;/a&gt;
+&lt;a href="{{ links.sign_in }}"&gt;Cadastre-se&lt;/a&gt;
+&lt;a href="{{ links.central }}"&gt;Central do cliente&lt;/a&gt;
+&lt;a href="{{ links.login }}"&gt;Entrar&lt;/a&gt;
+&lt;a href="{{ links.orders }}"&gt;Meus pedidos&lt;/a&gt;
+&lt;a href="{{ links.logout }}"&gt;Sair&lt;/a&gt;
+</code></pre>
+
+<h4>
+<a name="pages" class="anchor" href="#pages"><span class="octicon octicon-link"></span></a>Pages</h4>
+
+<p>Contém informações das páginas da loja.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>current</td>
+<td>Em qual página o usuário está navegando, ex: <code>home</code>
+</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>Páginas personalizadas cadastradas no Painel Administrativo</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-6" class="anchor" href="#exemplos-6"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>{% if pages.current == 'home' %}
+    Você está na nossa página inicial, navegue na nossa loja!
+{% endif %}
+
+{% for custom in pages.custom %}
+    &lt;a href="{{ custom.url }}"&gt;{{ custom.name }}&lt;/a&gt;
+{% endfor %}
+</code></pre>
+
+<h4>
+<a name="payment-methods" class="anchor" href="#payment-methods"><span class="octicon octicon-link"></span></a>Payment Methods</h4>
+
+<p>Informações de formas de pagamento cadastradas no Painel Administrativo.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>order</td>
+<td>Formas de pagamento à vista</td>
+</tr>
+<tr>
+<td>credit</td>
+<td>Formas de pagamento à prazo</td>
+</tr>
+</tbody>
+</table><table>
+<thead><tr>
+<th>Sub-chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>thumb</td>
+<td>Caminho da imagem da forma de pagamento</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Descrição da forma de pagamento</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-7" class="anchor" href="#exemplos-7"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>{% for payment in paymentMethods.order %}
+    &lt;img src="{{ payment.thumb }}" alt="{{ payment.description }}" title="{{ payment.description }}"&gt;
+{% endfor %}
+</code></pre>
+
+<p>Nesse exemplo acima, iteramos por todas as formas de pagamento à vista e exibimos a imagem referente a cada forma.</p>
+
+<h4>
+<a name="products" class="anchor" href="#products"><span class="octicon octicon-link"></span></a>Products</h4>
+
+<p>Informações sobre os produtos cadastrados no Painel Administrativo.</p>
+
+<h5>
+<a name="buscando-produtos" class="anchor" href="#buscando-produtos"><span class="octicon octicon-link"></span></a>Buscando produtos</h5>
+
+<p>Para buscar produtos de acordo com as suas necessidades, utilize a seguinte chamada:</p>
+
+<pre lang="twig"><code>{% set products = Products({
+    'filter': 'featured',
+    'limit': 8,
+    'order': {'quantity_sold': 'desc'},
+    'categories': 1,
+    'brands': 'Tray'
+}) %}
+</code></pre>
+
+<p>A chamada acima retornará até <strong>8</strong> produtos em <strong>destaque</strong> ordenados pelos <strong>mais vendidos</strong> que estejam cadastrados na <strong>categoria 1</strong> e <strong>marca Tray</strong>. Veja mais parâmetros disponíveis abaixo:</p>
+
+<h5>
+<a name="par%C3%A2metros-dispon%C3%ADveis-todos-os-par%C3%A2metros-s%C3%A3o-opcionais" class="anchor" href="#par%C3%A2metros-dispon%C3%ADveis-todos-os-par%C3%A2metros-s%C3%A3o-opcionais"><span class="octicon octicon-link"></span></a>Parâmetros disponíveis (todos os parâmetros são opcionais)</h5>
+
+<table>
+<thead><tr>
+<th>Parâmetro</th>
+<th>Descrição e opções</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>filter</td>
+<td>featured, new, free_shipping, promotion, available</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Quantidade máxima de produtos que será retornada</td>
+</tr>
+<tr>
+<td>order</td>
+<td>id, name, price, created</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>ID da categoria</td>
+</tr>
+<tr>
+<td>brands</td>
+<td>String da marca</td>
+</tr>
+</tbody>
+</table><p><strong>Obs:</strong> É possível realizar múltiplas ordenações, conforme exemplo:</p>
+
+<pre lang="twig"><code>{% set products = Products({
+    'order': {
+        'quantity_sold': 'desc',
+        'name': 'asc',
+        'id': 'desc'
+    }
+}) %}
+</code></pre>
+
+<p>As requisições de produtos sempre retornarão um array de dados onde cada chave está descrita abaixo.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único do produto</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Nome do produto</td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>Identificador único da categoria principal do produto</td>
+</tr>
+<tr>
+<td>price</td>
+<td>Valor do produto</td>
+</tr>
+<tr>
+<td>price_offer</td>
+<td>Valor do produto em promoção</td>
+</tr>
+<tr>
+<td>link</td>
+<td>Link para a página do produto</td>
+</tr>
+<tr>
+<td>available</td>
+<td>Disponibilidade do produto</td>
+</tr>
+<tr>
+<td>stock</td>
+<td>Quantidade de produtos em estoque</td>
+</tr>
+<tr>
+<td>featured</td>
+<td>Retorna verdadeiro se for destaque</td>
+</tr>
+<tr>
+<td>new</td>
+<td>Retorna verdadeiro se for lançamento</td>
+</tr>
+<tr>
+<td>free_shipping</td>
+<td>Retorna verdadeiro se possuir frete grátis</td>
+</tr>
+<tr>
+<td>additional_button</td>
+<td>Retorna verdadeiro se possuir botão adicional cadastrado</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="imagens" class="anchor" href="#imagens"><span class="octicon octicon-link"></span></a>Imagens</h5>
+
+<p>Informações sobre as imagens dos produtos.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>small</td>
+<td>Retorna a imagem do produto em tamanho 30x30</td>
+</tr>
+<tr>
+<td>medium</td>
+<td>Retorna a imagem do produto em tamanho 90x90</td>
+</tr>
+<tr>
+<td>large</td>
+<td>Retorna a imagem do produto em tamanho 180x180</td>
+</tr>
+<tr>
+<td>full</td>
+<td>Retorna a imagem do produto em tamanho original</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-8" class="anchor" href="#exemplos-8"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>{% set products = Products({'filter': 'featured'}) %}
+
+{% for product in products %}
+    {{ product.id }}
+    {{ product.name }}
+    {{ product.category_id }}
+    {% for image in product.images %}
+        &lt;img src="{{ image.small }}" alt=""&gt;
+        &lt;img src="{{ image.medium }}" alt=""&gt;
+        &lt;img src="{{ image.large }}" alt=""&gt;
+        &lt;img src="{{ image.full }}" alt=""&gt;
+    {% endfor %}
+    {{ product.price }}
+    {{ product.price_offer }}
+    {{ product.link }}
+    {{ product.available }}
+    {{ product.stock }}
+    {{ product.featured }}
+    {{ product.new }}
+    {{ product.free_shipping }}
+    {{ product.additional_button }}
+    {{ product.quantity_sold }}
+{% endfor %}
+
+{% if product.price_offer &gt; 0 %}
+    Esse produto está em promoção, por isso vamos mostrar uma imagem grande:
+    &lt;img src="{{ product.images[0].full }}" alt="{{ product.name }}"&gt;
+{% endfor %}
+</code></pre>
+
+<h4>
+<a name="seals" class="anchor" href="#seals"><span class="octicon octicon-link"></span></a>Seals</h4>
+
+<p>A Tray possui integração com 2 selos: <a href="http://www.lojaprotegida.com.br/">Loja Protegida</a> e <a href="http://www.ebit.com.br/">Ebit</a>.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>ebit</td>
+<td>Retorna o HTML do selo do Ebit</td>
+</tr>
+<tr>
+<td>hackersafe</td>
+<td>Retorna o HTML do selo Loja Protegida</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-9" class="anchor" href="#exemplos-9"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>{{ seals.ebit }}
+{{ seals.hackersafe }}
+</code></pre>
+
+<h4>
+<a name="settings" class="anchor" href="#settings"><span class="octicon octicon-link"></span></a>Settings</h4>
+
+<p>Existem algumas opções de nossos recursos que podem ser encontrados aqui. Em breve mais informações.</p>
+
+<h4>
+<a name="store" class="anchor" href="#store"><span class="octicon octicon-link"></span></a>Store</h4>
+
+<p>Informações básicas da loja.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identificador único da loja</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Nome da loja</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL da loja</td>
+</tr>
+<tr>
+<td>chat</td>
+<td>Retorna o conteúdo do campo "Atendimento Online" cadastrado no Painel Administrativo</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-10" class="anchor" href="#exemplos-10"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>{{ store.name }}
+{{ store.id }}
+{{ store.url }}
+{{ store.chat }}
+</code></pre>
+
+<h4>
+<a name="tags" class="anchor" href="#tags"><span class="octicon octicon-link"></span></a>Tags</h4>
+
+<p>Lista de palavras mais buscadas na loja.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>font_size</td>
+<td>Tamanho da fonte com base na quantidade de vezes que foi buscada</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL para a página de busca</td>
+</tr>
+<tr>
+<td>word</td>
+<td>Palavra buscada</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-11" class="anchor" href="#exemplos-11"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>{% for tag in tags %}
+    &lt;a href="{{ tag.url }}" style="font-size: {{ tag.font_size }}%"&gt;{{ tag.word }}&lt;/a&gt;
+{% endfor %}
+</code></pre>
+
+<h4>
+<a name="theme-path" class="anchor" href="#theme-path"><span class="octicon octicon-link"></span></a>Theme Path</h4>
+
+<p>Caminho absoluto do tema para ser utilizado juntamente com seus assets.</p>
+
+<pre lang="twig"><code>&lt;img src="{{ themePath }}img/my-image.png" alt=""&gt;
+&lt;script src="{{ themePath }}js/my-script.js"&gt;&lt;/script&gt;
+&lt;link href="{{ themePath }}css/my-style.css" rel="stylesheet" type="text/css"&gt;
+</code></pre>
+
+<h4>
+<a name="translation" class="anchor" href="#translation"><span class="octicon octicon-link"></span></a>Translation</h4>
+
+<p>Exibe um texto de acordo com o idioma configurado na sua loja no Painel Administrativo.</p>
+
+<h5>
+<a name="exemplos-12" class="anchor" href="#exemplos-12"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>Translation('key')
+</code></pre>
+
+<h4>
+<a name="utils" class="anchor" href="#utils"><span class="octicon octicon-link"></span></a>Utils</h4>
+
+<p>Utilidades técnicas.</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>assets_version</td>
+<td>Hash para arquivos estáticos devido a cache</td>
+</tr>
+<tr>
+<td>is_https</td>
+<td>Verifica se está em ambiente seguro</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-13" class="anchor" href="#exemplos-13"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>&lt;script src="my.js?{{ utils.assets_version }}"&gt;&lt;/script&gt;
+&lt;link href="my.css?{{ utils.assets_version }}" rel="stylesheet"/&gt;
+
+{% if utils.is_https %}
+    Fique tranquilo, você está navegando em um ambiente seguro!
+{% endif %}
+</code></pre>
+
+<h2>
+<a name="m%C3%B3dulos-javascript" class="anchor" href="#m%C3%B3dulos-javascript"><span class="octicon octicon-link"></span></a>Módulos JavaScript</h2>
+
+<p>Todos os nossos módulos trabalham com <a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">atributos de dados</a>, sem precisar escrever linhas de JavaScript para que eles funcionem. Veja a lista de módulos disponíveis:</p>
+
+<ul>
+<li>banner</li>
+<li>cart</li>
+<li>customer</li>
+<li>filter</li>
+<li>search</li>
+</ul><h3>
+<a name="banner" class="anchor" href="#banner"><span class="octicon octicon-link"></span></a>Banner</h3>
+
+<p>Para mais informações, visite a <a href="http://wiki.tray.com.br/documentacao/cadastrar-banners/">Wiki</a>.</p>
+
+<h4>
+<a name="banner-pop-up" class="anchor" href="#banner-pop-up"><span class="octicon octicon-link"></span></a>Banner Pop up</h4>
+
+<p>O banner pop up abre-se em uma nova janela do navegador, no momento em que a loja virtual é aberta.</p>
+
+<table>
+<thead><tr>
+<th>Atributos</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>data-banner</td>
+<td>Posição do banner (ex: <code>popup</code>, <code>gallery</code>)</td>
+</tr>
+<tr>
+<td>data-width</td>
+<td>Largura do banner</td>
+</tr>
+<tr>
+<td>data-height</td>
+<td>Altura do banner</td>
+</tr>
+<tr>
+<td>data-top</td>
+<td>Distância vertical entre o topo até o início do banner</td>
+</tr>
+<tr>
+<td>data-left</td>
+<td>Distância horizontal da esquerda até o início do banner</td>
+</tr>
+<tr>
+<td>data-url</td>
+<td>URL do banner que será carregada na Pop-Up</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-14" class="anchor" href="#exemplos-14"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<div class="highlight highlight-HTML"><pre><span class="nt">&lt;div</span> <span class="na">data-banner=</span><span class="s">"popup"</span> <span class="na">data-width=</span><span class="s">"200"</span> <span class="na">data-height=</span><span class="s">"200"</span> <span class="na">data-top=</span><span class="s">"400"</span> <span class="na">data-left=</span><span class="s">"400"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+
+<h4>
+<a name="banner-gallery" class="anchor" href="#banner-gallery"><span class="octicon octicon-link"></span></a>Banner Gallery</h4>
+
+<p>Para mais informações, visite a <a href="http://wiki.tray.com.br/documentacao/cadastrar-banners/#cadastrar-galeria">Wiki</a></p>
+
+<table>
+<thead><tr>
+<th>Atributos</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>data-banner</td>
+<td>Posição do banner (ex: <code>popup</code>, <code>gallery</code>)</td>
+</tr>
+<tr>
+<td>data-id</td>
+<td>Identificador único do banner</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-15" class="anchor" href="#exemplos-15"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>&lt;div data-banner="gallery" data-id="1"&gt;&lt;/div&gt;
+</code></pre>
+
+<h3>
+<a name="cart-1" class="anchor" href="#cart-1"><span class="octicon octicon-link"></span></a>Cart</h3>
+
+<p>Para contornar o cache, utilize essa marcação para exibir os dados do carrinho atualizados.</p>
+
+<h5>
+<a name="exemplos-16" class="anchor" href="#exemplos-16"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>&lt;span data-cart="amount"&gt;{{ cart.amount }}&lt;/span&gt;
+&lt;span data-cart="price"&gt;{{ cart.price }}&lt;/span&gt;
+</code></pre>
+
+<h3>
+<a name="customer-1" class="anchor" href="#customer-1"><span class="octicon octicon-link"></span></a>Customer</h3>
+
+<p>Para contornar o cache, utilize essa marcação para exibir o nome do cliente logado.</p>
+
+<h5>
+<a name="exemplos-17" class="anchor" href="#exemplos-17"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>&lt;span data-customer="name"&gt;{{ customer.name }}&lt;/span&gt;
+</code></pre>
+
+<h3>
+<a name="filter" class="anchor" href="#filter"><span class="octicon octicon-link"></span></a>Filter</h3>
+
+<p>Nas páginas de catálogo e busca, você poderá filtrar os produtos exibidos e ordená-los. Quando adicionar o atributo <code>data-form="filter"</code> em um formulário, ele iniciará o módulo filter. Esse módulo fará com que sempre que um <code>&lt;select&gt;</code> for alterado (onchange), o formulário seja submetido e recarregue os produtos.</p>
+
+<h5>
+<a name="exemplos-18" class="anchor" href="#exemplos-18"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>&lt;form data-form="filter"&gt;
+    &lt;select&gt;&lt;/select&gt;
+&lt;/form&gt;
+</code></pre>
+
+<h3>
+<a name="search-suggestion" class="anchor" href="#search-suggestion"><span class="octicon octicon-link"></span></a>Search (Suggestion)</h3>
+
+<p>Para mais informações, visite a <a href="http://wiki.tray.com.br/documentacao/sistema-de-busca-inteligente/#auto-sugestao">Wiki</a></p>
+
+<table>
+<thead><tr>
+<th>Atributos</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>data-search</td>
+<td>Tipo da busca (ex: <code>suggestion</code>)</td>
+</tr>
+<tr>
+<td>data-input</td>
+<td>Caixa de texto principal (ex: <code>suggestion</code>)</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-19" class="anchor" href="#exemplos-19"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>&lt;form data-search="suggestion"&gt;
+    &lt;input data-input="suggestion" type="text"&gt;
+&lt;/form&gt;
+</code></pre>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/tray-tecnologia/theme-template/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/tray-tecnologia/theme-template/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/tray-tecnologia/theme-template"></a> is maintained by <a href="https://github.com/tray-tecnologia">tray-tecnologia</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
