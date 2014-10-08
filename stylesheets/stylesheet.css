@@ -223,9 +223,15 @@ td {
 form {
   background: #f2f2f2;
   padding: 20px;
-
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+}
+
+strong {
+  font-weight: bold;
+}
 
 /* GENERAL ELEMENT TYPE STYLES */
 
@@ -290,6 +296,7 @@ h4:before {
 #main-content h5 {
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 14px;
+  font-weight: bold;
   color: #474747;
 }
 h5:before {
