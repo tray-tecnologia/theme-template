@@ -386,14 +386,11 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <h4>
 <a name="images" class="anchor" href="#images"><span class="octicon octicon-link"></span></a>Images</h4>
 
-<p>Use esse helper para exibir uma imagem cadastrada no Painel Administrativo ou uma imagem que está na pasta <code>img/</code> do seu tema.</p>
+<p>Use esse helper para exibir uma imagem cadastrada no Painel Administrativo.</p>
 
 <h5>
 <a name="exemplos-5" class="anchor" href="#exemplos-5"><span class="octicon octicon-link"></span></a>Exemplos</h5>
 
-<pre lang="twig"><code>&lt;img src="{{ Image('logo') }}" alt="{{ store.name }}"&gt;
-&lt;img src="{{ Image('buttons/my-button.png') }}" alt=""&gt;
-</code></pre>
 
 <h4>
 <a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h4>
@@ -1083,7 +1080,14 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
     &lt;input data-input="suggestion" type="text"&gt;
 &lt;/form&gt;
 </code></pre>
-        </section>
+
+<h4>
+<a name="jquery" class="anchor" href="#jquery"><span class="octicon octicon-link"></span></a>jQuery</h4>
+<p>Utilizamos a versão 1.6.2 da jQuery. Estamos em um processo de migração para a jQuery 2.1.1. Mas, para manter a compatibilidade com versões anteriores utilizaremos o <a href="http://jquery.com/upgrade-guide/1.9/">jQuery Migrate</a>.</p>
+
+<p>Evite utilizar funções que estão sendo removidas das novas versões da jQuery.</p>
+
+</section>
 
         <aside id="sidebar">
           <p>Variáveis e Helpers</p>
