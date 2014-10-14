@@ -82,16 +82,18 @@ $ opencode bootstrap API_KEY PASSWORD 'PrimeiroTema'</code></pre>
 
           <pre><code>git clone git@github.com:tray-tecnologia/theme-template.git nome-tema</code></pre>
 
-          <p>O upload deverá ser feito via interface, veja na opção 4.</p>
+          <p>O upload deverá ser feito via interface, veja na opção 3.</p>
 
+          <!--
           <h4 id="op-o-3-bower">Opção 3: Bower</h4>
           <p>Também poderá instalar pelo <a href="http://bower.io">Bower</a>:</p>
 
           <pre><code>bower install tray-theme-template</code></pre>
 
-          <p>O upload deverá ser feito via interface, veja na opção 4.</p>
+          <p>O upload deverá ser feito via interface, veja na opção 3.</p>
+          -->
 
-          <h4 id="op-o-4-download-via-interface">Opção 4: Download/upload via interface</h4>
+          <h4 id="op-o-4-download-via-interface">Opção 3: Download/upload via interface</h4>
           <p>Você consegue fazer várias operações (inclusão, upload, download, publicação) pela nossa interface. A imagem a seguir é a tela principal do Tray OpenCode.</p>
           <p><img src="images/opencode-ui-principal.png" alt=""></p>
 
@@ -102,7 +104,6 @@ $ opencode bootstrap API_KEY PASSWORD 'PrimeiroTema'</code></pre>
           <p><img src="images/opencode-ui.png" alt=""></p>
 
           <p>Então, poderá clicar em "Visualizar layout" para conferir como seu tema está ficando.</p>
-<hr>
 
 <h2>
 <a name="estrutura-do-tema" class="anchor" href="#estrutura-do-tema"><span class="octicon octicon-link"></span></a>Estrutura do tema</h2>
@@ -440,7 +441,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 </code></pre>
 
 <h4>
-<a name="images" class="anchor" href="#images"><span class="octicon octicon-link"></span></a>Images</h4>
+<a name="image" class="anchor" href="#image"><span class="octicon octicon-link"></span></a>Image</h4>
 
 <p>Use esse helper para exibir uma imagem cadastrada no Painel Administrativo.</p>
 <p>Para entender como cadastrar imagens, visite: <a href="http://wiki.tray.com.br/documentacao/botoes-da-loja-2/">Imagens/Botões da loja</a>.</p>
@@ -472,6 +473,8 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h4>
 
 <p>Utilize juntamente com a tag <code>&lt;a&gt;</code>, ex: <code>&lt;a href="{{ links.home }}"&gt;Página Inicial&lt;/a&gt;</code>.</p>
+
+<p>Poderá utilizar também com actions de formulários: <code>&lt;form action="{{ links.search }}"&gt;</code>. Esse exemplo vai submeter para a página de busca.</p>
 
 <table>
 <thead><tr>
@@ -745,7 +748,14 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 }) %}
 </code></pre>
 
-<p>A chamada acima retornará até <strong>8</strong> produtos em <strong>destaque</strong> ordenados pelos <strong>mais vendidos</strong> que estejam cadastrados na <strong>categoria 1</strong> e <strong>marca Tray</strong>. Veja mais parâmetros disponíveis abaixo:</p>
+<p>A chamada acima retornará até <strong>8</strong> produtos em <strong>destaque</strong> ordenados pelos <strong>mais vendidos</strong> que estejam cadastrados na <strong>categoria 1</strong> e <strong>marca Tray</strong>.</p>
+
+<pre lang="twig"><code>{% set products = Products({
+    'filter': 'new'
+}) %}
+</code></pre>
+
+<p>A chamada acima retornará os produtos marcados como lançamento. Veja mais parâmetros disponíveis abaixo:</p>
 
 <h5>
 <a name="par%C3%A2metros-dispon%C3%ADveis-todos-os-par%C3%A2metros-s%C3%A3o-opcionais" class="anchor" href="#par%C3%A2metros-dispon%C3%ADveis-todos-os-par%C3%A2metros-s%C3%A3o-opcionais"><span class="octicon octicon-link"></span></a>Parâmetros disponíveis (todos os parâmetros são opcionais)</h5>
@@ -758,7 +768,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <tbody>
 <tr>
 <td>filter</td>
-<td>featured, new, free_shipping, promotion, available</td>
+<td>featured, new, free_shipping, promotion, available, rand</td>
 </tr>
 <tr>
 <td>limit</td>
@@ -858,19 +868,19 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <tbody>
 <tr>
 <td>small</td>
-<td>Retorna a imagem do produto em tamanho 30x30</td>
+<td>30x30</td>
 </tr>
 <tr>
 <td>medium</td>
-<td>Retorna a imagem do produto em tamanho 90x90</td>
+<td>90x90</td>
 </tr>
 <tr>
 <td>large</td>
-<td>Retorna a imagem do produto em tamanho 180x180</td>
+<td>180x180</td>
 </tr>
 <tr>
 <td>full</td>
-<td>Retorna a imagem do produto em tamanho original</td>
+<td>Tamanho original</td>
 </tr>
 </tbody>
 </table><h5>
@@ -882,6 +892,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
     {{ product.id }}
     {{ product.name }}
     {{ product.category_id }}
+
     {% for image in product.images %}
         &lt;img src="{{ image.small }}" alt=""&gt;
         &lt;img src="{{ image.medium }}" alt=""&gt;
@@ -1022,6 +1033,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <a name="translation" class="anchor" href="#translation"><span class="octicon octicon-link"></span></a>Translation</h4>
 
 <p>Exibe um texto de acordo com o idioma configurado na sua loja no Painel Administrativo.</p>
+<p>Para entender como funciona o gerenciamento de textos e internacionalização, acesse: <a href="http://wiki.tray.com.br/documentacao/gerenciamento-de-textos/">Gerenciamento de Textos</a>.</p>
 
 <h5>
 <a name="exemplos-12" class="anchor" href="#exemplos-12"><span class="octicon octicon-link"></span></a>Exemplos</h5>
@@ -1074,7 +1086,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 </ul><h3>
 <a name="banner" class="anchor" href="#banner"><span class="octicon octicon-link"></span></a>Banner</h3>
 
-<p>Para mais informações, visite a <a href="http://wiki.tray.com.br/documentacao/cadastrar-banners/">Wiki</a>.</p>
+<p>Para mais informações, visite a wiki de <a href="http://wiki.tray.com.br/documentacao/cadastrar-banners/">Banners</a>.</p>
 
 <h4>
 <a name="banner-pop-up" class="anchor" href="#banner-pop-up"><span class="octicon octicon-link"></span></a>Banner Pop up</h4>
@@ -1121,7 +1133,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <h4>
 <a name="banner-gallery" class="anchor" href="#banner-gallery"><span class="octicon octicon-link"></span></a>Banner Gallery</h4>
 
-<p>Para mais informações, visite a <a href="http://wiki.tray.com.br/documentacao/cadastrar-banners/#cadastrar-galeria">Wiki</a></p>
+<p>Para mais informações, visite a wiki do <a href="http://wiki.tray.com.br/documentacao/cadastrar-banners/#cadastrar-galeria">Banner Galeria</a>.</p>
 
 <table>
 <thead><tr>
@@ -1148,6 +1160,21 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <a name="cart-1" class="anchor" href="#cart-1"><span class="octicon octicon-link"></span></a>Cart</h3>
 
 <p>Para contornar o cache, utilize essa marcação para exibir os dados do carrinho atualizados.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atributos</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>data-cart</td>
+      <td>amount | price</td>
+    </tr>
+  </tbody>
+</table>
 
 <h5>
 <a name="exemplos-16" class="anchor" href="#exemplos-16"><span class="octicon octicon-link"></span></a>Exemplos</h5>
@@ -1229,7 +1256,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
             <li><a href="#cart">Cart</a></li>
             <li><a href="#categories">Categories</a></li>
             <li><a href="#customer">Customer</a></li>
-            <li><a href="#images">Images</a></li>
+            <li><a href="#image">Image</a></li>
             <li><a href="#links">Links</a></li>
             <li><a href="#pages">Pages</a></li>
             <li><a href="#payment-methods">Payment Methods</a></li>
