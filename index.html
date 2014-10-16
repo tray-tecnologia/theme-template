@@ -207,6 +207,10 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <td>Lista de banners</td>
 </tr>
 <tr>
+  <td>breadcrumb</td>
+  <td>Lista de páginas que formam o breadcrumb</td>
+</tr>
+<tr>
 <td>categories</td>
 <td>Lista de categorias</td>
 </tr>
@@ -363,6 +367,39 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 {{ banners.home.banner_alt.src }}
 {{ banners.home.banner_alt.link }}
 {{ banners.home.banner_alt.target }}
+</code></pre>
+
+<h4>
+<a name="breadcrumb" class="anchor" href="#breadcrumb"><span class="octicon octicon-link"></span></a>Breadcrumb</h4>
+
+<p>
+  Lista de páginas que formam o breadcrumb.<br>
+  <strong>Obs:</strong> Variável disponível na página: "catalog".
+</p>
+
+<table>
+<thead><tr>
+<th>Chaves</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Nome da página</td>
+</tr>
+<tr>
+<td>link</td>
+<td>Link da página</td>
+</tr>
+</tbody>
+</table><h5>
+<a name="exemplos-breadcrumb" class="anchor" href="#exemplos-breadcrumb"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>&lt;ul&gt;
+  {% for item in breadcrumb %}
+    &lt;li&gt;&lt;a href="{{ item.link }}" title="{{ item.name }}"&gt;{{ item.name }}&lt;/a&gt;&lt;/li&gt;
+  {% endfor %}
+&lt;/ul&gt;
 </code></pre>
 
 <h4>
@@ -1286,6 +1323,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
           <p>Variáveis e Helpers</p>
           <ul>
             <li><a href="#banners">Banners</a></li>
+            <li><a href="#breadcrumb">Breadcrumb</a></li>
             <li><a href="#cart">Cart</a></li>
             <li><a href="#categories">Categories</a></li>
             <li><a href="#customer">Customer</a></li>
