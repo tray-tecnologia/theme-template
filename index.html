@@ -1277,6 +1277,53 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 &lt;/form&gt;
 </code></pre>
 
+<h3><a name="js-product" class="anchor" href="#js-product"></a>Product</h3>
+
+<p>A princípio, esse módulo gerencia o modo de exibição dos produtos. Você poderá exibir os produtos em modo lista ou galeria.</p>
+<p>Veja como ativar esse comportamento:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atributos</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>data-exhibition</td>
+      <td>Valores disponíveis: list | gallery | container</td>
+    </tr>
+    <tr>
+      <td>data-class</td>
+      <td>Classe que será utilizada na CSS</td>
+    </tr>
+    <tr>
+      <td>data-columns</td>
+      <td>Quantidade de colunas que será utilizado no modo gallery</td>
+    </tr>
+  </tbody>
+</table>
+
+<a name="js-product-examples" class="anchor" href="#js-product-examples"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+
+<pre lang="twig"><code>&lt;div class="my-gallery my-gallery-3" data-exhibition="container"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Produto 1&lt;/li&gt;
+      &lt;li&gt;Produto 2&lt;/li&gt;
+      &lt;li&gt;Produto 3&lt;/li&gt;
+      &lt;li&gt;Produto 4&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;button data-exhibition="list" data-class="my-list"&gt;Lista&lt;/button&gt;
+&lt;button data-exhibition="gallery" data-class="my-gallery" data-columns="3"&gt;Galeria&lt;/button&gt;
+</code></pre>
+
+<p>
+  <strong>Obs:</strong> Quando o usuário clica nos botões para alterar o modo de exibição dos produtos, a escolha persistirá na sessão.
+</p>
+
 <h3>
 <a name="search-suggestion" class="anchor" href="#search-suggestion"><span class="octicon octicon-link"></span></a>Search (Suggestion)</h3>
 
@@ -1346,6 +1393,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
             <li><a href="#cart-1">Cart</a></li>
             <li><a href="#customer-1">Customer</a></li>
             <li><a href="#filter">Filter</a></li>
+            <li><a href="#js-product">Product</a></li>
             <li><a href="#search-suggestion">Search</a></li>
           </ul>
           <a href="https://github.com/tray-tecnologia/theme-template/zipball/master" class="button">
