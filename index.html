@@ -510,6 +510,208 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 {{ customer.email }}
 </code></pre>
 
+<h4><a name="filters" class="anchor" href="#filters"><span class="octicon octicon-link"></span></a>Filters</h4>
+
+<p>Filtros de busca nas páginas catalogo e busca. Com esses dados você poderá montar filtros como esse:</p>
+<img src="images/filters-example.png" alt="Tray OpenCode Filters">
+
+<table>
+  <thead><tr>
+    <th>Chaves principais</th>
+    <th>Descrição</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>categories</td>
+      <td>Lista de categorias</td>
+    </tr>
+    <tr>
+      <td>brands</td>
+      <td>Lista de marcas</td>
+    </tr>
+    <tr>
+      <td>prices</td>
+      <td>Lista de preços</td>
+    </tr>
+    <tr>
+      <td>variations</td>
+      <td>Lista de variações</td>
+    </tr>
+    <tr>
+      <td>features</td>
+      <td>Lista de características</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead><tr>
+    <th>Chaves secundárias</th>
+    <th>Descrição</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>Título do filtro (ex: Categorias, Filtrar por marca, Faixa de preços)</td>
+    </tr>
+    <tr>
+      <td>items</td>
+      <td>Lista de itens</td>
+    </tr>
+  </tbody>
+</table>
+
+Exemplo de conteúdo:
+<pre><code>
+[categories] => Array
+    (
+        [title] => Categorias
+        [applied] => 
+        [items] => Array
+            (
+                [0] => Array
+                    (
+                        [title] => EPSON
+                        [count] => 2
+                        [url] => /mvc/store/catalog/?categoria=8-epson&loja=332719
+                        [type] => link
+                        [applied] => 0
+                    )
+
+                [1] => Array
+                    (
+                        [title] => HP
+                        [count] => 18
+                        [url] => /mvc/store/catalog/?categoria=10-hp&loja=332719
+                        [type] => link
+                        [applied] => 0
+                    )
+
+            )
+
+    )
+
+[brands] => Array
+    (
+        [title] => Filtrar por Marca
+        [applied] => 
+        [items] => Array
+            (
+                [0] => Array
+                    (
+                        [title] => EPSON
+                        [count] => 2
+                        [url] => /mvc/store/catalog/?categoria=2&loja=332719&marca=marca_epson
+                        [type] => checkbox
+                        [applied] => 0
+                        [name] => marca
+                        [value] => marca_epson
+                    )
+
+                [1] => Array
+                    (
+                        [title] => HP
+                        [count] => 18
+                        [url] => /mvc/store/catalog/?categoria=2&loja=332719&marca=marca_hp
+                        [type] => checkbox
+                        [applied] => 0
+                        [name] => marca
+                        [value] => marca_hp
+                    )
+
+            )
+
+    )
+
+[prices] => Array
+    (
+        [title] => Faixa de Preços
+        [applied] => 
+        [items] => Array
+            (
+                [0] => Array
+                    (
+                        [title] => De R$ 22,99 a R$ 156,81
+                        [count] => 13
+                        [url] => /mvc/store/catalog/?categoria=2&loja=332719&range=22.99-156.81
+                        [type] => checkbox
+                        [applied] => 0
+                        [name] => range
+                        [value] => 22.99-156.81
+                        [from] => 22.99
+                        [to] => 156.81
+                    )
+
+                [1] => Array
+                    (
+                        [title] => De R$ 156,82 a R$ 291,63
+                        [count] => 4
+                        [url] => /mvc/store/catalog/?categoria=2&loja=332719&range=156.82-291.63
+                        [type] => checkbox
+                        [applied] => 0
+                        [name] => range
+                        [value] => 156.82-291.63
+                        [from] => 156.82
+                        [to] => 291.63
+                    )
+
+                [2] => Array
+                    (
+                        [title] => De R$ 561,28 a R$ 696,09
+                        [count] => 2
+                        [url] => /mvc/store/catalog/?categoria=2&loja=332719&range=561.28-696.09
+                        [type] => checkbox
+                        [applied] => 0
+                        [name] => range
+                        [value] => 561.28-696.09
+                        [from] => 561.28
+                        [to] => 696.09
+                    )
+
+            )
+
+    )
+</code></pre>
+
+<h5>
+<a name="exemplos-filters" class="anchor" href="#exemplos-filters"></a>Exemplos</h5>
+
+<pre lang="twig"><code>
+{% if filters %}
+
+&#x3C;form name=&#x22;form-filter&#x22; method=&#x22;get&#x22;&#x3E;
+    &#x3C;input type=&#x22;hidden&#x22; name=&#x22;loja&#x22; value=&#x22;{{ store.id }}&#x22; /&#x3E;
+    {% if category.id %}
+        &#x3C;input type=&#x22;hidden&#x22; name=&#x22;categoria&#x22; value=&#x22;{{ category.id }}&#x22; /&#x3E;
+    {% endif %}
+    {% for myFilter in filters %}
+        {% if myFilter.items|length &#x3E; 0 %}
+            &#x3C;h3&#x3E;{{ myFilter.title }}&#x3C;/h3&#x3E;
+            &#x3C;ul&#x3E;
+            {% for item in myFilter.items %}
+                &#x3C;li&#x3E;
+                    {% if item.type == &#x22;link&#x22; %}
+                        &#x3C;a href=&#x22;{{ item.url }}&#x22;&#x3E;{{ item.title }}&#x3C;/a&#x3E;
+                    {% endif %}
+
+                    {% if item.type == &#x22;checkbox&#x22; %}
+                        &#x3C;label&#x3E;
+                            {% set checked = item.applied ? &#x27;checked=&#x22;checked&#x22;&#x27; %}
+                            &#x3C;input type=&#x22;checkbox&#x22; name=&#x22;{{ item.name }}&#x22; value=&#x22;{{ item.value }}&#x22; {{ checked }} /&#x3E;
+                            {{ item.title }}
+                        &#x3C;/label&#x3E;
+                    {% endif %}
+                &#x3C;/li&#x3E;
+            {% endfor %}
+            &#x3C;/ul&#x3E;
+        {% endif %}
+    {% endfor %}
+    &#x3C;button type=&#x22;submit&#x22; class=&#x22;filter-button&#x22;&#x3E;{{ Translation(&#x27;filtrar&#x27;) }}&#x3C;/button&#x3E;
+&#x3C;/form&#x3E;
+
+{% endif %}
+</code></pre>
+
 <h4>
 <a name="image" class="anchor" href="#image"><span class="octicon octicon-link"></span></a>Image</h4>
 
@@ -1374,6 +1576,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
             <li><a href="#cart">Cart</a></li>
             <li><a href="#categories">Categories</a></li>
             <li><a href="#customer">Customer</a></li>
+            <li><a href="#filters">Filters</a></li>
             <li><a href="#image">Image</a></li>
             <li><a href="#links">Links</a></li>
             <li><a href="#pages">Pages</a></li>
