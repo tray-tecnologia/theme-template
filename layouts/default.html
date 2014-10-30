@@ -68,6 +68,8 @@
             {{ banner.popup ~ banner.floating }}
         {% endif %}
 
+        {{ _view.element('snippets/credits') }}
+
     {% endif %}
 
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
