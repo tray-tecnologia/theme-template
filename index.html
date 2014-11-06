@@ -365,6 +365,75 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 {{ banners.home.banner_alt.target }}
 </code></pre>
 
+<h5>Banner JS</h5>
+<p>O banner JavaScript possui algumas informações que os outros banners não tem, segue a lista:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Chaves</th>
+      <th>Descrição</th>
+      <th>Valores</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>interval</td>
+      <td>Intervalo da transição entre cada slide</td>
+      <td>3 a 10 (segundos)</td>
+    </tr>
+    <tr>
+      <td>velocity</td>
+      <td>Velocidade da animação</td>
+      <td>0.5 | 1.0 | 1.5 | 2.0</td>
+    </tr>
+    <tr>
+      <td>animation</td>
+      <td>Tipo da animação</td>
+      <td>blind | block | cube | cubeSpread | fade | fadeFour | glassCube | horizontal | tube</td>
+    </tr>
+    <tr>
+      <td>stop_over</td>
+      <td>Pausar a troca de slides quando o mouse estiver sobre o banner</td>
+      <td>0 | 1</td>
+    </tr>
+    <tr>
+      <td>navigation</td>
+      <td>Tipos de navegação</td>
+      <td>0 | 1 | 2</td>
+    </tr>
+    <tr>
+      <td>progressbar</td>
+      <td>Exibir barra de progresso</td>
+      <td>0 | 1</td>
+    </tr>
+    <tr>
+      <td>slides</td>
+      <td>Dados das imagens cadastradas</td>
+      <td>image | link | label | target | width | height</td>
+    </tr>
+  </tbody>
+</table>
+<h5>
+  <a name="exemplos-bannerjs" class="anchor" href="#exemplos-bannerjs">
+    <span class="octicon octicon-link"></span>
+  </a>
+  Exemplos Banner JS
+</h5>
+</h5>
+<pre lang="twig"><code>{{ banners.extra1.enable_navigation_keys }}
+{{ banners.extra1.interval }}
+{{ banners.extra1.velocity }}
+{{ banners.extra1.animation }}
+{{ banners.extra1.stop_over }}
+{{ banners.extra1.navigation }}
+{{ banners.extra1.progressbar }}
+{% for slide in banners.extra1.slides %}
+    &#x3C;a href=&#x22;{{ slide.link }}&#x22; target=&#x22;{{ slide.target }}&#x22;&#x3E;
+        &#x3C;img src=&#x22;{{ slide.image }}&#x22; alt=&#x22;{{ slide.label }}&#x22; /&#x3E;
+    &#x3C;/a&#x3E;
+{% endfor %}
+</code></pre>
+
 <h4>
 <a name="cart" class="anchor" href="#cart"><span class="octicon octicon-link"></span></a>Cart</h4>
 
