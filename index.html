@@ -365,6 +365,74 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 {{ banners.home.banner_alt.target }}
 </code></pre>
 
+<h5>Banner JS</h5>
+<p>O banner JavaScript possui algumas informações que os outros banners não tem, segue a lista:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Chaves</th>
+      <th>Descrição</th>
+      <th>Valores</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>interval</td>
+      <td>Intervalo da transição entre cada slide</td>
+      <td>3 a 10 (segundos)</td>
+    </tr>
+    <tr>
+      <td>velocity</td>
+      <td>Velocidade da animação</td>
+      <td>0.5 | 1.0 | 1.5 | 2.0</td>
+    </tr>
+    <tr>
+      <td>animation</td>
+      <td>Tipo da animação</td>
+      <td>blind | block | cube | cubeSpread | fade | fadeFour | glassCube | horizontal | tube</td>
+    </tr>
+    <tr>
+      <td>stop_over</td>
+      <td>Pausar a troca de slides quando o mouse estiver sobre o banner</td>
+      <td>0 | 1</td>
+    </tr>
+    <tr>
+      <td>navigation</td>
+      <td>Tipos de navegação</td>
+      <td>0 | 1 | 2</td>
+    </tr>
+    <tr>
+      <td>progressbar</td>
+      <td>Exibir barra de progresso</td>
+      <td>0 | 1</td>
+    </tr>
+    <tr>
+      <td>slides</td>
+      <td>Dados das imagens cadastradas</td>
+      <td>image | link | label | target | width | height</td>
+    </tr>
+  </tbody>
+</table>
+<h5>
+  <a name="exemplos-bannerjs" class="anchor" href="#exemplos-bannerjs">
+    <span class="octicon octicon-link"></span>
+  </a>
+  Exemplos Banner JS
+</h5>
+</h5>
+<pre lang="twig"><code>{{ banners.extra1.interval }}
+{{ banners.extra1.velocity }}
+{{ banners.extra1.animation }}
+{{ banners.extra1.stop_over }}
+{{ banners.extra1.navigation }}
+{{ banners.extra1.progressbar }}
+{% for slide in banners.extra1.slides %}
+    &#x3C;a href=&#x22;{{ slide.link }}&#x22; target=&#x22;{{ slide.target }}&#x22;&#x3E;
+        &#x3C;img src=&#x22;{{ slide.image }}&#x22; alt=&#x22;{{ slide.label }}&#x22; /&#x3E;
+    &#x3C;/a&#x3E;
+{% endfor %}
+</code></pre>
+
 <h4>
 <a name="cart" class="anchor" href="#cart"><span class="octicon octicon-link"></span></a>Cart</h4>
 
@@ -385,7 +453,9 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <td>Valor total à pagar</td>
 </tr>
 </tbody>
-</table><h5>
+</table>
+<p><strong>Obs: </strong>Para problemas com cache, leia sobre o <a href="#cart-1">módulo Cart em JavaScript</a></p>
+<h5>
 <a name="exemplos-2" class="anchor" href="#exemplos-2"><span class="octicon octicon-link"></span></a>Exemplos</h5>
 
 <pre lang="twig"><code>{{ cart.amount }}
@@ -572,7 +642,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <td>Página mapa do site</td>
 </tr>
 <tr>
-<td>sign_in</td>
+<td>register</td>
 <td>Página de cadastro</td>
 </tr>
 <tr>
@@ -626,7 +696,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 &lt;a href="{{ links.payment }}"&gt;Pagamento&lt;/a&gt;
 &lt;a href="{{ links.newsletter }}"&gt;Inscreva-se para receber novidades&lt;/a&gt;
 &lt;a href="{{ links.map }}"&gt;Mapa do site&lt;/a&gt;
-&lt;a href="{{ links.sign_in }}"&gt;Cadastre-se&lt;/a&gt;
+&lt;a href="{{ links.register }}"&gt;Cadastre-se&lt;/a&gt;
 &lt;a href="{{ links.central }}"&gt;Central do cliente&lt;/a&gt;
 &lt;a href="{{ links.login }}"&gt;Entrar&lt;/a&gt;
 &lt;a href="{{ links.orders }}"&gt;Meus pedidos&lt;/a&gt;
@@ -860,6 +930,10 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <td>Valor do produto em promoção</td>
 </tr>
 <tr>
+  <td>payment</td>
+  <td>Retorna o parcelamento do produto</td>
+</tr>
+<tr>
 <td>link</td>
 <td>Link para a página do produto</td>
 </tr>
@@ -935,6 +1009,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
           
     {{ product.price }}
     {{ product.price_offer }}
+    {{ product.payment }}
     {{ product.link }}
     {{ product.available }}
     {{ product.stock }}
