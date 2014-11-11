@@ -49,6 +49,8 @@
     </div>
     
     {% if showFooter %}
+        {{ _view.element('snippets/tagcloud') }}
+        {{ _view.element('snippets/history') }}
 
         {% if banner.bottom %}
             <div class="banner banner-bottom">
