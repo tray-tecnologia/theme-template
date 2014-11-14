@@ -491,7 +491,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 </tr>
 <tr>
 <td>children</td>
-<td>Categorias filhas</td>
+<td>Subcategorias</td>
 </tr>
 </tbody>
 </table><h5>
@@ -503,6 +503,10 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
     {{ category.name }}
     {{ category.description }}
     {{ category.link }}
+    {% for child in category.children %}
+        {{ child.id }}
+        {{ child.name }}
+    {% endfor %}
 {% endfor %}
 </code></pre>
 
