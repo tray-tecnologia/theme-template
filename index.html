@@ -590,14 +590,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 </tr></thead>
 <tbody>
 <tr>
-<td>search</td>
-<td>Página de busca</td>
-</tr>
-<tr>
-<td>search_by_brand</td>
-<td>Página de busca por marca</td>
-</tr>
-<tr>
 <td>home</td>
 <td>Página inicial</td>
 </tr>
@@ -685,10 +677,52 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <td>logout</td>
 <td>Página de logout</td>
 </tr>
+<tr>
+<td>search</td>
+<td>Página de busca</td>
+</tr>
+<tr>
+<td>search_by_brand</td>
+<td>Página de busca por marca</td>
+</tr>
+<tr>
+  <td>search_new</td>
+  <td>Link para a página de busca listando apenas os produtos em lançamento</td>
+</tr>
+<tr>
+  <td>search_featured</td>
+  <td>Link para a página de busca listando apenas os produtos em destaque</td>
+</tr>
+<tr>
+  <td>search_offer</td>
+  <td>Link para a página de busca listando apenas os produtos em promoção</td>
+</tr>
+<tr>
+  <td>search_order_name</td>
+  <td>Link para a página de busca listando produtos ordenados por nome</td>
+</tr>
+<tr>
+  <td>search_order_price</td>
+  <td>Link para a página de busca listando produtos ordenados por preço</td>
+</tr>
+<tr>
+  <td>search_order_bestsellers</td>
+  <td>Link para a página de busca listando produtos ordenados pelos mais vendidos</td>
+</tr>
+<tr>
+  <td>search_order_featured</td>
+  <td>Link para a página de busca listando produtos ordenados por destaque</td>
+</tr>
+<tr>
+  <td>search_order_new</td>
+  <td>Link para a página de busca listando produtos ordenados por lançamento</td>
+</tr>
+<tr>
+  <td>search_order_release</td>
+  <td>Link para a página de busca listando produtos ordenados por data de lançamento</td>
+</tr>
 </tbody>
-</table><pre lang="twig"><code>&lt;a href="{{ links.search }}"&gt;Buscar&lt;/a&gt;
-&lt;a href="{{ links.search_by_brand }}tray"&gt;Buscar pela marca "tray"&lt;/a&gt;
-&lt;a href="{{ links.home }}"&gt;Página Inicial&lt;/a&gt;
+</table><pre lang="twig"><code>&lt;a href="{{ links.home }}"&gt;Página Inicial&lt;/a&gt;
 &lt;a href="{{ links.company }}"&gt;Empresa&lt;/a&gt;
 &lt;a href="{{ links.contact }}"&gt;Fale conosco&lt;/a&gt;
 &lt;a href="{{ links.cart }}"&gt;Carrinho de compras&lt;/a&gt;
@@ -705,6 +739,23 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 &lt;a href="{{ links.login }}"&gt;Entrar&lt;/a&gt;
 &lt;a href="{{ links.orders }}"&gt;Meus pedidos&lt;/a&gt;
 &lt;a href="{{ links.logout }}"&gt;Sair&lt;/a&gt;
+
+&lt;a href="{{ links.search }}"&gt;Buscar&lt;/a&gt;
+&lt;a href="{{ links.search_by_brand }}tray"&gt;Buscar pela marca "tray"&lt;/a&gt;
+&lt;a href="{{ links.search_new }}"&gt;Produtos em lançamento&lt;/a&gt;
+&lt;a href="{{ links.search_featured }}"&gt;Produtos em destaque&lt;/a&gt;
+&lt;a href="{{ links.search_offer }}"&gt;Ofertas&lt;/a&gt;
+&lt;a href="{{ links.search_order_name }}"&gt;Produtos ordenados por nome&lt;/a&gt;
+&lt;a href="{{ links.search_order_price }}"&gt;Produtos ordenados por preço&lt;/a&gt;
+&lt;a href="{{ links.search_order_bestsellers }}"&gt;Mais vendidos&lt;/a&gt;
+&lt;a href="{{ links.search_order_featured }}"&gt;Produtos em destaque aparecem primeiro&lt;/a&gt;
+&lt;a href="{{ links.search_order_new }}"&gt;Produtos em lançamento aparecem primeiro&lt;/a&gt;
+&lt;a href="{{ links.search_order_release }}"&gt;Produtos ordenados pela data de lançamento&lt;/a&gt;
+</code></pre>
+
+<p>Outros links</p>
+<pre lang="twig"><code>&lt;a href="{{ links.news }}"&gt;Últimas notícias&lt;/a&gt;
+&lt;a href="{{ links.customer_reviews }}"&gt;Depoimentos dos clientes&lt;/a&gt;
 </code></pre>
 
 <h4>
