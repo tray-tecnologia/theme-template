@@ -639,7 +639,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 </tr>
 <tr>
 <td>newsletter</td>
-<td>Página de cadastro de newletter</td>
+<td>Página de cadastro de newsletter</td>
 </tr>
 <tr>
 <td>map</td>
@@ -1353,6 +1353,46 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 
 <p>Evite utilizar funções que estão sendo removidas das novas versões da jQuery.</p>
 
+<h2>
+  <a name="extensoes" class="anchor" href="#extensoes">
+    <span class="octicon octicon-link"></span>
+  </a>
+  Extensões
+</h2>
+
+<p>A Tray possui diversas <a href="http://wiki.tray.com.br/secao/tray-commerce/extensoes/">extensões</a> para tornar a sua loja virtual imbatível. Nem todas as extensões tem necessidade de realizar chamadas de código no layout, porém, algumas precisam.</p>
+<p>Veja a tabela de recursos disponíveis e o respectivo código necessário:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Extensão</th>
+      <th>Código no layout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="http://wiki.tray.com.br/documentacao/depoimentos-e-bit/" target="_blank">Depoimentos E-bit</a><br>
+        <a href="http://wiki.tray.com.br/documentacao/depoimentos-da-loja-virtual/" target="_blank">Depoimentos da Loja Virtual</a>
+      </td>
+      <td><code>{{ _view.element('CustomerReview.reviews') }}</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://wiki.tray.com.br/documentacao/filtro-de-caracteristicas-de-produto/" target="_blank">Filtro de características</a></td>
+      <td><code>{{ _view.element('FeaturesTopMenu.features_top_menu') }}</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://wiki.tray.com.br/documentacao/menu-superior-inteligente-2/" target="_blank">Menu Superior Inteligente</a></td>
+      <td><code>{{ _view.element('SmartTopMenu.smart_top_menu') }}</code></td>
+    </tr>
+    <tr>
+      <td><a href="http://wiki.tray.com.br/documentacao/sistema-de-noticias/" target="_blank">Notícias</a></td>
+      <td><code>{{ _view.element('News.news') }}</code></td>
+    </tr>
+  </tbody>
+</table>
+
 </section>
 
         <aside id="sidebar">
@@ -1388,6 +1428,13 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
             <li><a href="#customer-1">Customer</a></li>
             <li><a href="#filter">Filter</a></li>
             <li><a href="#search-suggestion">Search</a></li>
+          </ul>
+          <p>Recursos Extras</p>
+          <ul>
+            <li><a href="#extensoes">Depoimentos</a></li>
+            <li><a href="#extensoes">Filtro de Características</a></li>
+            <li><a href="#extensoes">Menu Superior Inteligente</a></li>
+            <li><a href="#extensoes">Notícias</a></li>
           </ul>
           <a href="https://github.com/tray-tecnologia/theme-template/zipball/master" class="button">
             <small>Download</small>
