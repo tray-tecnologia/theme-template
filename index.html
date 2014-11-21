@@ -405,12 +405,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <h5>Banner JS</h5>
 <p>O banner JavaScript possui algumas informações que os outros banners não tem, segue a lista:</p>
 <table>
-  <thead>
-    <tr>
-      <th>Chaves</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
       <td>interval</td>
@@ -481,28 +475,24 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Informações do carrinho de compras.</p>
 
 <table>
-<thead><tr>
-<th>Chaves</th>
-<th>Descrição</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>amount</td>
-<td>Total de produtos no carrinho</td>
+<td>
+    <pre lang="twig"><code>Você tem {{ cart.amount }} produtos no carrinho</code></pre>
+    Total de produtos no carrinho
+</td>
 </tr>
 <tr>
 <td>price</td>
-<td>Valor total à pagar</td>
+<td>
+    <pre lang="twig"><code>Total: {{ cart.price }}</code></pre>
+    Valor total à pagar
+</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Obs: </strong>Para problemas com cache, leia sobre o <a href="#cart-1">módulo Cart em JavaScript</a></p>
-<h5>
-<a name="exemplos-2" class="anchor" href="#exemplos-2"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
-<pre lang="twig"><code>{{ cart.amount }}
-{{ cart.price }}
-</code></pre>
+<p><strong>Obs:</strong> Para problemas com cache, leia sobre o <a href="#cart-1">módulo Cart em JavaScript</a></p>
 
 <h4>
 <a name="categories" class="anchor" href="#categories"><span class="octicon octicon-link"></span></a>Categories</h4>
@@ -517,40 +507,47 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <tbody>
 <tr>
 <td>id</td>
-<td>Identificador único da categoria</td>
+<td>
+    <pre lang="twig"><code>{{ categories[0].id }}</code></pre>
+    Identificador único da categoria
+</td>
 </tr>
 <tr>
 <td>parent</td>
-<td>Identificador único da categoria mãe</td>
+<td>
+    <pre lang="twig"><code>{{ categories[25].parent }}</code></pre>
+    Identificador único da categoria mãe
+</td>
 </tr>
 <tr>
 <td>name</td>
-<td>Nome da categoria</td>
+<td>
+    <pre lang="twig"><code>{{ categories[0].name }}</code></pre>
+    Nome da categoria
+</td>
 </tr>
 <tr>
 <td>description</td>
-<td>Descrição da categoria</td>
+<td>
+    <pre lang="twig"><code>{{ categories[0].description }}</code></pre>
+    Descrição da categoria
+</td>
 </tr>
 <tr>
 <td>children</td>
-<td>Subcategorias</td>
-</tr>
-</tbody>
-</table><h5>
-<a name="exemplos-3" class="anchor" href="#exemplos-3"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
+<td>
 <pre lang="twig"><code>{% for category in categories %}
-    {{ category.id }}
-    {{ category.parent }}
-    {{ category.name }}
-    {{ category.description }}
-    {{ category.link }}
     {% for child in category.children %}
         {{ child.id }}
         {{ child.name }}
     {% endfor %}
 {% endfor %}
 </code></pre>
+    Subcategorias
+</td>
+</tr>
+</tbody>
+</table>
 
 <h4>
 <a name="customer" class="anchor" href="#customer"><span class="octicon octicon-link"></span></a>Customer</h4>
@@ -558,36 +555,39 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Dados do consumidor que está navegando na loja.</p>
 
 <table>
-<thead><tr>
-<th>Chaves</th>
-<th>Descrição</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>id</td>
-<td>Identificador único do cliente (se estiver logado)</td>
+<td>
+    <pre lang="twig"><code>{{ customer.id }}</code></pre>
+    Identificador único do cliente (se estiver logado)
+</td>
 </tr>
 <tr>
 <td>logged</td>
-<td>Retorna se está logado ou não</td>
+<td>
+<pre lang="twig"><code>{% if customer.logged %}
+    Bem-vindo {{ customer.name }}!
+{% endif %}</code></pre>
+    Retorna se está logado ou não
+</td>
 </tr>
 <tr>
 <td>name</td>
-<td>Nome completo do cliente</td>
+<td>
+    <pre lang="twig"><code>{{ customer.id }}</code></pre>
+    Nome completo do cliente
+</td>
 </tr>
 <tr>
 <td>email</td>
-<td>E-mail do cliente</td>
+<td>
+    <pre lang="twig"><code>{{ customer.email }}</code></pre>
+    E-mail do cliente
+</td>
 </tr>
 </tbody>
-</table><h5>
-<a name="exemplos-4" class="anchor" href="#exemplos-4"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
-<pre lang="twig"><code>{{ customer.logged }}
-{{ customer.name }}
-{{ customer.id }}
-{{ customer.email }}
-</code></pre>
+</table>
 
 <h4>
 <a name="image" class="anchor" href="#image"><span class="octicon octicon-link"></span></a>Image</h4>
