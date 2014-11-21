@@ -486,7 +486,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <tr>
 <td>price</td>
 <td>
-    <pre lang="twig"><code>Total: {{ cart.price }}</code></pre>
+    <pre lang="twig"><code>Valor total: {{ cart.price }}</code></pre>
     Valor total à pagar
 </td>
 </tr>
@@ -593,11 +593,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <a name="image" class="anchor" href="#image"><span class="octicon octicon-link"></span></a>Image</h4>
 
 <p>Use esse helper para exibir uma imagem cadastrada no Painel Administrativo.</p>
-<p>Para entender como cadastrar imagens, visite: <a href="http://wiki.tray.com.br/documentacao/botoes-da-loja-2/">Imagens/Botões da loja</a>.</p>
-
-<h5>
-<a name="exemplos-5" class="anchor" href="#exemplos-5"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
 <pre lang="twig"><code>{{ Image('botao_adicional') }}
 {{ Image('botao_compre_junto') }}
 {{ Image('calcular_frete') }}
@@ -617,6 +612,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 {{ Image('simular_frete') }}
 {{ Image('sobconsulta') }}
 </code></pre>
+<p>Para entender como cadastrar imagens, visite: <a href="http://wiki.tray.com.br/documentacao/botoes-da-loja-2/">Imagens/Botões da loja</a>.</p>
 
 <h4>
 <a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h4>
@@ -633,121 +629,174 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <tbody>
 <tr>
 <td>search</td>
-<td>Página de busca</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.search }}"&gt;Buscar&lt;/a&gt;</code></pre>
+    Página de busca
+</td>
 </tr>
 <tr>
 <td>search_by_brand</td>
-<td>Página de busca por marca</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.search_by_brand }}tray"&gt;Buscar pela marca "tray"&lt;/a&gt;</code></pre>
+    Página de busca por marca
+</td>
 </tr>
 <tr>
 <td>home</td>
-<td>Página inicial</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.home }}"&gt;Página Inicial&lt;/a&gt;</code></pre>
+    Página inicial
+</td>
 </tr>
 <tr>
 <td>company</td>
-<td>Página com informações sobre a loja/empresa</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.company }}"&gt;Empresa&lt;/a&gt;</code></pre>
+    Página com informações sobre a loja/empresa
+</td>
 </tr>
 <tr>
 <td>contact</td>
-<td>Página de contato</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.contact }}"&gt;Fale conosco&lt;/a&gt;</code></pre>
+    Página de contato
+</td>
 </tr>
 <tr>
 <td>cart</td>
-<td>Página do carrinho de compras</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.cart }}"&gt;Carrinho de compras&lt;/a&gt;</code></pre>
+    Página do carrinho de compras
+</td>
 </tr>
 <tr>
 <td>info</td>
-<td>Página de informações gerais sobre os processos da loja</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.info }}"&gt;Mais informações&lt;/a&gt;</code></pre>
+    Página de informações gerais sobre os processos da loja
+</td>
 </tr>
 <tr>
 <td>info_buy</td>
-<td>Âncora de informações sobre compra</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.info_buy }}"&gt;Como comprar&lt;/a&gt;</code></pre>
+    Âncora de informações sobre compra
+</td>
 </tr>
 <tr>
 <td>security</td>
-<td>Âncora de informações sobre segurança</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.security }}"&gt;Segurança&lt;/a&gt;</code></pre>
+    Âncora de informações sobre segurança
+</td>
 </tr>
 <tr>
 <td>warranty</td>
-<td>Âncora de informações sobre garantia</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.warranty }}"&gt;Garantia&lt;/a&gt;</code></pre>
+    Âncora de informações sobre garantia
+</td>
 </tr>
 <tr>
 <td>send</td>
-<td>Âncora de informações sobre envio</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.send }}"&gt;Envio&lt;/a&gt;</code></pre>
+    Âncora de informações sobre envio
+</td>
 </tr>
 <tr>
 <td>payment</td>
-<td>Âncora de informações sobre pagamento</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.payment }}"&gt;Pagamento&lt;/a&gt;</code></pre>
+    Âncora de informações sobre pagamento
+</td>
 </tr>
 <tr>
 <td>newsletter</td>
-<td>Página de cadastro de newsletter</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.newsletter }}"&gt;Inscreva-se para receber novidades&lt;/a&gt;</code></pre>
+    Página de cadastro de newsletter
+</td>
 </tr>
 <tr>
 <td>map</td>
-<td>Página mapa do site</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.map }}"&gt;Mapa do site&lt;/a&gt;</code></pre>
+    Página mapa do site
+</td>
 </tr>
 <tr>
 <td>register</td>
-<td>Página de cadastro</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.register }}"&gt;Cadastre-se&lt;/a&gt;</code></pre>
+    Página de cadastro
+</td>
 </tr>
 <tr>
 <td>central</td>
-<td>Página da central do cliente</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.central }}"&gt;Central do cliente&lt;/a&gt;</code></pre>
+    Página da central do cliente
+</td>
 </tr>
 <tr>
 <td>login</td>
-<td>Página de login</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.login }}"&gt;Entrar&lt;/a&gt;</code></pre>
+    Página de login
+</td>
 </tr>
 <tr>
 <td>orders</td>
-<td>Página de pedidos</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.orders }}"&gt;Meus pedidos&lt;/a&gt;</code></pre>
+    Página de pedidos
+</td>
 </tr>
 <tr>
 <td>orders_tracking</td>
-<td>Página de rastreio de pedidos</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.orders_tracking }}"&gt;Rastrear pedidos&lt;/a&gt;</code></pre>
+    Página de rastreio de pedidos
+</td>
 </tr>
 <tr>
 <td>orders_return</td>
-<td>Página de trocas/devoluções</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.orders_return }}"&gt;Trocas e devoluções&lt;/a&gt;</code></pre>
+    Página de trocas/devoluções
+</td>
 </tr>
 <tr>
 <td>payment_confirm</td>
-<td>Página de confirmação de pagamento</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.payment_confirm }}"&gt;Confirmar pagamento&lt;/a&gt;</code></pre>
+    Página de confirmação de pagamento
+</td>
 </tr>
 <tr>
 <td>account</td>
-<td>Página central do cliente</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.account }}"&gt;Minha Conta&lt;/a&gt;</code></pre>
+    Página central do cliente
+</td>
 </tr>
 <tr>
 <td>account_password</td>
-<td>Página de alteração de senha</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.account_password }}"&gt;Alterar senha&lt;/a&gt;</code></pre>
+    Página de alteração de senha
+</td>
 </tr>
 <tr>
 <td>logout</td>
-<td>Página de logout</td>
+<td>
+    <pre lang="twig"><code>&lt;a href="{{ links.logout }}"&gt;Sair&lt;/a&gt;</code></pre>
+    Página de logout
+</td>
 </tr>
 </tbody>
-</table><pre lang="twig"><code>&lt;a href="{{ links.search }}"&gt;Buscar&lt;/a&gt;
-&lt;a href="{{ links.search_by_brand }}tray"&gt;Buscar pela marca "tray"&lt;/a&gt;
-&lt;a href="{{ links.home }}"&gt;Página Inicial&lt;/a&gt;
-&lt;a href="{{ links.company }}"&gt;Empresa&lt;/a&gt;
-&lt;a href="{{ links.contact }}"&gt;Fale conosco&lt;/a&gt;
-&lt;a href="{{ links.cart }}"&gt;Carrinho de compras&lt;/a&gt;
-&lt;a href="{{ links.info }}"&gt;Mais informações&lt;/a&gt;
-&lt;a href="{{ links.info_buy }}"&gt;Como comprar&lt;/a&gt;
-&lt;a href="{{ links.security }}"&gt;Segurança&lt;/a&gt;
-&lt;a href="{{ links.warranty }}"&gt;Garantia&lt;/a&gt;
-&lt;a href="{{ links.send }}"&gt;Envio&lt;/a&gt;
-&lt;a href="{{ links.payment }}"&gt;Pagamento&lt;/a&gt;
-&lt;a href="{{ links.newsletter }}"&gt;Inscreva-se para receber novidades&lt;/a&gt;
-&lt;a href="{{ links.map }}"&gt;Mapa do site&lt;/a&gt;
-&lt;a href="{{ links.register }}"&gt;Cadastre-se&lt;/a&gt;
-&lt;a href="{{ links.central }}"&gt;Central do cliente&lt;/a&gt;
-&lt;a href="{{ links.login }}"&gt;Entrar&lt;/a&gt;
-&lt;a href="{{ links.orders }}"&gt;Meus pedidos&lt;/a&gt;
-&lt;a href="{{ links.logout }}"&gt;Sair&lt;/a&gt;
-</code></pre>
+</table>
 
 <h4>
 <a name="pages" class="anchor" href="#pages"><span class="octicon octicon-link"></span></a>Pages</h4>
@@ -762,31 +811,30 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <tbody>
 <tr>
 <td>current</td>
-<td>Em qual página o usuário está navegando, ex: <code>home</code>
+<td>
+<pre lang="twig"><code>{% if pages.current == 'home' %}
+    Você está na nossa página inicial, navegue na nossa loja!
+{% endif %}
+</code></pre>    
+    Em qual página o usuário está navegando, ex: <code>home</code>
 </td>
 </tr>
 <tr>
 <td>custom</td>
-<td><a href="http://wiki.tray.com.br/documentacao/paginas-personalizadas-2/">Páginas Personalizadas</a> cadastradas no Painel Administrativo</td>
-</tr>
-</tbody>
-</table><h5>
-<a name="exemplos-6" class="anchor" href="#exemplos-6"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
-<pre lang="twig"><code>{% if pages.current == 'home' %}
-    Você está na nossa página inicial, navegue na nossa loja!
-{% endif %}
-
-{% for custom in pages.custom %}
+<td>
+<pre lang="twig"><code>{% for custom in pages.custom %}
     &lt;a href="{{ custom.url }}"&gt;{{ custom.name }}&lt;/a&gt;
 {% endfor %}
 </code></pre>
+    <a href="http://wiki.tray.com.br/documentacao/paginas-personalizadas-2/">Páginas Personalizadas</a> cadastradas no Painel Administrativo
+</td>
+</tr>
+</tbody>
+</table>
 
-<h5>
-<a name="exemplos-6" class="anchor" href="#exemplos-6"><span class="octicon octicon-link"></span></a>Páginas principais</h5>
 <table>
 <thead><tr>
-<th>Retorno de {{ pages.current }}</th>
+<th>Retorno de <code>{{ pages.current }}</code></th>
 <th>Descrição</th>
 </tr></thead>
 <tbody>
@@ -839,52 +887,36 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Informações de formas de pagamento cadastradas no Painel Administrativo.</p>
 
 <table>
-<thead><tr>
-<th>Chaves</th>
-<th>Descrição</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>order</td>
-<td>Formas de pagamento à vista</td>
+<td>
+<pre lang="twig"><code>{% for payment in paymentMethods.order %}
+    &lt;img src="{{ payment.thumb }}" alt="{{ payment.description }}"&gt;
+{% endfor %}
+</code></pre>
+    Formas de pagamento à vista
+</td>
 </tr>
 <tr>
 <td>credit</td>
-<td>Formas de pagamento à prazo</td>
-</tr>
-</tbody>
-</table><table>
-<thead><tr>
-<th>Sub-chaves</th>
-<th>Descrição</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>thumb</td>
-<td>Caminho da imagem da forma de pagamento</td>
-</tr>
-<tr>
-<td>description</td>
-<td>Descrição da forma de pagamento</td>
-</tr>
-</tbody>
-</table><h5>
-<a name="exemplos-7" class="anchor" href="#exemplos-7"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
-<pre lang="twig"><code>{% for payment in paymentMethods.order %}
-    &lt;img src="{{ payment.thumb }}" alt="{{ payment.description }}" title="{{ payment.description }}"&gt;
+<td>
+<pre lang="twig"><code>{% for payment in paymentMethods.credit %}
+    &lt;img src="{{ payment.thumb }}" alt="{{ payment.description }}"&gt;
 {% endfor %}
 </code></pre>
+    Formas de pagamento à prazo
+</td>
+</tr>
+</tbody>
+</table>
 
-<p>Nesse exemplo acima, iteramos por todas as formas de pagamento à vista e exibimos a imagem referente a cada forma.</p>
+<p>Nesses exemplos acima, iteramos por todas as formas de pagamento e exibimos a imagem referente a cada forma.</p>
 
 <h4>
 <a name="products" class="anchor" href="#products"><span class="octicon octicon-link"></span></a>Products</h4>
 
 <p>Informações sobre os produtos cadastrados no Painel Administrativo.</p>
-
-<h5>
-<a name="buscando-produtos" class="anchor" href="#buscando-produtos"><span class="octicon octicon-link"></span></a>Buscando produtos</h5>
 
 <p>Para buscar produtos de acordo com as suas necessidades, utilize a seguinte chamada:</p>
 
@@ -900,40 +932,68 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>A chamada acima retornará até <strong>8</strong> produtos em <strong>destaque</strong> ordenados pelos <strong>mais vendidos</strong> que estejam cadastrados na <strong>categoria 1</strong> e <strong>marca Tray</strong>.</p>
 
 <pre lang="twig"><code>{% set products = Products({
-    'filter': 'new'
+    'filter': 'rand'
 }) %}
 </code></pre>
 
-<p>A chamada acima retornará os produtos marcados como lançamento. Veja mais parâmetros disponíveis abaixo:</p>
+<p>A chamada acima retornará produtos aleatoriamente. Veja mais parâmetros disponíveis abaixo:</p>
 
 <h5>
 <a name="par%C3%A2metros-dispon%C3%ADveis-todos-os-par%C3%A2metros-s%C3%A3o-opcionais" class="anchor" href="#par%C3%A2metros-dispon%C3%ADveis-todos-os-par%C3%A2metros-s%C3%A3o-opcionais"><span class="octicon octicon-link"></span></a>Parâmetros disponíveis (todos os parâmetros são opcionais)</h5>
 
 <table>
-<thead><tr>
-<th>Parâmetro</th>
-<th>Descrição e opções</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>filter</td>
-<td>featured, new, free_shipping, promotion, available, rand</td>
+<td>
+<pre lang="twig"><code>{% set products = Products({
+    'filter': 'rand'
+}) %}
+</code></pre>
+    Critérios de busca<br>
+    featured, new, free_shipping, promotion, available, rand
+</td>
 </tr>
 <tr>
 <td>limit</td>
-<td>Quantidade máxima de produtos que será retornada</td>
+<td>
+<pre lang="twig"><code>{% set products = Products({
+    'limit': 20
+}) %}
+</code></pre>
+    Quantidade máxima de produtos que será retornada
+</td>
 </tr>
 <tr>
 <td>order</td>
-<td>id, name, price, created</td>
+<td>
+<pre lang="twig"><code>{% set products = Products({
+    'order': 'name'
+}) %}
+</code></pre>
+    Ordenação de produtos<br>
+    id, name, price, created
+</td>
 </tr>
 <tr>
 <td>categories</td>
-<td>ID da categoria</td>
+<td>
+<pre lang="twig"><code>{% set products = Products({
+    'categories': 2
+}) %}
+</code></pre>
+    Busca produtos apenas da categoria informada
+</td>
 </tr>
 <tr>
 <td>brands</td>
-<td>String da marca</td>
+<td>
+<pre lang="twig"><code>{% set products = Products({
+    'brands': 'tray'
+}) %}
+</code></pre>
+    Busca produtos apenas da marca informada
+</td>
 </tr>
 </tbody>
 </table><p><strong>Obs:</strong> É possível realizar múltiplas ordenações, conforme exemplo:</p>
@@ -957,55 +1017,122 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <tbody>
 <tr>
 <td>id</td>
-<td>Identificador único do produto</td>
+<td>
+<pre lang="twig"><code>{{ products[0].id }}</code></pre>
+    Identificador único do produto
+</td>
 </tr>
 <tr>
 <td>name</td>
-<td>Nome do produto</td>
+<td>
+<pre lang="twig"><code>{% if 'tenis' in products[0].name %}
+    O produto {{ products[0].name }} é um tênis!
+{% endif %}</code></pre>
+    Nome do produto
+</td>
 </tr>
 <tr>
 <td>category_id</td>
-<td>Identificador único da categoria principal do produto</td>
+<td>
+    <pre lang="twig"><code>{{ products[0].category_id }}</code></pre>
+    Identificador único da categoria principal do produto
+</td>
 </tr>
 <tr>
 <td>price</td>
-<td>Valor do produto</td>
+<td>
+<pre lang="twig"><code>{% if products[0].price < 50 %}
+    Ta barato!
+{% endif %}
+</code></pre>
+    Valor do produto
+</td>
 </tr>
 <tr>
 <td>price_offer</td>
-<td>Valor do produto em promoção</td>
+<td>
+<pre lang="twig"><code>{% if products[0].price_offer > 0 %}
+    Esse produto está em promoção!
+{% endif %}
+</code></pre>
+    Valor do produto em promoção
+</td>
 </tr>
 <tr>
   <td>payment</td>
-  <td>Retorna o parcelamento do produto</td>
+  <td>
+    <pre lang="twig"><code>{{ products[0].payment }}</code></pre>
+    Retorna opões de parcelamento do produto
+  </td>
 </tr>
 <tr>
 <td>link</td>
-<td>Link para a página do produto</td>
+<td>
+<pre lang="twig"><code>&lt;a href="{{ products[0].link }}"&gt; 
+    {{ products[0].name }} 
+&lt;/a&gt;</code></pre>
+    Link para a página do produto
+</td>
 </tr>
 <tr>
 <td>available</td>
-<td>Disponibilidade do produto</td>
+<td>
+<pre lang="twig"><code>{% if not products[0].available %}
+    Produto indisponível!
+{% endif %}
+</code></pre>
+    Disponibilidade do produto
+</td>
 </tr>
 <tr>
 <td>stock</td>
-<td>Quantidade de produtos em estoque</td>
+<td>
+<pre lang="twig"><code>{% if products[0].stock <= 5 %}
+    Aproveite, últimas unidades!
+{% endif %}
+</code></pre>
+    Quantidade de produtos em estoque
+</td>
 </tr>
 <tr>
 <td>featured</td>
-<td>Retorna verdadeiro se for destaque</td>
+<td>
+<pre lang="twig"><code>{% if products[0].featured %}
+    Produto em destaque!
+{% endif %}
+</code></pre>
+    Retorna verdadeiro se for destaque
+</td>
 </tr>
 <tr>
 <td>new</td>
-<td>Retorna verdadeiro se for lançamento</td>
+<td>
+<pre lang="twig"><code>{% if products[0].new %}
+    Produto em lançamento!
+{% endif %}
+</code></pre>
+    Retorna verdadeiro se for lançamento
+</td>
 </tr>
 <tr>
 <td>free_shipping</td>
-<td>Retorna verdadeiro se possuir frete grátis</td>
+<td>
+<pre lang="twig"><code>{% if products[0].free_shipping %}
+    Produto com frete grátis, aproveite!
+{% endif %}
+</code></pre>
+    Retorna verdadeiro se possuir frete grátis
+</td>
 </tr>
 <tr>
 <td>additional_button</td>
-<td>Retorna verdadeiro se possuir botão adicional cadastrado</td>
+<td>
+<pre lang="twig"><code>{% if products[0].additional_button %}
+    {{ Image('botao_adicional') }}
+{% endif %}
+</code></pre>
+    Retorna verdadeiro se possuir botão adicional cadastrado
+</td>
 </tr>
 </tbody>
 </table><h5>
@@ -1021,56 +1148,42 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <tbody>
 <tr>
 <td>small</td>
-<td>30x30</td>
+<td>
+<pre lang="twig"><code>{% set images = products[0].images %}
+&lt;img src="{{ images[0].small }}" alt=""&gt;
+</code></pre>
+    30x30
+</td>
 </tr>
 <tr>
 <td>medium</td>
-<td>90x90</td>
+<td>
+<pre lang="twig"><code>{% set images = products[0].images %}
+&lt;img src="{{ images[0].medium }}" alt=""&gt;
+</code></pre>
+    90x90
+</td>
 </tr>
 <tr>
 <td>large</td>
-<td>180x180</td>
+<td>
+<pre lang="twig"><code>{% set images = products[0].images %}
+&lt;img src="{{ images[0].large }}" alt=""&gt;
+</code></pre>
+    180x180
+</td>
 </tr>
 <tr>
 <td>full</td>
-<td>Tamanho original</td>
+<td>
+<pre lang="twig"><code>{% set images = products[0].images %}
+&lt;img src="{{ images[0].full }}" alt=""&gt;
+</code></pre>
+    Tamanho original
+</td>
 </tr>
 </tbody>
-</table><h5>
-<a name="exemplos-8" class="anchor" href="#exemplos-8"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
-<pre lang="twig"><code>{% set products = Products({'filter': 'featured'}) %}
-
-{% for product in products %}
-    {{ product.id }}
-    {{ product.name }}
-    {{ product.category_id }}
-
-    {% for image in product.images %}
-        &lt;img src="{{ image.small }}" alt=""&gt;
-        &lt;img src="{{ image.medium }}" alt=""&gt;
-        &lt;img src="{{ image.large }}" alt=""&gt;
-        &lt;img src="{{ image.full }}" alt=""&gt;
-    {% endfor %}
-          
-    {{ product.price }}
-    {{ product.price_offer }}
-    {{ product.payment }}
-    {{ product.link }}
-    {{ product.available }}
-    {{ product.stock }}
-    {{ product.featured }}
-    {{ product.new }}
-    {{ product.free_shipping }}
-    {{ product.additional_button }}
-    {{ product.quantity_sold }}
-{% endfor %}
-
-{% if product.price_offer &gt; 0 %}
-    Esse produto está em promoção, por isso vamos mostrar uma imagem grande:
-    &lt;img src="{{ product.images[0].full }}" alt="{{ product.name }}"&gt;
-{% endfor %}
-</code></pre>
+</table>
 
 <h4>
 <a name="seals" class="anchor" href="#seals"><span class="octicon octicon-link"></span></a>Seals</h4>
@@ -1078,31 +1191,28 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>A Tray possui integração com 2 selos: <a href="http://www.lojaprotegida.com.br/">Loja Protegida</a> e <a href="http://www.ebit.com.br/">Ebit</a>.</p>
 
 <table>
-<thead><tr>
-<th>Chaves</th>
-<th>Descrição</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>ebit</td>
-<td>Retorna o HTML do selo do Ebit</td>
+<td>
+    <pre lang="twig"><code>{{ seals.ebit }}</code></pre>
+    Retorna o HTML do selo do Ebit
+</td>
 </tr>
 <tr>
 <td>hackersafe</td>
-<td>Retorna o HTML do selo Loja Protegida</td>
+<td>
+    <pre lang="twig"><code>{{ seals.hackersafe }}</code></pre>
+    Retorna o HTML do selo Loja Protegida
+</td>
 </tr>
 </tbody>
-</table><h5>
-<a name="exemplos-9" class="anchor" href="#exemplos-9"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
-<pre lang="twig"><code>{{ seals.ebit }}
-{{ seals.hackersafe }}
-</code></pre>
+</table>
 
 <h4>
 <a name="settings" class="anchor" href="#settings"><span class="octicon octicon-link"></span></a>Settings</h4>
 
-<p>Existem algumas opções de nossos recursos que podem ser encontrados aqui. Em breve mais informações.</p>
+<p>Existem algumas opções da loja que podem ser encontradas aqui. Em breve mais informações.</p>
 
 <h4>
 <a name="store" class="anchor" href="#store"><span class="octicon octicon-link"></span></a>Store</h4>
@@ -1110,36 +1220,37 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Informações básicas da loja.</p>
 
 <table>
-<thead><tr>
-<th>Chaves</th>
-<th>Descrição</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>id</td>
-<td>Identificador único da loja</td>
+<td>
+    <pre lang="twig"><code>{{ store.id }}</code></pre>
+    Identificador único da loja
+</td>
 </tr>
 <tr>
 <td>name</td>
-<td>Nome da loja</td>
+<td>
+    <pre lang="twig"><code>{{ store.name }}</code></pre>
+    Nome da loja
+</td>
 </tr>
 <tr>
 <td>url</td>
-<td>URL da loja</td>
+<td>
+    <pre lang="twig"><code>{{ store.url }}</code></pre>
+    URL da loja
+</td>
 </tr>
 <tr>
 <td>chat</td>
-<td>Retorna o conteúdo do campo "Atendimento Online" cadastrado no Painel Administrativo</td>
+<td>
+    <pre lang="twig"><code>{{ store.chat }}</code></pre>
+    Retorna o conteúdo do campo "Atendimento Online" cadastrado no Painel Administrativo
+</td>
 </tr>
 </tbody>
-</table><h5>
-<a name="exemplos-10" class="anchor" href="#exemplos-10"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
-<pre lang="twig"><code>{{ store.name }}
-{{ store.id }}
-{{ store.url }}
-{{ store.chat }}
-</code></pre>
+</table>
 
 <h4>
 <a name="tags" class="anchor" href="#tags"><span class="octicon octicon-link"></span></a>Tags</h4>
@@ -1147,26 +1258,30 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Lista de palavras mais buscadas na loja.</p>
 
 <table>
-<thead><tr>
-<th>Chaves</th>
-<th>Descrição</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>font_size</td>
-<td>Tamanho da fonte com base na quantidade de vezes que foi buscada</td>
+<td>
+    <pre lang="twig"><code>{{ tags[0].font_size }}</code></pre>
+    Tamanho da fonte com base na quantidade de vezes que foi buscada
+</td>
 </tr>
 <tr>
 <td>url</td>
-<td>URL para a página de busca</td>
+<td>
+    <pre lang="twig"><code>{{ tags[0].url }}</code></pre>
+    URL para a página de busca
+</td>
 </tr>
 <tr>
 <td>word</td>
-<td>Palavra buscada</td>
+<td>
+    <pre lang="twig"><code>{{ tags[0].word }}</code></pre>
+    Palavra buscada
+</td>
 </tr>
 </tbody>
 </table><h5>
-<a name="exemplos-11" class="anchor" href="#exemplos-11"><span class="octicon octicon-link"></span></a>Exemplos</h5>
 
 <pre lang="twig"><code>{% for tag in tags %}
     &lt;a href="{{ tag.url }}" style="font-size: {{ tag.font_size }}%"&gt;{{ tag.word }}&lt;/a&gt;
@@ -1187,13 +1302,8 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <a name="translation" class="anchor" href="#translation"><span class="octicon octicon-link"></span></a>Translation</h4>
 
 <p>Exibe um texto de acordo com o idioma configurado na sua loja no Painel Administrativo.</p>
+<pre lang="twig"><code>Translation('key')</code></pre>
 <p>Para entender como funciona o gerenciamento de textos e internacionalização, acesse: <a href="http://wiki.tray.com.br/documentacao/gerenciamento-de-textos/">Gerenciamento de Textos</a>.</p>
-
-<h5>
-<a name="exemplos-12" class="anchor" href="#exemplos-12"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
-<pre lang="twig"><code>Translation('key')
-</code></pre>
 
 <h4>
 <a name="utils" class="anchor" href="#utils"><span class="octicon octicon-link"></span></a>Utils</h4>
@@ -1201,30 +1311,28 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Utilidades técnicas.</p>
 
 <table>
-<thead><tr>
-<th>Chaves</th>
-<th>Descrição</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>assets_version</td>
-<td>Hash para arquivos estáticos devido a cache</td>
+<td>
+<pre lang="twig"><code>&lt;script src="my.js?{{ utils.assets_version }}"&gt;&lt;/script&gt;
+&lt;link href="my.css?{{ utils.assets_version }}" rel="stylesheet"/&gt;
+</code></pre>
+    Hash para arquivos estáticos devido a cache
+</td>
 </tr>
 <tr>
 <td>is_https</td>
-<td>Verifica se está em ambiente seguro</td>
-</tr>
-</tbody>
-</table><h5>
-<a name="exemplos-13" class="anchor" href="#exemplos-13"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
-<pre lang="twig"><code>&lt;script src="my.js?{{ utils.assets_version }}"&gt;&lt;/script&gt;
-&lt;link href="my.css?{{ utils.assets_version }}" rel="stylesheet"/&gt;
-
-{% if utils.is_https %}
+<td>
+<pre lang="twig"><code>{% if utils.is_https %}
     Fique tranquilo, você está navegando em um ambiente seguro!
 {% endif %}
 </code></pre>
+    Verifica se está em ambiente seguro
+</td>
+</tr>
+</tbody>
+</table><h5>
 
 <h2>
 <a name="m%C3%B3dulos-javascript" class="anchor" href="#m%C3%B3dulos-javascript"><span class="octicon octicon-link"></span></a>Módulos JavaScript</h2>
@@ -1279,10 +1387,13 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 </tr>
 </tbody>
 </table><h5>
-<a name="exemplos-14" class="anchor" href="#exemplos-14"><span class="octicon octicon-link"></span></a>Exemplos</h5>
 
-<div class="highlight highlight-HTML"><pre><span class="nt">&lt;div</span> <span class="na">data-banner=</span><span class="s">"popup"</span> <span class="na">data-width=</span><span class="s">"200"</span> <span class="na">data-height=</span><span class="s">"200"</span> <span class="na">data-top=</span><span class="s">"400"</span> <span class="na">data-left=</span><span class="s">"400"</span><span class="nt">&gt;&lt;/div&gt;</span>
-</pre></div>
+<pre lang="twig"><code>&lt;div data-banner="popup"
+    data-width="200"
+    data-height="200"
+    data-top="400"
+    data-left="400"&gt;
+&lt;/div&gt;</code></pre>
 
 <h4>
 <a name="banner-gallery" class="anchor" href="#banner-gallery"><span class="octicon octicon-link"></span></a>Banner Gallery</h4>
@@ -1290,10 +1401,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Para mais informações, visite a wiki do <a href="http://wiki.tray.com.br/documentacao/cadastrar-banners/#cadastrar-galeria">Banner Galeria</a>.</p>
 
 <table>
-<thead><tr>
-<th>Atributos</th>
-<th>Descrição</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>data-banner</td>
@@ -1304,8 +1411,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <td>Identificador único do banner</td>
 </tr>
 </tbody>
-</table><h5>
-<a name="exemplos-15" class="anchor" href="#exemplos-15"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+</table>
 
 <pre lang="twig"><code>&lt;div data-banner="gallery" data-id="1"&gt;&lt;/div&gt;
 </code></pre>
@@ -1316,12 +1422,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Para contornar o cache, utilize essa marcação para exibir os dados do carrinho atualizados.</p>
 
 <table>
-  <thead>
-    <tr>
-      <th>Atributos</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
   <tbody>
     <tr>
       <td>data-cart</td>
@@ -1329,9 +1429,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
     </tr>
   </tbody>
 </table>
-
-<h5>
-<a name="exemplos-16" class="anchor" href="#exemplos-16"><span class="octicon octicon-link"></span></a>Exemplos</h5>
 
 <pre lang="twig"><code>&lt;span data-cart="amount"&gt;{{ cart.amount }}&lt;/span&gt;
 &lt;span data-cart="price"&gt;{{ cart.price }}&lt;/span&gt;
@@ -1342,9 +1439,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 
 <p>Para contornar o cache, utilize essa marcação para exibir o nome do cliente logado.</p>
 
-<h5>
-<a name="exemplos-17" class="anchor" href="#exemplos-17"><span class="octicon octicon-link"></span></a>Exemplos</h5>
-
 <pre lang="twig"><code>&lt;span data-customer="name"&gt;{{ customer.name }}&lt;/span&gt;
 </code></pre>
 
@@ -1352,9 +1446,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <a name="filter" class="anchor" href="#filter"><span class="octicon octicon-link"></span></a>Filter</h3>
 
 <p>Nas páginas de catálogo e busca, você poderá filtrar os produtos exibidos e ordená-los. Quando adicionar o atributo <code>data-form="filter"</code> em um formulário, ele iniciará o módulo filter. Esse módulo fará com que sempre que um <code>&lt;select&gt;</code> for alterado (onchange), o formulário seja submetido e recarregue os produtos.</p>
-
-<h5>
-<a name="exemplos-18" class="anchor" href="#exemplos-18"><span class="octicon octicon-link"></span></a>Exemplos</h5>
 
 <pre lang="twig"><code>&lt;form data-form="filter"&gt;
     &lt;select&gt;&lt;/select&gt;
@@ -1367,10 +1458,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Para mais informações, visite a <a href="http://wiki.tray.com.br/documentacao/sistema-de-busca-inteligente/#auto-sugestao">Wiki</a></p>
 
 <table>
-<thead><tr>
-<th>Atributos</th>
-<th>Descrição</th>
-</tr></thead>
 <tbody>
 <tr>
 <td>data-search</td>
@@ -1381,8 +1468,7 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <td>Caixa de texto principal (ex: <code>suggestion</code>)</td>
 </tr>
 </tbody>
-</table><h5>
-<a name="exemplos-19" class="anchor" href="#exemplos-19"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+</table>
 
 <pre lang="twig"><code>&lt;form data-search="suggestion"&gt;
     &lt;input data-input="suggestion" type="text"&gt;
@@ -1418,19 +1504,27 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
         <a href="http://wiki.tray.com.br/documentacao/depoimentos-e-bit/" target="_blank">Depoimentos E-bit</a><br>
         <a href="http://wiki.tray.com.br/documentacao/depoimentos-da-loja-virtual/" target="_blank">Depoimentos da Loja Virtual</a>
       </td>
-      <td><code>{{ _view.element('CustomerReview.reviews') }}</code></td>
+      <td>
+        <pre lang="twig"><code>{{ _view.element('CustomerReview.reviews') }}</code></pre>
+      </td>
     </tr>
     <tr>
       <td><a href="http://wiki.tray.com.br/documentacao/filtro-de-caracteristicas-de-produto/" target="_blank">Filtro de características</a></td>
-      <td><code>{{ _view.element('FeaturesTopMenu.features_top_menu') }}</code></td>
+      <td>
+        <pre lang="twig"><code>{{ _view.element('FeaturesTopMenu.features_top_menu') }}</code></pre>
+      </td>
     </tr>
     <tr>
       <td><a href="http://wiki.tray.com.br/documentacao/menu-superior-inteligente-2/" target="_blank">Menu Superior Inteligente</a></td>
-      <td><code>{{ _view.element('SmartTopMenu.smart_top_menu') }}</code></td>
+      <td>
+        <pre lang="twig"><code>{{ _view.element('SmartTopMenu.smart_top_menu') }}</code></pre>
+      </td>
     </tr>
     <tr>
       <td><a href="http://wiki.tray.com.br/documentacao/sistema-de-noticias/" target="_blank">Notícias</a></td>
-      <td><code>{{ _view.element('News.news') }}</code></td>
+      <td>
+        <pre lang="twig"><code>{{ _view.element('News.news') }}</code></pre>
+      </td>
     </tr>
   </tbody>
 </table>
