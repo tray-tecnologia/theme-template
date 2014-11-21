@@ -292,78 +292,115 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
 <p>Se você deseja criar um banner da sua maneira, poderá trabalhar com as seguintes informações:</p>
 
 <table>
-<thead><tr>
+<!--<thead><tr>
 <th>Chaves</th>
 <th>Descrição</th>
-</tr></thead>
+</tr></thead> -->
 <tbody>
 <tr>
 <td>id</td>
-<td>Identificador único do banner</td>
+<td>
+  <pre lang="twig"><code>{{ banners.home.id }}</code></pre>
+  Identificador único do banner
+</td>
 </tr>
 <tr>
 <td>type</td>
-<td>Tipo do banner, valores possíveis: "javascript", "image", "flash", "gallery"</td>
+<td>
+  <pre lang="twig"><code>{{ banners.home.type }}</code></pre>
+  Tipo do banner, valores possíveis: "javascript", "image", "flash", "gallery"
+</td>
 </tr>
 <tr>
 <td>description</td>
-<td>Descrição do banner</td>
+<td>
+  <pre lang="twig"><code>{{ banners.home.description }}</code></pre>
+  Descrição do banner
+</td>
 </tr>
 <tr>
 <td>src</td>
-<td>URL do banner</td>
+<td>
+<pre lang="twig"><code>{% if banners.home %}
+    &lt;img src=&quot;{{ banners.home.src }}&quot; title=&quot;{{ banners.home.description }}&quot;&gt;
+{% endif %}</code></pre>
+  URL do banner
+</td>
 </tr>
 <tr>
 <td>link</td>
-<td>Link do banner (apenas nos tipos "javascript" e "image")</td>
+<td>
+<pre lang="twig"><code>&lt;a href=&quot;{{ banners.home.link }}&quot;&gt;
+    &lt;img src=&quot;{{ banners.home.src }}&quot; alt=&quot;{{ banners.home.alt_text }}&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+  Link do banner (apenas nos tipos "javascript" e "image")
+</td>
 </tr>
 <tr>
 <td>width</td>
-<td>Largura da imagem ou do objeto flash</td>
+<td>
+  <pre lang="twig"><code>&lt;img src=&quot;{{ banners.home.src }}&quot; width=&quot;{{ banners.home.width }}&quot;&gt;</code></pre>
+  Largura da imagem ou do objeto flash
+</td>
 </tr>
 <tr>
 <td>height</td>
-<td>Altura da imagem</td>
+<td>
+  <pre lang="twig"><code>&lt;img src=&quot;{{ banners.home.src }}&quot; height=&quot;{{ banners.home.height }}&quot;&gt;</code></pre>
+  Altura da imagem
+</td>
 </tr>
 <tr>
 <td>alt_text</td>
-<td>Texto alternativo para a imagem do banner</td>
+<td>
+<pre lang="twig"><code>&lt;a href=&quot;{{ banners.home.link }}&quot;&gt;
+  &lt;img src=&quot;{{ banners.home.src }}&quot; alt=&quot;{{ banners.home.alt_text }}&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+  Texto alternativo para a imagem do banner
+</td>
 </tr>
 <tr>
 <td>target</td>
-<td>Se o link vai abrir em uma nova janela ou na mesma</td>
+<td>
+<pre lang="twig"><code>&lt;a href=&quot;{{ banners.home.link }}&quot; target=&quot;{{ banners.home.target }}&quot;&gt;
+    &lt;img src=&quot;{{ banners.home.src }}&quot; alt=&quot;{{ banners.home.description }}&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+  Se o link vai abrir em uma nova janela ou na mesma
+</td>
 </tr>
 <tr>
 <td>banner_alt</td>
-<td>Banner alternativo caso não tenha suporte ao flash (apenas quando o tipo for "flash"), possui as chaves "src", "link", "target"</td>
+<td>
+<pre lang="twig"><code>{% if banners.home.banner_alt %}
+    {% set bannerAlt = banners.home.banner_alt %}
+    &lt;a href=&quot;{{ bannerAlt.link }}&quot; target=&quot;{{ bannerAlt.target }}&quot;&gt;
+        &lt;img src=&quot;{{ bannerAlt.src }}&quot; alt=&quot;{{ banners.home.alt_text }}&quot;&gt;
+    &lt;/a&gt;
+{% endif %}</code></pre>
+  Banner alternativo caso não tenha suporte ao flash (apenas quando o tipo for "flash"), possui as chaves "src", "link", "target"
+</td>
 </tr>
 <tr>
 <td>margin_top</td>
-<td>Especifica a posição do banner referente ao topo da página (apenas banner "floating")</td>
+<td>
+  <pre lang="twig"><code>{{ banners.home.margin_top }}</code></pre>
+  Especifica a posição do banner referente ao topo da página (apenas banner "floating")
+</td>
 </tr>
 <tr>
 <td>margin_left</td>
-<td>Especifica a posição do banner referente ao lado esquerdo da página</td>
+<td>
+  <pre lang="twig"><code>{{ banners.home.margin_left }}</code></pre>
+  Especifica a posição do banner referente ao lado esquerdo da página
+</td>
 </tr>
 </tbody>
-</table><h5>
-<a name="exemplos-1" class="anchor" href="#exemplos-1"><span class="octicon octicon-link"></span></a>Exemplos</h5>
+</table>
 
 <p>Lembrando que o padrão de chamada é sempre: <code>banners.{position}.{key}</code>. Veja exemplos utilizando a posição <code>home</code>:</p>
-
-<pre lang="twig"><code>{{ banners.home.id }}
-{{ banners.home.type }}
-{{ banners.home.description }}
-{{ banners.home.src }}
-{{ banners.home.link }}
-{{ banners.home.width }}
-{{ banners.home.height }}
-{{ banners.home.alt_text }}
-{{ banners.home.target }}
-{{ banners.home.banner_alt.src }}
-{{ banners.home.banner_alt.link }}
-{{ banners.home.banner_alt.target }}
-</code></pre>
 
 <h5>Banner JS</h5>
 <p>O banner JavaScript possui algumas informações que os outros banners não tem, segue a lista:</p>
@@ -372,66 +409,71 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
     <tr>
       <th>Chaves</th>
       <th>Descrição</th>
-      <th>Valores</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>interval</td>
-      <td>Intervalo da transição entre cada slide</td>
-      <td>3 a 10 (segundos)</td>
+      <td>
+        <pre lang="twig"><code>{{ banners.extra1.interval }}</code></pre><br>
+        Intervalo da transição entre cada slide<br>
+        3 a 10 (segundos)
+      </td>
     </tr>
     <tr>
       <td>velocity</td>
-      <td>Velocidade da animação</td>
-      <td>0.5 | 1.0 | 1.5 | 2.0</td>
+      <td>
+        <pre lang="twig"><code>{{ banners.extra1.velocity }}</code></pre><br>
+        Velocidade da animação<br>
+        0.5 | 1.0 | 1.5 | 2.0
+      </td>
     </tr>
     <tr>
       <td>animation</td>
-      <td>Tipo da animação</td>
-      <td>blind | block | cube | cubeSpread | fade | fadeFour | glassCube | horizontal | tube</td>
+      <td>
+        <pre lang="twig"><code>{{ banners.extra1.animation }}</code></pre><br>
+        Tipo da animação<br>
+        blind | block | cube | cubeSpread | fade | fadeFour | glassCube | horizontal | tube
+      </td>
     </tr>
     <tr>
       <td>stop_over</td>
-      <td>Pausar a troca de slides quando o mouse estiver sobre o banner</td>
-      <td>0 | 1</td>
+      <td>
+        <pre lang="twig"><code>{{ banners.extra1.stop_over }}</code></pre><br>
+        Pausar a troca de slides quando o mouse estiver sobre o banner<br>
+        0 | 1
+      </td>
     </tr>
     <tr>
       <td>navigation</td>
-      <td>Tipos de navegação</td>
-      <td>0 | 1 | 2</td>
+      <td>
+        <pre lang="twig"><code>{{ banners.extra1.navigation }}</code></pre><br>
+        Tipos de navegação<br>
+        0 | 1 | 2
+      </td>
     </tr>
     <tr>
       <td>progressbar</td>
-      <td>Exibir barra de progresso</td>
-      <td>0 | 1</td>
+      <td>
+        <pre lang="twig"><code>{{ banners.extra1.progressbar }}</code></pre><br>
+        Exibir barra de progresso<br>
+        0 | 1
+      </td>
     </tr>
     <tr>
       <td>slides</td>
-      <td>Dados das imagens cadastradas</td>
-      <td>image | link | label | target | width | height</td>
-    </tr>
-  </tbody>
-</table>
-<h5>
-  <a name="exemplos-bannerjs" class="anchor" href="#exemplos-bannerjs">
-    <span class="octicon octicon-link"></span>
-  </a>
-  Exemplos Banner JS
-</h5>
-</h5>
-<pre lang="twig"><code>{{ banners.extra1.interval }}
-{{ banners.extra1.velocity }}
-{{ banners.extra1.animation }}
-{{ banners.extra1.stop_over }}
-{{ banners.extra1.navigation }}
-{{ banners.extra1.progressbar }}
-{% for slide in banners.extra1.slides %}
+      <td>
+<pre lang="twig"><code>{% for slide in banners.extra1.slides %}
     &#x3C;a href=&#x22;{{ slide.link }}&#x22; target=&#x22;{{ slide.target }}&#x22;&#x3E;
         &#x3C;img src=&#x22;{{ slide.image }}&#x22; alt=&#x22;{{ slide.label }}&#x22; /&#x3E;
     &#x3C;/a&#x3E;
-{% endfor %}
-</code></pre>
+{% endfor %}</code></pre>
+        Dados das imagens cadastradas<br>
+        image | link | label | target | width | height
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <h4>
 <a name="cart" class="anchor" href="#cart"><span class="octicon octicon-link"></span></a>Cart</h4>
@@ -1436,14 +1478,6 @@ Mas, o que são esses caracteres <code>{{ }}</code>?</p>
             <li><a href="#extensoes">Menu Superior Inteligente</a></li>
             <li><a href="#extensoes">Notícias</a></li>
           </ul>
-          <a href="https://github.com/tray-tecnologia/theme-template/zipball/master" class="button">
-            <small>Download</small>
-            .zip
-          </a>
-          <a href="https://github.com/tray-tecnologia/theme-template/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz
-          </a>
         </aside>
       </div>
     </div>
