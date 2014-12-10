@@ -4,10 +4,10 @@
     <title>trayopencode</title>
     <description>Documentação para desenvolvimento de temas da plataforma de e-commerce Tray
 </description>
-    <link>http://tray-tecnologia.github.io/theme-template//</link>
-    <atom:link href="http://tray-tecnologia.github.io/theme-template//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Dec 2014 14:01:18 -0200</pubDate>
-    <lastBuildDate>Wed, 10 Dec 2014 14:01:18 -0200</lastBuildDate>
+    <link>http://tray-tecnologia.github.io/theme-template/theme-template/</link>
+    <atom:link href="http://tray-tecnologia.github.io/theme-template/theme-template/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 10 Dec 2014 14:13:03 -0200</pubDate>
+    <lastBuildDate>Wed, 10 Dec 2014 14:13:03 -0200</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
   </channel>
