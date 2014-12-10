@@ -283,8 +283,11 @@ header h2 {
 
 .sidebar-title {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   padding: 10px 0; }
+
+.sidebar a {
+  font-size: 14px; }
 
 /**
  * Site footer
