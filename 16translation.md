@@ -3,6 +3,7 @@ layout: page
 title: Translation
 type: Variáveis/Helpers
 permalink: /variables/translation/
+scope: todas
 ---
 
 Exibe um texto de acordo com o idioma configurado na sua loja no Painel Administrativo.

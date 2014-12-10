@@ -3,6 +3,7 @@ layout: page
 title: Categories
 type: Variáveis/Helpers
 permalink: /variables/categories/
+scope: todas
 ---
 
 Informações sobre as categorias cadastradas no Painel Administrativo.

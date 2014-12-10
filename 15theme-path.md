@@ -3,6 +3,7 @@ layout: page
 title: Theme Path
 type: Variáveis/Helpers
 permalink: /variables/theme-path/
+scope: todas
 ---
 
 Caminho absoluto do tema para ser utilizado juntamente com seus assets.

@@ -3,6 +3,7 @@ layout: page
 title: Tags
 type: Variáveis/Helpers
 permalink: /variables/tags/
+scope: todas
 ---
 
 Lista de palavras mais buscadas na loja.

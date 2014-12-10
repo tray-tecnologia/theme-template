@@ -3,6 +3,7 @@ layout: page
 title: Seals
 type: Variáveis/Helpers
 permalink: /variables/seals/
+scope: todas
 ---
 
 A Tray possui integração com 2 selos: [Loja Protegida](https://www.lojaprotegida.com.br/) e [Ebit](http://www.ebit.com.br/).

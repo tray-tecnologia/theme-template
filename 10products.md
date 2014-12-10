@@ -3,6 +3,7 @@ layout: page
 title: Products
 type: Variáveis/Helpers
 permalink: /variables/products/
+scope: todas
 ---
 
 Informações sobre os produtos cadastrados no Painel Administrativo.

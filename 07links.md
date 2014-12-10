@@ -3,6 +3,7 @@ layout: page
 title: Links
 type: Variáveis/Helpers
 permalink: /variables/links/
+scope: todas
 ---
 
 <table>

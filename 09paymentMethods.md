@@ -3,6 +3,7 @@ layout: page
 title: Payment Methods
 type: Variáveis/Helpers
 permalink: /variables/payment-methods/
+scope: todas
 ---
 
 Informações de formas de pagamento cadastradas no Painel Administrativo.

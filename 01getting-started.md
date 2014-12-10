@@ -68,3 +68,6 @@ js/       -> você pode inserir seus plugins js
 img/      -> pasta de imagens
 configs/  -> opções da sua loja virtual (ainda em desenvolvimento)
 {% endhighlight %}
+
+## Escopo de variáveis
+Dentro da página de cada variável, existirá a informação de escopo, ou seja, em quais páginas aquela variável poderá ser utilizada.

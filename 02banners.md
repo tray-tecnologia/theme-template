@@ -3,6 +3,7 @@ layout: page
 title: Banners
 type: Variáveis/Helpers
 permalink: /variables/banners/
+scope: todas
 ---
 
 Para imprimir um banner, você poderá utilizar o helper de banner, utilizando a seguinte chamada:
@@ -88,7 +89,7 @@ Se você deseja criar o banner do seu jeito, poderá utilizar as seguinte inform
 
                 {% endraw %}
                 {% endhighlight %}
-                <p>URL do banner</p>
+                <p>Link do banner</p>
             </td>
         </tr>
         <tr>

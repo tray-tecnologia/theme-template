@@ -3,6 +3,7 @@ layout: page
 title: Image
 type: Variáveis/Helpers
 permalink: /variables/image/
+scope: todas
 ---
 
 Use esse helper para exibir uma imagem cadastrada no Painel Administrativo.

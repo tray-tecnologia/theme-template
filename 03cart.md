@@ -3,6 +3,7 @@ layout: page
 title: Cart
 type: Variáveis/Helpers
 permalink: /variables/cart/
+scope: todas
 ---
 
 Informações do carrinho de compras

@@ -3,6 +3,7 @@ layout: page
 title: Customer
 type: Variáveis/Helpers
 permalink: /variables/customer/
+scope: todas
 ---
 
 Dados do consumidor que está navegando na loja.

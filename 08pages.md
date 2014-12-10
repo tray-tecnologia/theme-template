@@ -3,6 +3,7 @@ layout: page
 title: Pages
 type: Variáveis/Helpers
 permalink: /variables/pages/
+scope: todas
 ---
 
 Contém informações das páginas da loja.
