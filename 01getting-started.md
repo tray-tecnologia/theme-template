@@ -13,7 +13,7 @@ Leia atentamente todas as informações contidas na documentação e veja como �
 
 Seja cuidadoso ao utilizar variáveis ou parâmetros que estão com a nomenclatura em português, provavelmente será alterado para o inglês assim que possível. Avisaremos com antecedência sobre essas mudanças.
 
-## OpenCode GEM ([Download](/assets/gems/opencode_theme-0.0.1b.gem))
+## OpenCode GEM ([Download]({{ site.baseurl }}/assets/gems/opencode_theme-0.0.1b.gem))
 
 A GEM permitirá que você tenha um ambiente de alta produtividade, por isso é a nossa recomendação.
 
