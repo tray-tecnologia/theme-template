@@ -1,0 +1,10 @@
+# Site settings
+title: trayopencode
+email: rsantos@tray.com.br
+description: > # this means to ignore newlines until "baseurl:"
+  Documentação para desenvolvimento de temas da plataforma de e-commerce Tray
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://tray-tecnologia.github.io/theme-template/" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown

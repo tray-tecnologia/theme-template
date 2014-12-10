@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+
+  <title>Banners</title>
+  <meta name="description" content="Documentação para desenvolvimento de temas da plataforma de e-commerce Tray
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://tray-tecnologia.github.io/theme-template//variables/banners/">
+  <link rel="alternate" type="application/atom+xml" title="trayopencode" href="http://tray-tecnologia.github.io/theme-template//feed.xml" />
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title">
+      <a href="/">&lt;tray-opencode&gt;</a>
+    </h1>
+
+    <h2>Documentação para desenvolvimento de temas da plataforma de e-commerce Tray
+</h2>
+
+    <a href="https://github.com/tray-tecnologia/theme-template" class="button">
+      <img src="/assets/tray-commerce.svg" class="brand" width="150" height="124" alt="Tray Commerce">
+    </a>
+
+  </div>
+
+</header>
+
+
+    <section class="page-content">
+      <div class="wrapper">
+        <aside class="sidebar">
+    <ul class="sidebar-list">
+        
+        
+        
+            
+                
+            <li class="sidebar-title">
+                <span>Introdução</span>
+            </li>
+            
+            <li>
+                <a href="/getting-started/">Iniciando um tema</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/theme-pages/">Páginas Disponíveis</a>
+            </li>
+        
+        
+        
+            
+                
+            <li class="sidebar-title">
+                <span>Variáveis/Helpers</span>
+            </li>
+            
+            <li>
+                <a href="/variables/banners/">Banners</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/cart/">Cart</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/categories/">Categories</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/customer/">Customer</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/image/">Image</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/links/">Links</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/pages/">Pages</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/payment-methods/">Payment Methods</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/products/">Products</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/seals/">Seals</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/settings/">Settings</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/store/">Store</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/tags/">Tags</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/theme-path/">Theme Path</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/translation/">Translation</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/variables/utils/">Utils</a>
+            </li>
+        
+        
+        
+            
+                
+            <li class="sidebar-title">
+                <span>Módulos JavaScript</span>
+            </li>
+            
+            <li>
+                <a href="/modules/">Data attributes</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/modules/banners/">Banners</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/modules/cart/">Cart</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/modules/customer/">Customer</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/modules/filter/">Filter</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/modules/search/">Search (Suggestion)</a>
+            </li>
+        
+        
+        
+            
+            <li>
+                <a href="/modules/jquery/">jQuery</a>
+            </li>
+        
+        
+        
+            
+                
+            <li class="sidebar-title">
+                <span>Extensões</span>
+            </li>
+            
+            <li>
+                <a href="/extensions/">Extensões</a>
+            </li>
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Banners</h1>
+  </header>
+
+  <article class="post-content">
+    <p>Para imprimir um banner, você poderá utilizar o helper de banner, utilizando a seguinte chamada:</p>
+
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="cp">{{</span> <span class="nv">banner.home</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="nv">banner.footer</span> <span class="cp">}}</span><span class="x"></span></code></pre></div>
+
+<p><code>home</code> e <code>footer</code> são as posições em que o banner foi cadastrado. Veja a lista de posições disponíveis: <code>home</code>, <code>footer</code>, <code>bottom</code>, <code>side</code>, <code>title</code>, <code>floating</code>, <code>popup</code>, <code>extra1</code>, <code>extra2</code>, <code>extra3</code>, <code>extra4</code></p>
+
+<p>Se você deseja criar o banner do seu jeito, poderá utilizar as seguinte informações</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="cp">{{</span> <span class="nv">banners.home.id</span> <span class="cp">}}</span><span class="x"></span></code></pre></div>
+
+                <p>Identificador único do banner</p>
+            </td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="cp">{{</span> <span class="nv">banners.home.type</span> <span class="cp">}}</span><span class="x"></span></code></pre></div>
+
+                <p>Tipo do banner, valores possíveis: "javascript", "image", "flash", "gallery"</p>
+            </td>
+        </tr>
+        <tr>
+            <td>description</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-jinja" data-lang="jinja"><span class="cp">{{</span> <span class="nv">banners.home.description</span> <span class="cp">}}</span><span class="x"></span></code></pre></div>
+
+                <p>Descrição do banner</p>
+            </td>
+        </tr>
+        <tr>
+            <td>src</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{%</span> <span class="k">if</span> <span class="nv">banners.home</span> <span class="cp">%}</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.src</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">title=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.description</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span></code></pre></div>
+
+                <p>URL do banner</p>
+            </td>
+        </tr>
+        <tr>
+            <td>link</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.link</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.src</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">alt=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.alt_text</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+                <p>URL do banner</p>
+            </td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.src</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">width=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.width</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+                <p>Largura da imagem ou do objeto flash</p>
+            </td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.src</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">width=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.height</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+                <p>Altura da imagem ou do objeto flash</p>
+            </td>
+        </tr>
+        <tr>
+            <td>alt_text</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.src</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">alt=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.alt_text</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+                <p>Texto alternativo para a imagem do banner</p>
+            </td>
+        </tr>
+        <tr>
+            <td>target</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.link</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">target=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.target</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.src</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">alt=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">banners.home.alt_text</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+                <p>Se o link vai abrir em uma nova janela ou na mesma</p>
+            </td>
+        </tr>
+        <tr>
+            <td>banner_alt</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{%</span> <span class="k">if</span> <span class="nv">banners.home.banner_alt</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">set</span> <span class="nv">bannerAlt</span> <span class="o">=</span> <span class="nv">banners.home.banner_alt</span> <span class="cp">%}</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">bannerAlt.link</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">target=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">bannerAlt.target</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">bannerAlt.src</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">alt=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">bannerAlt.alt_text</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span></code></pre></div>
+
+                <p>Banner alternativo caso não tenha suporte ao flash (apenas quando o tipo for "flash"), possui as chaves "src", "link", "target"</p>
+            </td>
+        </tr>
+        <tr>
+            <td>margin_top</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{{</span> <span class="nv">banners.home.margin_top</span> <span class="cp">}}</span></code></pre></div>
+
+                <p>Especifica a posição do banner referente ao topo da página (apenas banner "floating")</p>
+            </td>
+        </tr>
+        <tr>
+            <td>margin_left</td>
+            <td>
+                
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{{</span> <span class="nv">banners.home.margin_left</span> <span class="cp">}}</span></code></pre></div>
+
+                <p>Especifica a posição do banner referente ao lado esquerdo da página</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Lembrando que o padrão de chamada é sempre: <code>banners.{position}.{key}</code>.</p>
+
+<h3 id="bannerjs">BannerJS</h3>
+<p>O banner JavaScript possui algumas informações que os outros banners não tem, segue a lista:</p>
+<table>
+  <tbody>
+    <tr>
+      <td>interval</td>
+      <td>
+        
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{{</span> <span class="nv">banners.extra1.interval</span> <span class="cp">}}</span></code></pre></div>
+
+        <p>Intervalo da transição entre cada slide<br />3 a 10 (segundos)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>velocity</td>
+      <td>
+        
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{{</span> <span class="nv">banners.extra1.velocity</span> <span class="cp">}}</span></code></pre></div>
+
+        <p>Velocidade da animação<br />0.5 | 1.0 | 1.5 | 2.0</p>
+      </td>
+    </tr>
+    <tr>
+      <td>animation</td>
+      <td>
+        
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{{</span> <span class="nv">banners.extra1.animation</span> <span class="cp">}}</span></code></pre></div>
+
+        <p>Tipo da animação<br />blind | block | cube | cubeSpread | fade | fadeFour | glassCube | horizontal | tube</p>
+      </td>
+    </tr>
+    <tr>
+      <td>stop_over</td>
+      <td>
+        
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{{</span> <span class="nv">banners.extra1.stop_over</span> <span class="cp">}}</span></code></pre></div>
+
+        <p>Pausar a troca de slides quando o mouse estiver sobre o banner<br />0 | 1</p>
+      </td>
+    </tr>
+    <tr>
+      <td>navigation</td>
+      <td>
+        
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{{</span> <span class="nv">banners.extra1.navigation</span> <span class="cp">}}</span></code></pre></div>
+
+        <p>Tipos de navegação<br />0 | 1 | 2</p>
+      </td>
+    </tr>
+    <tr>
+      <td>progressbar</td>
+      <td>
+        
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{{</span> <span class="nv">banners.extra1.progressbar</span> <span class="cp">}}</span></code></pre></div>
+
+        <p>Exibir barra de progresso<br />0 | 1</p>
+      </td>
+    </tr>
+    <tr>
+      <td>slides</td>
+      <td>
+        
+<div class="highlight"><pre><code class="language-html-jinja" data-lang="html+jinja"><span class="cp">{%</span> <span class="k">for</span> <span class="nv">slide</span> <span class="k">in</span> <span class="nv">banners.extra1.slides</span> <span class="cp">%}</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">slide.link</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">target=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">slide.target</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">slide.image</span> <span class="cp">}}</span><span class="s">&quot;</span> <span class="na">alt=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">slide.label</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span></code></pre></div>
+
+        <p>Dados das imagens cadastradas<br />image | link | label | target | width | height</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  </article>
+
+</div>
+
+      </div>
+    </section>
+
+    
+
+  </body>
+
+</html>
