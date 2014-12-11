@@ -9,8 +9,10 @@ As seguintes páginas estão disponíveis para edição:
 
 {% highlight html %}
 pages/
-    home.html -> página inicial
-     map.html -> mapa do site
+    catalog.html -> página de categoria
+       home.html -> página inicial
+        map.html -> mapa do site
+     search.html -> página de busca
 {% endhighlight %}
 
 É só criar os arquivos respeitando a estrutura e começar a editar o HTML da página.

@@ -8,11 +8,13 @@
   - /variables/banners/
   - /variables/cart/
   - /variables/categories/
+  - /variables/category/
   - /variables/customer/
   - /variables/image/
   - /variables/links/
   - /variables/pages/
   - /variables/payment-methods/
+  - /variables/product-featured/
   - /variables/products/
   - /variables/seals/
   - /variables/settings/

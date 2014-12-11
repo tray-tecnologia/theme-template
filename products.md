@@ -227,7 +227,7 @@ As requisições de produtos sempre retornarão um array de dados onde cada chav
 {% endif %}
             {% endraw %}
             {% endhighlight %}
-            Disponibilidade do produto
+            Retorna se o produto está disponível
         </td>
     </tr>
     <tr>
@@ -293,6 +293,19 @@ As requisições de produtos sempre retornarão um array de dados onde cada chav
             {% endraw %}
             {% endhighlight %}
             Retorna verdadeiro se possuir botão adicional cadastrado
+        </td>
+    </tr>
+    <tr>
+        <td>availability</td>
+        <td>
+            {% highlight html+jinja %}
+            {% raw %}
+{% if products[0].availability %}
+    Disponibilidade: {{ products[0].availability }}
+{% endif %}
+            {% endraw %}
+            {% endhighlight %}
+            Informação de disponibilidade do produto
         </td>
     </tr>
 </table>
