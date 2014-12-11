@@ -321,5 +321,35 @@ scope: todas
                 Página de logout
             </td>
         </tr>
+        <tr>
+            <td>compare_add</td>
+            <td>
+                {% highlight html+jinja %}
+                {% raw %}
+
+<a href="{{ links.compare_add ~ product.id }}">
+    Adicionar à comparação de produto
+</a>
+
+                {% endraw %}
+                {% endhighlight %}
+                Adiciona um produto à comparação
+            </td>
+        </tr>
+        <tr>
+            <td>compare_delete</td>
+            <td>
+                {% highlight html+jinja %}
+                {% raw %}
+
+<a href="{{ links.compare_remove }}">
+    Remover da comparação de produto
+</a>
+
+                {% endraw %}
+                {% endhighlight %}
+                Remove um produto da comparação
+            </td>
+        </tr>
     </tbody>
 </table>
