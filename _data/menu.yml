@@ -1,0 +1,37 @@
+- title: Introdução
+  items:
+  - /getting-started/
+  - /theme-pages/
+
+- title: Variáveis/Helpers
+  items:
+  - /variables/banners/
+  - /variables/cart/
+  - /variables/categories/
+  - /variables/customer/
+  - /variables/image/
+  - /variables/links/
+  - /variables/pages/
+  - /variables/payment-methods/
+  - /variables/products/
+  - /variables/seals/
+  - /variables/settings/
+  - /variables/store/
+  - /variables/tags/
+  - /variables/theme-path/
+  - /variables/translation/
+  - /variables/utils/
+
+- title: Módulos JavaScript
+  items:
+  - /modules/
+  - /modules/banners/
+  - /modules/cart/
+  - /modules/customer/
+  - /modules/filter/
+  - /modules/search/
+  - /modules/jquery/
+
+- title: Outros
+  items:
+  - /extensions/

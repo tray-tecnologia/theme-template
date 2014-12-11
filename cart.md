@@ -39,4 +39,4 @@ Informações do carrinho de compras
     </tbody>
 </table>
 
-**Obs:** Para problemas com cache, leia sobre o [módulo Cart em JavaScript](/js/cart)
+**Obs:** Para problemas com cache, leia sobre o [módulo Cart em JavaScript]({{ site.baseurl }}/modules/cart/)

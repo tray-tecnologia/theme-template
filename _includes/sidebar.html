@@ -1,18 +1,29 @@
 <aside class="sidebar">
+
     <ul class="sidebar-list">
-        {% assign type = '' %}
-        {% for page in site.pages %}
-        {% if page.title %}
-            {% if page.type != type and page.type %}
-                {% assign type = page.type %}
-            <li class="sidebar-title">
-                <span>{{ type }}</span>
-            </li>
-            {% endif %}
-            <li>
-                <a href="{{ site.baseurl }}{{ page.permalink }}">{{ page.title }}</a>
-            </li>
-        {% endif %}
+    {% for section in site.data.menu %}
+
+        <li class="sidebar-title">
+            <span>{{ section.title }}</span>
+        </li>
+
+        {% for item in section.items %}
+
+            {% for p in site.pages %}
+
+                {% if p.url == item %}
+                    <li>
+                        <a href="{{ site.baseurl }}{{ p.url }}">
+                            {{ p.title }}
+                        </a>
+                    </li>
+                {% endif %}
+
+            {% endfor %}
+
         {% endfor %}
+
+    {% endfor %}
     </ul>
+
 </aside>
