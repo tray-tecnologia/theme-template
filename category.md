@@ -44,7 +44,7 @@ Informações sobre a categoria atual.
 
 {% if category.brands %}
 
-    <select>
+    <select name="filtrar_marca">
         {% for brand in category.brands %}
             <option value="{{ brand.name }}">{{ brand.name }}</option>
         {% endfor %}
