@@ -49,7 +49,7 @@ Informações relacionadas a busca de produtos.
 
                 {% endraw %}
                 {% endhighlight %}
-                Opções de disponibilidade de produto
+                Opções de ordenação
             </td>
         </tr>
         <tr>
