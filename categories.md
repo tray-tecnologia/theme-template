@@ -80,5 +80,22 @@ Informações sobre as categorias cadastradas no Painel Administrativo.
                 Subcategorias
             </td>
         </tr>
+        <tr>
+            <td>images</td>
+            <td>
+                {% highlight html+jinja %}
+                {% raw %}
+
+{% for category in categories %}
+    {% if category.images %}
+        <img src="{{ category.images[0] }}" alt="{{ category.name }}">
+    {% endif %}
+{% endfor %}
+
+                {% endraw %}
+                {% endhighlight %}
+                Imagem por categoria
+            </td>
+        </tr>
     </tbody>
 </table>
