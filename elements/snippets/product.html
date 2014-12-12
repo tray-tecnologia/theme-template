@@ -1,6 +1,7 @@
 <a href="{{ product.link }}">
     <div class="product-image">
-        <img class="img-responsive" src="{{ product.images[0].full }}" alt="{{ product.name }}">
+        {% set loading = tray.paths.system_image ~ "/loading.gif" %}
+        <img class="img-responsive lazy" data-original="{{ product.images[0].large }}" src="{{ loading }}" alt="{{ product.name }}">
     </div>
     <div class="product-name">
         <h3>{{ product.name }}</h3>

@@ -1,7 +1,10 @@
 {% if products|length > 0 %}
-    <div class="showcase">
-        <h4 class="showcase-title">{{ showcaseTitle }} </h4>
-    </div>
+
+    {% if showcaseTitle %}
+        <div class="showcase">
+            <h4 class="showcase-title">{{ showcaseTitle }} </h4>
+        </div>
+    {% endif %}
 
     <div class="row">
         {% for product in products %}
@@ -16,4 +19,5 @@
 
         {% endfor %}
     </div>
+
 {% endif %}
