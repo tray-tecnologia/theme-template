@@ -308,6 +308,38 @@ As requisições de produtos sempre retornarão um array de dados onde cada chav
             Informação de disponibilidade do produto
         </td>
     </tr>
+    <tr>
+        <td>ranking</td>
+        <td>
+            count | rating
+
+            {% highlight html+jinja %}
+            {% raw %}
+
+{% set ranking = products[0].ranking %}
+{% if ranking %}
+    Quantidade de avaliações: {{ ranking.count }} <br>
+    Nota do produto: {{ ranking.rating }}
+{% endif %}
+
+            {% endraw %}
+            {% endhighlight %}
+            Ranking (avaliação) do produto
+        </td>
+    </tr>
+    <tr>
+        <td>bonus_html</td>
+        <td>
+            {% highlight html+jinja %}
+            {% raw %}
+
+            {{ product.bonus_html }}
+
+            {% endraw %}
+            {% endhighlight %}
+            <a href="http://wiki.tray.com.br/documentacao/programa-de-fidelizacao/" target="_blank">Programa de fidelização</a>
+        </td>
+    </tr>
 </table>
 
 ### Imagens
