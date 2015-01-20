@@ -52,6 +52,8 @@ A chamada acima retornará produtos aleatoriamente. Veja mais parâmetros dispon
 
 {% endraw %}
 {% endhighlight %}
+
+            featured | new | free_shipping | rand | available | promotion
             </td>
         </tr>
         <tr>

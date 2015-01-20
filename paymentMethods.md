@@ -16,7 +16,7 @@ Informações de formas de pagamento cadastradas no Painel Administrativo.
             {% raw %}
 
 {% for payment in paymentMethods.order %}
-    <img src="{{ payment.thumb }}" alt="{{ payment.description }}">
+    <img src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}">
 {% endfor %}
 
             {% endraw %}
@@ -31,7 +31,7 @@ Informações de formas de pagamento cadastradas no Painel Administrativo.
             {% raw %}
 
 {% for payment in paymentMethods.credit %}
-    <img src="{{ payment.thumb }}" alt="{{ payment.description }}">
+    <img src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}">
 {% endfor %}
 
             {% endraw %}
