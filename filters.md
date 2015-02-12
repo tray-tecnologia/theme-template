@@ -6,51 +6,7 @@ permalink: /variables/filters/
 scope: catalog | search
 ---
 
-A variável `filters` te da a possibilidade de montar filtros como esse:
-
-<img src="{{ site.baseurl }}/assets/filters-example.png" alt="Tray OpenCode filters">
-
-Snippet de código para montar o filtro:
-
-{% highlight html+jinja %}
-{% raw %}
-
-{% if filters %}
-
-<form name="form-filter" method="get">
-    <input type="hidden" name="loja" value="{{ store.id }}" />
-    {% if category.id %}
-        <input type="hidden" name="categoria" value="{{ category.id }}" />
-    {% endif %}
-    {% for myFilter in filters %}
-        {% if myFilter.items|length > 0 %}
-            <h3>{{ myFilter.title }}</h3>
-            <ul>
-            {% for item in myFilter.items %}
-                <li>
-                    {% if item.type == "link" %}
-                        <a href="{{ item.url }}">{{ item.title }}</a>
-                    {% endif %}
-
-                    {% if item.type == "checkbox" %}
-                        <label>
-                            {% set checked = item.applied ? 'checked="checked"' %}
-                            <input type="checkbox" name="{{ item.name }}" value="{{ item.value }}" {{ checked }} />
-                            {{ item.title }}
-                        </label>
-                    {% endif %}
-                </li>
-            {% endfor %}
-            </ul>
-        {% endif %}
-    {% endfor %}
-    <button type="submit" class="filter-button">{{ Translation('filtrar') }}</button>
-</form>
-
-{% endif %}
-
-{% endraw %}
-{% endhighlight %}
+A variável `filters` te da a possibilidade de montar filtros como esse: [Smart Filter Component](http://tray-tecnologia.github.io/opencode-components/smart-filter).
 
 <table>
   <thead><tr>

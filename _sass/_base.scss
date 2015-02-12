@@ -258,3 +258,7 @@ table {
     background-color: #e6e6e6;
     text-decoration: none;
  }
+
+.btn + .btn {
+    margin-left: 15px;
+}
