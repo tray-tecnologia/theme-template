@@ -71,3 +71,14 @@ configs/  -> opções da sua loja virtual (ainda em desenvolvimento)
 
 ## Escopo de variáveis
 Dentro da página de cada variável, existirá a informação de escopo, ou seja, em quais páginas aquela variável poderá ser utilizada.
+
+### Debug de variáveis
+Para facilitar a solução de problemas e verificar o conteúdo das variáveis, disponibilizamos a função de [dump do Twig](http://twig.sensiolabs.org/doc/functions/dump.html){:target="_blank"}:
+
+{% highlight html+jinja %}
+{% raw %}
+
+<pre>{{ dump(products) }}</pre>
+
+{% endraw %}
+{% endhighlight %}
