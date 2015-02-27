@@ -30,13 +30,14 @@ A chamada acima retornará até **8** produtos em **destaque** ordenados pelos *
 {% raw %}
 
 {% set products = Products({
-    'filter': 'rand'
+    'filter': 'available',
+    'order': 'rand'
 }) %}
 
 {% endraw %}
 {% endhighlight %}
 
-A chamada acima retornará produtos aleatoriamente. Veja mais parâmetros disponíveis abaixo:
+A chamada acima retornará os produtos disponíveis aleatoriamente. Veja mais parâmetros disponíveis abaixo:
 
 <table>
     <tbody>
@@ -47,13 +48,13 @@ A chamada acima retornará produtos aleatoriamente. Veja mais parâmetros dispon
 {% raw %}
 
 {% set products = Products({
-    'filter': 'rand'
+    'filter': 'available'
 }) %}
 
 {% endraw %}
 {% endhighlight %}
 
-            featured | new | free_shipping | rand | available | promotion
+            featured | new | free_shipping | available | promotion
             </td>
         </tr>
         <tr>
@@ -77,11 +78,13 @@ A chamada acima retornará produtos aleatoriamente. Veja mais parâmetros dispon
 {% raw %}
 
 {% set products = Products({
-    'order': 'name'
+    'order': 'rand'
 }) %}
 
 {% endraw %}
 {% endhighlight %}
+
+            id | name | price | price_offer | stock
             </td>
         </tr>
         <tr>
