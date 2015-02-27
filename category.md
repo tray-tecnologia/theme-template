@@ -74,5 +74,18 @@ Informações sobre a categoria atual.
                 Subcategorias
             </td>
         </tr>
+        <tr>
+            <td>parent</td>
+            <td>
+                {% highlight html+jinja %}
+                {% raw %}
+{% if category.parent  %}
+    É uma subcategoria!
+{% endif %}
+                {% endraw %}
+                {% endhighlight %}
+                ID da categoria mãe
+            </td>
+        </tr>
     </tbody>
 </table>
