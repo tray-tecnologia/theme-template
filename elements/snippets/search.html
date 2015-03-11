@@ -1,4 +1,5 @@
 <form role="form" action="{{ links.search }}">
+    <input type="hidden" name="loja" value="{{ store.id }}">
     <div class="row">
         <div class="col-xs-10">
             <input type="search" placeholder="Buscar na loja" name="palavra_busca">

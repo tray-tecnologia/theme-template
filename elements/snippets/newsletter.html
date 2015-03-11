@@ -1,4 +1,5 @@
 <form action="{{ links.newsletter }}" method="POST">
+    <input type="hidden" name="loja" value="{{ store.id }}">
     <input name="email" type="text" placeholder="email@templateshop.com">
     <button class="btn btn-default btn-block news-button">Cadastrar</button>
 </form>
