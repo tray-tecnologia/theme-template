@@ -199,6 +199,19 @@ As requisições de produtos sempre retornarão um array de dados onde cada chav
         </td>
     </tr>
     <tr>
+        <td>has_other_prices</td>
+        <td>
+            {% highlight html+jinja %}
+            {% raw %}
+{% if products[0].has_other_prices %}
+    Esse produto tem variações!
+{% endif %}
+            {% endraw %}
+            {% endhighlight %}
+            Retorna se o produto possui outros preços, ou seja, se possui variações
+        </td>
+    </tr>
+    <tr>
         <td>payment</td>
         <td>
             {% highlight html+jinja %}
