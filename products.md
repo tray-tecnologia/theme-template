@@ -177,8 +177,8 @@ As requisições de produtos sempre retornarão um array de dados onde cada chav
         <td>
             {% highlight html+jinja %}
             {% raw %}
-{% if products[0].price < 50 %}
-    Ta barato!
+{% if products[0].price > 0 %}
+    {{ products[0].price|currency }}
 {% endif %}
             {% endraw %}
             {% endhighlight %}
