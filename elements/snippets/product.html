@@ -8,6 +8,6 @@
     </div>
     <div class="product-price">
         {% set price = product.price_offer > 0 ? product.price_offer : product.price %}
-        <span>{{ price }}</span>
+        <span>{{ price|currency }}</span>
     </div>
 </a>
