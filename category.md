@@ -75,11 +75,11 @@ Informações sobre a categoria atual.
             </td>
         </tr>
         <tr>
-            <td>parent</td>
+            <td>parent_id</td>
             <td>
                 {% highlight html+jinja %}
                 {% raw %}
-{% if category.parent  %}
+{% if category.parent_id %}
     É uma subcategoria!
 {% endif %}
                 {% endraw %}

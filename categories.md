@@ -24,12 +24,12 @@ Informações sobre as categorias cadastradas no Painel Administrativo.
             </td>
         </tr>
         <tr>
-            <td>parent</td>
+            <td>parent_id</td>
             <td>
                 {% highlight html+jinja %}
                 {% raw %}
 
-                {{ categories[25].parent }}
+                {{ categories[25].parent_id }}
 
                 {% endraw %}
                 {% endhighlight %}
