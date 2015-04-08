@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Customer
-type: Variáveis/Helpers
 permalink: /variables/customer/
 scope: todas
 ---

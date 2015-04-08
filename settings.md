@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Settings
-type: Variáveis/Helpers
 permalink: /variables/settings/
 scope: todas
 ---

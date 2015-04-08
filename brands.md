@@ -1,14 +1,13 @@
 ---
 layout: page
 title: Brands
-type: Variáveis/Helpers
 permalink: /functions/brands/
 scope: todas
+help: gerenciar-marcas
+help_title: Gerenciar marcas
 ---
 
 Essa função retorna as marcas cadastradas no Painel Administrativo da loja.
-
-**Aprenda na Wiki**: [Gerenciar marcas](http://wiki.tray.com.br/documentacao/gerenciar-marcas/){:target="_blank"}.
 
 Veja alguns exemplos de uso:
 

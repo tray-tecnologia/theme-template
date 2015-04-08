@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Categories
-type: Variáveis/Helpers
 permalink: /variables/categories/
 scope: todas
 ---

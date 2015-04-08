@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Tags
-type: Variáveis/Helpers
 permalink: /variables/tags/
 scope: todas
 ---

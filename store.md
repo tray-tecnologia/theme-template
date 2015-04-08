@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Store
-type: Variáveis/Helpers
 permalink: /variables/store/
 scope: todas
 ---

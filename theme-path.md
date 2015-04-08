@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Theme Path
-type: Variáveis/Helpers
 permalink: /variables/theme-path/
 scope: todas
 ---

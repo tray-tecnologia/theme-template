@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Payment Methods
-type: Variáveis/Helpers
 permalink: /variables/payment-methods/
 scope: todas
 ---

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Category
-type: Variáveis/Helpers
 permalink: /variables/category/
 scope: catalog
 ---

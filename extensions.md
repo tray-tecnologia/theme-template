@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Extensões
-type: Extensões
 permalink: /extensions/
 ---
 

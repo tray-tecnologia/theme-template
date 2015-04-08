@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Pages
-type: Variáveis/Helpers
 permalink: /variables/pages/
 scope: todas
 ---

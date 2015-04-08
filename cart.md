@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Cart
-type: Variáveis/Helpers
 permalink: /variables/cart/
 scope: todas
 ---
@@ -39,4 +38,4 @@ Informações do carrinho de compras
     </tbody>
 </table>
 
-**Obs:** Para problemas com cache, leia sobre o [módulo Cart em JavaScript]({{ site.baseurl }}/modules/cart/)
+**Obs:** Para problemas com cache, leia sobre o [módulo Cart em JavaScript]({{ site.baseurl }}/js/cart/)

@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Cart
-type: Módulos JavaScript
-permalink: /modules/cart/
+permalink: /js/cart/
 ---
 
 Para contornar o cache, utilize essa marcação para exibir os dados do carrinho atualizados.

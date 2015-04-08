@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Filters
-type: Variáveis/Helpers
 permalink: /variables/filters/
 scope: catalog | search
 ---

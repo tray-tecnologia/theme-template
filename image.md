@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Image
-type: Variáveis/Helpers
 permalink: /functions/image/
 scope: todas
 help: botoes-da-loja-2

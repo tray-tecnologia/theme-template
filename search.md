@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Search
-type: Variáveis/Helpers
 permalink: /variables/search/
 scope: search (alguns índices estão disponíveis na catalog)
 ---

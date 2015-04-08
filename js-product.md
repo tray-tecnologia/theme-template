@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Product
-type: Módulos JavaScript
-permalink: /modules/product/
+permalink: /js/product/
 ---
 
 Para adicionar e remover produtos da [comparação de produtos](http://wiki.tray.com.br/documentacao/configuracoes-gerais-da-loja/) via AJAX, utilize o seguinte snippet:

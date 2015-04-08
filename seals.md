@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Seals
-type: Variáveis/Helpers
 permalink: /variables/seals/
 scope: todas
 ---

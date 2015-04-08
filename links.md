@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Links
-type: Variáveis/Helpers
 permalink: /variables/links/
 scope: todas
 ---
@@ -322,6 +321,21 @@ scope: todas
             </td>
         </tr>
         <tr>
+            <td>compare</td>
+            <td>
+                {% highlight html+jinja %}
+                {% raw %}
+
+<a href="{{ links.compare }}">
+    Ver comparação de produtos
+</a>
+
+                {% endraw %}
+                {% endhighlight %}
+                Página com a comparação dos produtos selecionados
+            </td>
+        </tr>
+        <tr>
             <td>compare_add</td>
             <td>
                 {% highlight html+jinja %}
@@ -342,7 +356,7 @@ scope: todas
                 {% highlight html+jinja %}
                 {% raw %}
 
-<a href="{{ links.compare_remove }}">
+<a href="{{ links.compare_delete ~ product.id }}">
     Remover da comparação de produto
 </a>
 

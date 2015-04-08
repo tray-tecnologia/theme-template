@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Product Featured
-type: Variáveis/Helpers
 permalink: /variables/product-featured/
 scope: catalog
 ---

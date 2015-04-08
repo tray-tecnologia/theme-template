@@ -4,7 +4,15 @@
   - /theme-pages/
   - /file-extensions/
 
-- title: Variáveis/Helpers
+- title: Funções
+  items:
+  - /functions/brands/
+  - /functions/categories/
+  - /functions/image/
+  - /functions/products/
+  - /functions/translation/
+
+- title: Variáveis
   items:
   - /variables/banners/
   - /variables/cart/
@@ -12,7 +20,6 @@
   - /variables/category/
   - /variables/customer/
   - /variables/filters/
-  - /variables/image/
   - /variables/links/
   - /variables/pages/
   - /variables/paginate/
@@ -25,19 +32,19 @@
   - /variables/store/
   - /variables/tags/
   - /variables/theme-path/
-  - /variables/translation/
   - /variables/utils/
 
-- title: Módulos JavaScript
+- title: JavaScript
   items:
-  - /modules/
-  - /modules/banners/
-  - /modules/cart/
-  - /modules/customer/
-  - /modules/filter/
-  - /modules/product/
-  - /modules/search/
-  - /modules/jquery/
+  - /js/
+  - /js/banners/
+  - /js/cart/
+  - /js/customer/
+  - /js/filter/
+  - /js/product/
+  - /js/search/
+  - /js/jquery/
+
 
 - title: Outros
   items:

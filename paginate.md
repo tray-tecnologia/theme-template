@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Paginate
-type: Variáveis/Helpers
 permalink: /variables/paginate/
 scope: catalog | search
 ---

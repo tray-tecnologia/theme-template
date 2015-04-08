@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Páginas Disponíveis
-type: Introdução
 permalink: /theme-pages/
 ---
 

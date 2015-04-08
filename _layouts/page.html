@@ -12,7 +12,7 @@ layout: default
     {% if page.help %}
       <br><strong>Saiba mais em: </strong>
       <a href="http://wiki.tray.com.br/documentacao/{{ page.help }}/" target="_blank">
-        {{ page.help|replace: '-', ' ')|capitalize }}
+        {{ page.help_title }}
       </a>
     {% endif %}
   </header>

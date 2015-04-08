@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Search (Suggestion)
-type: Módulos JavaScript
-permalink: /modules/search/
+permalink: /js/search/
 ---
 
 Para mais informações, visite a wiki de [sugestões de busca](http://wiki.tray.com.br/documentacao/sistema-de-busca-inteligente/#auto-sugestao).

@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Banners
-type: Módulos JavaScript
-permalink: /modules/banners/
+permalink: /js/banners/
 ---
 
 Para mais informações sobre o comportamento dos banners, visite a wiki de [Banners](http://wiki.tray.com.br/documentacao/cadastrar-banners/).

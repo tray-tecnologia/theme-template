@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Translation
-type: Variáveis/Helpers
-permalink: /variables/translation/
+permalink: /functions/translation/
 scope: todas
+help: gerenciamento-de-textos
+help_title: Gerenciamento de Textos
 ---
 
 Exibe um texto de acordo com o idioma configurado na sua loja no Painel Administrativo.
@@ -15,5 +16,3 @@ Exibe um texto de acordo com o idioma configurado na sua loja no Painel Administ
 
 {% endraw %}
 {% endhighlight %}
-
-Para entender como funciona o gerenciamento de textos e internacionalização, acesse: [Gerenciamento de Textos](http://wiki.tray.com.br/documentacao/gerenciamento-de-textos/).

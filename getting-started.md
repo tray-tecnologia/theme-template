@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Iniciando um tema
-type: Introdução
 permalink: /getting-started/
 ---
 

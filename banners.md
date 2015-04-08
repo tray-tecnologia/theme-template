@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Banners
-type: Variáveis/Helpers
 permalink: /variables/banners/
 scope: todas
 ---

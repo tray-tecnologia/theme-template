@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Utils
-type: Variáveis/Helpers
 permalink: /variables/utils/
 scope: todas
 ---

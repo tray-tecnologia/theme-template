@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Customer
-type: Módulos JavaScript
-permalink: /modules/customer/
+permalink: /js/customer/
 ---
 
 Para contornar o cache, utilize essa marcação para exibir o nome do cliente logado.
