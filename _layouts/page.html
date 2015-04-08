@@ -7,7 +7,13 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     {% if page.scope %}
-    	<strong>Disponível nas páginas:</strong> {{ page.scope }}
+      <strong>Disponível nas páginas:</strong> {{ page.scope }}
+    {% endif %}
+    {% if page.help %}
+      <br><strong>Saiba mais em: </strong>
+      <a href="http://wiki.tray.com.br/documentacao/{{ page.help }}/" target="_blank">
+        {{ page.help|replace: '-', ' ')|capitalize }}
+      </a>
     {% endif %}
   </header>
 
