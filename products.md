@@ -9,7 +9,7 @@ A variável `products` está disponível de acordo com as regras de cada página
 
 * Na "home" contém os produtos em destaque;
 * Na "catalog" contém os produtos de uma categoria específica de acordo com os filtros aplicados;
-* Na "busca" contém os produtos de acordo com os critérios da busca e os filtros aplicados.
+* Na "search" contém os produtos de acordo com os critérios da busca e os filtros aplicados.
 
 Para chamar produtos com critérios personalizados, veja a função [Products()]({{ site.baseurl }}/functions/products).
 
@@ -128,7 +128,7 @@ As requisições de produtos sempre retornarão um array de dados onde cada chav
         </td>
     </tr>
     <tr>
-        <td>available</td>
+        <td>upon_request</td>
         <td>
             {% highlight html+jinja %}
             {% raw %}
