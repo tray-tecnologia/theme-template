@@ -6,6 +6,8 @@
     <li><a href="{{ links.sign_in }}">Crie sua conta</a></li>
     {% endif %}
     <li>
-        <a class="glyphicon glyphicon-shopping-cart" href="{{ links.cart }}" title="{{ cart.amount }} itens no carrinho"></a>
+        <a class="glyphicon glyphicon-shopping-cart" href="{{ links.cart }}">
+            <span data-cart="amount">{{ cart.amount }}</span> itens no carrinho
+        </a>
     </li>
 </ul>

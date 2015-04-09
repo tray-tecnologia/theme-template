@@ -9,7 +9,7 @@
 {% if breadcrumb %}
 
     <div class="vspace-sm">
-        {{ _view.element('snippets/breadcrumb') }}
+        {% element 'snippets/breadcrumb' %}
     </div>
 
 {% endif %}
@@ -23,23 +23,23 @@
 {% if products|length > 0 %}
     
     <div class="vspace-sm">
-        {{ _view.element('snippets/filter', {
+        {% element 'snippets/filter', {
             'brands': search.brands
-        }) }}
+        } %}
     </div>
 
     <div class="vspace-sm">
-        {{ _view.element('snippets/pagination') }}
+        {% element 'snippets/pagination' %}
     </div>
 
     <div class="vspace-sm">
-        {{ _view.element('snippets/showcase', {
+        {% element 'snippets/showcase' {
             "products": products
-        }) }}
+        } %}
     </div>
 
     <div class="vspace-sm">
-        {{ _view.element('snippets/pagination') }}
+        {% element 'snippets/pagination' %}
     </div>
 
 {% else %}

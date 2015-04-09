@@ -10,7 +10,7 @@
         {% for product in products %}
 
             <div class="col-sm-4 product">
-                {{ _view.element('snippets/product', {"product": product}) }}
+                {% element 'snippets/product' {"product": product} %}
             </div>
 
             {% if loop.index is divisible by(3) %}

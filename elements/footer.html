@@ -3,21 +3,21 @@
         <div class="row">
             <div class="col-sm-3">
                 <h4 class="footer-title">Loja</h4>
-                {{ _view.element('snippets/categories_list', {'limit': 6}) }}
+                {% element 'snippets/categories_list' {'limit': 6} %}
             </div>
             <div class="col-sm-3">
                 <h4 class="footer-title">Ajuda</h4>
-                {{ _view.element('snippets/help_links') }}
+                {% element 'snippets/help_links' %}
             </div>
             <div class="col-sm-3">
                 <h4 class="footer-title">Siga-nos</h4>
-                {{ _view.element('snippets/contact_links') }}
+                {% element 'snippets/contact_links' %}
             </div>
             <div class="col-sm-3">
                 <h4 class="footer-title">Inscreva-se</h4>
-                {{ _view.element('snippets/newsletter') }}
+                {% element 'snippets/newsletter' %}
             </div>
         </div>
-        {{ _view.element('snippets/address') }}
+        {% element 'snippets/address' %}
     </div>
 </footer>

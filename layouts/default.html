@@ -1,7 +1,3 @@
-{% set showHeader = not getLayout or (getLayout and 'header' in elementsToLoad) %}
-{% set showFooter = not getLayout or (getLayout and 'footer' in elementsToLoad) %}
-{% set showLeft = not getLayout or (getLayout and 'left' in elementsToLoad) %}
-{% set showRight = not getLayout or (getLayout and 'right' in elementsToLoad) %}
 <!doctype html>
 <html lang="pt-br" data-store="{{ store.id }}" class="page-{{ pages.current }}">
 <head>
@@ -19,67 +15,57 @@
 </head>
 <body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
-
-    {% if showHeader %}
         
-        {{ _view.element('header') }}
-        {% if pages.current == 'home' and banner.home %}
-            <div class="banner banner-home">
-                {{ banner.home }}
-            </div>
-        {% endif %}
+    {% element 'header' %}
 
+    {% if pages.current == 'home' and banner.home %}
+        <div class="banner banner-home">
+            {{ banner.home }}
+        </div>
     {% endif %}
 
     <div class="container">
         <div class="content row">
 
-            {% if showLeft %}
-                {{ _view.element('sidebar_left') }}
-            {% endif %}
+            {% element 'sidebar_left' %}
 
             <section class="page-content col-sm-8">
                 {{ content_for_layout }}
             </section>
 
-            {% if showRight %}
-                {{ _view.element('sidebar_right') }}
-            {% endif %}
+            {% element 'sidebar_right' %}
 
         </div>
     </div>
     
-    {% if showFooter %}
-        {{ _view.element('snippets/tagcloud') }}
-        {{ _view.element('snippets/history') }}
+    {% element 'snippets/tagcloud' %}
+    {% element 'snippets/history' %}
 
-        {% if banner.bottom %}
-            <div class="banner banner-bottom">
-                {{ banner.bottom }}
-            </div>
-        {% endif %}
-
-        {{ _view.element('footer') }}
-
-        {% if banner.footer %}
-            <div class="banner banner-footer">
-                {{ banner.footer }}
-            </div>
-        {% endif %}
-
-        {% if pages.current == 'home' %}
-            {{ banner.popup ~ banner.floating }}
-        {% endif %}
-
-        {{ _view.element('snippets/credits') }}
-
+    {% if banner.bottom %}
+        <div class="banner banner-bottom">
+            {{ banner.bottom }}
+        </div>
     {% endif %}
+
+    {% element 'footer' %}
+
+    {% if banner.footer %}
+        <div class="banner banner-footer">
+            {{ banner.footer }}
+        </div>
+    {% endif %}
+
+    {% if pages.current == 'home' %}
+        {{ banner.popup ~ banner.floating }}
+    {% endif %}
+
+    {% element 'snippets/credits' %}
 
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
 
     {{ html.script('dist/application.min.js?' ~ utils.assets_version) }}
 
-    {{ _view.element('snippets/pageview') }}
+    {% element 'snippets/pageview' %}
 
 </body>
 </html>
