@@ -6,15 +6,24 @@ permalink: /getting-started/
 
 Leia atentamente todas as informações contidas na documentação e veja como é simples criar um tema para uma loja Tray.
 
-## OpenCode GEM ([Download]({{ site.baseurl }}/assets/gems/opencode_theme-0.0.1b.gem))
+## OpenCode GEM
 
 A GEM permitirá que você tenha um ambiente de alta produtividade, por isso é a nossa recomendação.
 
-**Pré-requisito:** Ter o Ruby instalado.
-Para que as gems funcionem corretamente no MAC, é necessário instalar o XCode: [Instalar XCode via AppStore](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)
+
+**Pré-requisitos:** 
+
+* Ruby
+* XCode (apenas OSX), comando para instalar: `$ xcode-select --install`
+
+### Download
+
+<a class="btn btn-success" href="{{ site.baseurl }}/assets/gems/opencode_theme-0.0.2.gem">Versão 0.0.2</a>
+
+### Instalação
 
 {% highlight bash %}
-$ gem install opencode_theme-0.0.1b.gem
+$ gem install opencode_theme-0.0.2.gem
 $ opencode -h
 {% endhighlight %}
 
@@ -22,9 +31,11 @@ Serão exibidas todas as opções da GEM:
 
 {% highlight bash %}
 opencode bootstrap API_KEY PASSWORD THEME_NAME THEME_BASE
+opencode clean
 opencode configure API_KEY PASSWORD THEME_ID
 opencode download FILE
 opencode help [COMMAND]
+opencode list
 opencode open
 opencode publish
 opencode remove FILE
