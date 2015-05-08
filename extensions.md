@@ -18,7 +18,7 @@ Veja a tabela de recursos disponíveis e o respectivo código necessário:
 {% highlight html+jinja %}
 {% raw %}
 
-{{ _view.element('CustomerReview.reviews') }}
+{% element 'CustomerReview.reviews' %}
 
 {% endraw %}
 {% endhighlight %}
@@ -32,7 +32,7 @@ Veja a tabela de recursos disponíveis e o respectivo código necessário:
 {% highlight html+jinja %}
 {% raw %}
 
-{{ _view.element('FeaturesTopMenu.features_top_menu') }}
+{% element 'FeaturesTopMenu.features_top_menu' %}
 
 {% endraw %}
 {% endhighlight %}
@@ -46,7 +46,7 @@ Veja a tabela de recursos disponíveis e o respectivo código necessário:
 {% highlight html+jinja %}
 {% raw %}
 
-{{ _view.element('SmartTopMenu.smart_top_menu') }}
+{% element 'SmartTopMenu.smart_top_menu' %}
 
 {% endraw %}
 {% endhighlight %}
@@ -60,7 +60,7 @@ Veja a tabela de recursos disponíveis e o respectivo código necessário:
 {% highlight html+jinja %}
 {% raw %}
 
-{{ _view.element('News.news') }}
+{% element 'News.news' %}
 
 {% endraw %}
 {% endhighlight %}
