@@ -18,16 +18,22 @@
     > a {
         display: block;
         position: relative;
+        text-decoration: none;
     }
 
-    .product-image img {
-        margin: 0 auto;
+    .product-image {
+        img {
+            margin: 0 auto;
+            width: 180px;
+        }
+
+        img[src*='loading'] {
+            width: 48px;
+        }
     }
 
     .product-name {
-        color: #fff;
-        position: absolute;
-        top: 39%;
+        color: #333;
         width: 100%;
         
         h3 {
@@ -40,17 +46,11 @@
         }
     }
 
-    .product-price {
-        position: absolute;
-        top: 53%;
-        width: 100%;
-
-        span {
-            background: #000;
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            font-size: 0.8em;
-            padding: 3px 17px;
-        }
+    .product-price span {
+        background: #000;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 0.8em;
+        padding: 3px 17px;
     }
 }

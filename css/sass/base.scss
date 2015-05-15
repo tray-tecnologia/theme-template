@@ -1,0 +1,33 @@
+/**
+ * Base / Settings
+ */
+
+$primary-color: #25282A;
+$primary-font: "Oswald", sans-serif;
+
+body {
+    background: #fff;
+    color: $primary-color;
+}
+
+// adaptive images
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+// vertical spaces
+.vspace-xs,
+.vspace-sm,
+.vspace-lg {
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.vspace-sm {
+    margin-bottom: 10px;
+}
+
+.vspace-lg {
+    margin-bottom: 20px;
+}

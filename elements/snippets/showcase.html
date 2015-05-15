@@ -1,13 +1,16 @@
 {% if products|length > 0 %}
-    <div class="showcase">
-        <h4 class="showcase-title">{{ showcaseTitle }} </h4>
-    </div>
+
+    {% if showcaseTitle %}
+        <div class="showcase">
+            <h4 class="showcase-title">{{ showcaseTitle }} </h4>
+        </div>
+    {% endif %}
 
     <div class="row">
         {% for product in products %}
 
             <div class="col-sm-4 product">
-                {{ _view.element('snippets/product', {"product": product}) }}
+                {% element 'snippets/product' {"product": product} %}
             </div>
 
             {% if loop.index is divisible by(3) %}
@@ -16,4 +19,5 @@
 
         {% endfor %}
     </div>
+
 {% endif %}

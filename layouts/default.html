@@ -1,32 +1,71 @@
 <!doctype html>
-<html lang="pt-br" data-store="{{ store.id }}">
+<html lang="pt-br" data-store="{{ store.id }}" class="page-{{ pages.current }}">
 <head>
     {{ html.charset() }}
     {{ tray.meta }}
     <!-- [if IE]<meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ tray.styles }}
     <link rel="stylesheet" href="{{ themePath }}css/bootstrap/bootstrap.min.css?{{ utils.assets_version }}">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oswald:400,300,700">
     <link rel="stylesheet" href="{{ themePath }}css/theme.min.css?{{ utils.assets_version }}">
     {{ tray.scripts }}
+    {{ tray.analytics }}
+    {{ googleTagManager.header(pages.current, tagManagerData) }}
 </head>
 <body>
+    {{ googleTagManager.top(pages.current, tagManagerData) }}
+        
+    {% element 'header' %}
 
-    {{ _view.element('header') }}
+    {% if pages.current == 'home' and banner.home %}
+        <div class="banner banner-home">
+            {{ banner.home }}
+        </div>
+    {% endif %}
 
-    {{ _view.element('banners/banner_main') }}
-
-    <div class="container{% if pages.current == 'home' %}-fluid{% endif %}">
+    <div class="container">
         <div class="content row">
-            <div class="col-sm-12">
+
+            {% element 'sidebar_left' %}
+
+            <section class="page-content col-sm-8">
                 {{ content_for_layout }}
-            </div>
+            </section>
+
+            {% element 'sidebar_right' %}
+
         </div>
     </div>
     
-    {{ _view.element('footer') }}
+    {% element 'snippets/tagcloud' %}
+    {% element 'snippets/history' %}
+
+    {% if banner.bottom %}
+        <div class="banner banner-bottom">
+            {{ banner.bottom }}
+        </div>
+    {% endif %}
+
+    {% element 'footer' %}
+
+    {% if banner.footer %}
+        <div class="banner banner-footer">
+            {{ banner.footer }}
+        </div>
+    {% endif %}
+
+    {% if pages.current == 'home' %}
+        {{ banner.popup ~ banner.floating }}
+    {% endif %}
+
+    {% element 'snippets/credits' %}
+
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
 
     {{ html.script('dist/application.min.js?' ~ utils.assets_version) }}
+
+    {% element 'snippets/pageview' %}
 
 </body>
 </html>

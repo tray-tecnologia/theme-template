@@ -1,10 +1,11 @@
 <form role="form" action="{{ links.search }}">
+    <input type="hidden" name="loja" value="{{ store.id }}">
     <div class="row">
         <div class="col-xs-10">
-            <input type="search" placeholder="Buscar na loja" class="form-control">
+            <input type="search" placeholder="Buscar na loja" name="palavra_busca">
         </div>
         <div class="col-xs-2">
-            <button class="btn btn-link btn-block search-button">
+            <button class="search-button">
                 <span class="glyphicon glyphicon-search"></span>
             </button>
         </div>
