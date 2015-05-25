@@ -1,0 +1,14 @@
+<div id="logotipo" class="logo left">
+    {% set h2 = ['produto','catalogo','busca','busca_avancada'] %}
+    {% set tag = pages.current in(h2) ? 'h2' : 'h1' %}
+
+    <{{ tag }}>
+    <a data-tray-tst="logotipo_loja" href="{{ links.home }}" title="{{ store.name }}"> 
+      {% if Image('logo') %}
+        {{ Image('logo') }}
+      {% else %}
+        {{ store.name }}
+      {% endif %} 
+    </a>
+    {{ '</' ~ tag ~ '>' }}
+</div>

@@ -1,0 +1,9 @@
+<div class="env-busca">
+    <form class="search-box" name="buscaForm" method="get" action="{{ links.search }}">
+        <input type="hidden" name="loja" value="{{ store.id }}" />
+        <button class="search-button" type="submit" tabindex="1"></button>
+        <label for="search-key">
+            <input class="search-key" name="palavra_busca" id="search-key" value="" placeholder="{{ Translation('buscar_no_site') }}" tabindex="0" type="text" />
+        </label>
+    </form><!-- .search-box -->
+</div>

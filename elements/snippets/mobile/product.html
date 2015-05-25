@@ -1,0 +1,16 @@
+<div itemscope itemtype="http://schema.org/Product">
+    <a href="{{ product.link }}" itemprop="url">
+        <div class="product-image">
+            {% set loading = tray.paths.system_image ~ "/loading.gif" %}
+            <img class="img-responsive lazy" data-original="{{ product.images[0].large }}" src="{{ loading }}" alt="{{ product.name }}">
+        </div>
+        <div class="product-name" itemprop="name">
+            <h3>{{ product.name }}</h3>
+        </div>
+        <div class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            {% set price = product.price_offer > 0 ? product.price_offer : product.price %}
+            <span itemprop="price">{{ price|currency }}</span>
+            <meta itemprop="priceCurrency" content="BRL">
+        </div>
+    </a>
+</div>
