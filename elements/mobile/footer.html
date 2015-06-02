@@ -1,0 +1,24 @@
+<footer>
+         
+         {{ _view.element('snippets/custom_pages', {'pages': pages, 'Translation': Translation}) }}
+         
+         <ul>
+            <li class="li-atendimento">
+
+                <ul  class="footer-links telefone"> 
+                    <li><h2>{{ Translation('atendimento') }}</h2></li>
+                    <li>
+                       {{ _view.element('snippets/contact', {'Translation': Translation, 'links': links}) }}
+                    </li>
+                </ul><!-- .footer-links -->
+            </li>
+        </ul>
+</footer>
+
+{{ Translation('ag_remarketing') }}
+
+{% if pages.current in (['retorno_pagamento', 'finalizar_finalizar']) %}
+
+    {{ Translation('ag_conversao') }}
+
+{% endif %}
