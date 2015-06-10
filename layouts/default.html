@@ -24,9 +24,9 @@
     {{ googleTagManager.top(pages.current, tagManagerData) }}
         
     {% if utils.is_mobile %}
-        {{ _view.element('mobile/header') }}
+        {{ element 'mobile/header' }}
     {% else %}
-        {{ _view.element('header') }}
+        {{ element 'header' }}
     {% endif %}
 
     {% if pages.current == 'home' and banner.home %}
@@ -59,9 +59,9 @@
     {% endif %}
 
     {% if utils.is_mobile %}
-        {{ _view.element('mobile/footer') }}
+        {{ element 'mobile/footer' }}
     {% else %}
-        {{ _view.element('footer') }}
+        {{ element 'footer' }}
     {% endif %}
 
     {% if banner.footer %}
