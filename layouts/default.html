@@ -24,9 +24,9 @@
     {{ googleTagManager.top(pages.current, tagManagerData) }}
         
     {% if utils.is_mobile %}
-        {{ _view.element('mobile/header') }}
+        {% element 'mobile/header' %}
     {% else %}
-        {{ _view.element('header') }}
+        {% element 'header' %}
     {% endif %}
 
     {% if pages.current == 'home' and banner.home %}
@@ -58,7 +58,11 @@
         </div>
     {% endif %}
 
-    {% element 'footer' %}
+    {% if utils.is_mobile %}
+        {% element 'mobile/footer' %}
+    {% else %}
+        {% element 'footer' %}
+    {% endif %}
 
     {% if banner.footer %}
         <div class="banner banner-footer">
