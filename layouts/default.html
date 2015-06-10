@@ -58,7 +58,11 @@
         </div>
     {% endif %}
 
-    {% element 'footer' %}
+    {% if utils.is_mobile %}
+        {{ _view.element('mobile/footer') }}
+    {% else %}
+        {{ _view.element('footer') }}
+    {% endif %}
 
     {% if banner.footer %}
         <div class="banner banner-footer">
