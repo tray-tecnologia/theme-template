@@ -1,0 +1,119 @@
+- url: /index.html
+  new: http://dev.tray.com.br
+
+- url: /getting-started/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206159587-Iniciando-um-tema
+
+- url: /alerts/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205385408-Avisos
+
+- url: /theme-pages/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206160127--P%C3%A1ginas-Dispon%C3%ADveis
+
+- url: /file-extensions/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206160337-Extens%C3%B5es-de-Arquivos
+
+- url: /file-encoding/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206160347-Codifica%C3%A7%C3%A3o-de-Arquivos
+
+- url: /functions/brands/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206160367-Brands
+
+- url: /functions/categories/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206160467-Categories
+
+- url: /functions/image/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206160497-Image
+
+- url: /functions/products/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206160507-Products
+
+- url: /functions/translation/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205385848-Translation
+
+- url: /variables/banners/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
+
+- url: /variables/cart/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392048-Cart
+
+- url: /variables/categories/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166527-Categories
+
+- url: /variables/category/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166517-Category
+
+- url: /variables/customer/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392038-Customer
+
+- url: /variables/filters/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392028-Filters
+
+- url: /variables/links/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166507-Links
+
+- url: /variables/pages/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166497-Pages
+
+- url: /variables/paginate/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392018-Paginate
+
+- url: /variables/payment-methods/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392008-Payment-Methods
+
+- url: /variables/product-featured/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205391998-Product-Featured
+
+- url: /variables/products/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205391978-Products
+
+- url: /variables/seals/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166477-Seals
+
+- url: /variables/search/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205391968-Search
+
+- url: /variables/settings/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205391948-Settings
+
+- url: /variables/store/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166467-Store
+
+- url: /variables/tags/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166457-Tags
+
+- url: /variables/theme-path/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205391918-Theme-Path
+
+- url: /variables/utils/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166427-Utils
+
+- url: /js/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166667--Data-Attributes
+
+- url: /js/banners/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166657-Banners
+
+- url: /js/cart/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392108-Cart
+
+- url: /js/customer/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392098-Customer
+
+- url: /js/filter/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392088-Filter
+
+- url: /js/product/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166647-Product
+
+- url: /js/search/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392078-Search-Suggestion-
+
+- url: /js/jquery/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392068-jQuery
+
+- url: /tips/
+  new: http://dev.tray.com.br/hc/pt-br/articles/205392118-Dicas
+
+- url: /extensions/
+  new: http://dev.tray.com.br/hc/pt-br/articles/206166677-Extens%C3%B5es
