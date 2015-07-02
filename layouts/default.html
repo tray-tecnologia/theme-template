@@ -12,11 +12,22 @@
     {{ tray.scripts }}
     {{ tray.analytics }}
     {{ googleTagManager.header(pages.current, tagManagerData) }}
+
+    {% if utils.is_mobile %}
+        <link rel="stylesheet" href="//images.tcdn.com.br/img/arquivos/identidade_visual/css/sistema.css?{{ utils.assets_version }}">  
+        <link rel="stylesheet" href="//images.tcdn.com.br/img/arquivos/mobile/css/open-mobilev2.css?{{ utils.assets_version }}">
+        <script src="//images.tcdn.com.br/img/arquivos/mobile/scripts/open-mobilev2.js?{{ utils.assets_version }}"></script>
+    {% endif %}
+
 </head>
 <body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
         
-    {% element 'header' %}
+    {% if utils.is_mobile %}
+        {% element 'mobile/header' %}
+    {% else %}
+        {% element 'header' %}
+    {% endif %}
 
     {% if pages.current == 'home' and banner.home %}
         <div class="banner banner-home">
@@ -47,7 +58,11 @@
         </div>
     {% endif %}
 
-    {% element 'footer' %}
+    {% if utils.is_mobile %}
+        {% element 'mobile/footer' %}
+    {% else %}
+        {% element 'footer' %}
+    {% endif %}
 
     {% if banner.footer %}
         <div class="banner banner-footer">
