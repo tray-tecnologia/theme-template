@@ -1,7 +1,7 @@
 <div id="product-container" class="produto-wrapper" itemscope itemtype="http://schema.org/Product">
   <span id="span_erro_carrinho"></span>
   <div id="loading-product-container">
-    <img src='/loja/img01/big-loading.svg' />
+    <img src='{{ tray.paths.system_image }}/big-loading.svg' />
   </div>
   <div id="title">
     {% element 'snippets/breadcrumb' { "class": 'produto-breadcrumb'} %}
@@ -72,7 +72,7 @@
 
 <div id="ProdBlock">
   <div id="loading-tab-container">
-    <img src='/loja/img01/big-loading.svg' />
+    <img src='{{ tray.paths.system_image }}/big-loading.svg' />
   </div>
   <div id="ProdAbas" class="abasProduto">
     <div class="leftCorner2"></div>
@@ -86,13 +86,13 @@
       </li>
       {% endif %}
       <li class="" id="Aba3">
-        <a href="#" data-tab-container-id="#garantia" data-tab-url="/mvc/store/product/warranty?loja=406562&amp;IdProd=2">Garantia</a>
+        <a href="#" data-tab-container-id="#garantia" data-tab-url="/mvc/store/product/warranty?loja={{ store.id }}&amp;IdProd={{ product.id }}">Garantia</a>
       </li>
       <li class="" id="Aba4">
-        <a href="#" data-tab-container-id="#formasPagto" data-tab-url="/mvc/store/product/payment_options?loja=406562&amp;IdProd=2&amp;IdVariacao=%s">Formas de Pagamento</a>
+        <a href="#" data-tab-container-id="#formasPagto" data-tab-url="/mvc/store/product/payment_options?loja={{ store.id }}&amp;IdProd={{ product.id }}&amp;IdVariacao=%s">Formas de Pagamento</a>
       </li>
       <li class="" id="Aba5">
-        <a href="#" data-tab-container-id="#coments" data-tab-url="">Coment�rios</a>
+        <a href="#" data-tab-container-id="#coments" data-tab-url="">Coment�ios</a>
       </li>
     </ul>
   </div>
