@@ -54,3 +54,71 @@
         padding: 3px 17px;
     }
 }
+.page-product{
+    .breadcrumb{
+        display: inline-block;
+        text-align: left;
+    }
+    .product-safe{
+        text-align: right;
+        margin-top: -20px;
+    }
+    .product-id{
+        float: right;
+    }
+    .product-title{
+        margin: 10px 0 0;
+    }
+    .product-links{
+        text-align: center;
+        
+        > a{
+            display: block;
+            border-right: 1px #ccc solid;
+            border-bottom: 1px #ccc solid;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 3px;
+        }
+    }
+    .product-labels, .product-details{
+        clear: both;
+    }
+    .products-related{
+        text-align: center;
+        margin: 10px 0;
+        
+        .related-title{
+            text-align: left;
+            margin: 0 0 10px;
+        }
+        .related-image{
+            display: inline-block;
+        }
+    }
+    .no-padding{
+        padding: 0;
+    }
+    @media screen and (max-width: 600px) {
+        .product-id {
+            float: none;
+        }
+        .produto-calcular-frete{
+            display: none;
+        }
+        #ProdAbas{
+            background: #f1f1f1;
+            li, .aberta{
+                float: none;
+            }
+            li+li{
+                border-top: 1px solid #ccc;
+            }
+        }
+        #formasPagto{
+            img{
+                max-width: 60px;
+            }
+        }
+    }
+}
