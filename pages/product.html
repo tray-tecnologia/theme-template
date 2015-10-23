@@ -113,9 +113,9 @@
 <div class="products-related">
   <h3 class="related-title">Produtos Relacionados</h3>
   <div class="row">
-    {% for produto in product.related_products %}
+    {% for related in product.related_products %}
       <div class="col-sm-4 product">
-          {% element 'snippets/product' {"product": produto} %}
+          {% element 'snippets/product' {"product": related} %}
       </div>
     {% if loop.index is divisible by(3) %}
   </div>
