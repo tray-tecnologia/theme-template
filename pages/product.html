@@ -5,12 +5,6 @@
   </div>
   <div id="title">
     {% element 'snippets/breadcrumb' { "class": 'produto-breadcrumb'} %}
-    {% if utils.is_https %}
-    <div class="product-safe">
-      Ambiente Seguro
-      <img src="{{ tray.paths.system_image }}/ico_safe.png" alt="Ambiente Seguro"/>
-    </div>
-    {% endif %}
     <span class="product-id">
       {{ Translation('codigo') }}:
       <strong>
@@ -25,7 +19,7 @@
       {{ productHelper.gallery() }}
     </div>
     <div class="product-social">
-        {{ productHelper.social() }}
+      {{ productHelper.social() }}
     </div>
     <div class="product-links">
       <span class="produto-recommend">
@@ -48,17 +42,17 @@
       {{ productHelper.labels() }}
     </div>
     <p class="product-details">
-      {{ productHelper.details() }}
+      {{ productHelper.details() }} 
       {{ productHelper.icons() }}
     </p>
     {{ productHelper.bonus() }}
     <form id="form_comprar" method="post" data-app="product.buy-form" action="carrinho.php?loja={{ store.id }}&amp;action=incluir&amp;product_id={{ product.id }}&amp;purchase_origin=catalogo">
-      {{ productHelper.pricing() }}
-      {{ productHelper.variants() }}
+      {{ productHelper.pricing() }} 
+      {{ productHelper.variants() }} 
       {{ product.additional_information }}
-      {{ productHelper.gifts() }}
-      {{ productHelper.form() }}
-      {{ productHelper.wishlist() }}
+      {{ productHelper.gifts() }} 
+      {{ productHelper.form() }} 
+      {{ productHelper.wishlist() }} 
       {{ productHelper.shipping() }}
     </form>
     <p class="product-message">
@@ -72,51 +66,46 @@
     <img src='{{ tray.paths.system_image }}/big-loading.svg' />
   </div>
   <div id="ProdAbas" class="abasProduto">
-    <div class="leftCorner2"></div>
     <ul>
-      <li id="Aba1" class="aberta">
-        <a href="#" data-tab-container-id="#descricao" data-tab-url="">Descri��o Geral</a>
+      {% for key, tab in productTabs %} {% if tab.container_id %}
+      <li id="{{ tab.id }}" {% if key=='description' %}class="aberta" {% endif %}>
+        <a href="#" data-tab-container-id="{{ tab.container_id }}" data-tab-url="{{ tab.url }}">{{ tab.description }}</a>
       </li>
-      {% if product.included_items %}
-      <li class="" id="Aba2">
-        <a href="#" data-tab-container-id="#itensInclusos" data-tab-url="">Itens Inclusos</a>
-      </li>
-      {% endif %}
-      <li class="" id="Aba3">
-        <a href="#" data-tab-container-id="#garantia" data-tab-url="/mvc/store/product/warranty?loja={{ store.id }}&amp;IdProd={{ product.id }}">Garantia</a>
-      </li>
-      <li class="" id="Aba4">
-        <a href="#" data-tab-container-id="#formasPagto" data-tab-url="/mvc/store/product/payment_options?loja={{ store.id }}&amp;IdProd={{ product.id }}&amp;IdVariacao=%s">Formas de Pagamento</a>
-      </li>
-      <li class="" id="Aba5">
-        <a href="#" data-tab-container-id="#coments" data-tab-url="">Coment�ios</a>
-      </li>
+      {% endif %} {% endfor %}
     </ul>
   </div>
+
   <div id="descricao" class="prodBox">
     <div class="board">
       <div class="board_htm description">
-        {{ product.description ? product.description : product.description_small }}
+        <br /> {{ product.description ? product.description : product.description_small }}
       </div>
     </div>
   </div>
-  {% if product.included_items %}
+
   <div id="itensInclusos" class="prodBox">
     <div class="board">
-      {{ product.included_items }}
+      <br /> {{ product.included_items }}
     </div>
   </div>
-  {% endif %}
+
   <div id="coments" class="prodBox">
     <div class="board">
-      {% element 'product/comments' %}
+      <br /> {% element 'product/comments' %}
     </div>
   </div>
-  <div id="garantia" class="prodBox">
-    <img class="loader" src="/mvc/store/webroot/img/loading.gif" style="display:none;" />
+
+  <div id="caracteristicas" class="prodBox">
+    <div class='board'>
+      <br /> {% element 'product/properties' %}
+    </div>
   </div>
-  <div data-app="product.payment-methods" id="formasPagto" class="prodBox" style="display:none;">
-  </div>
+
+  {{ productTabs.custom.content }} {{ productTabs.downloads.content }}
+
+  <div id="garantia" class="prodBox"><img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" style="display:none;" /></div>
+
+  <div data-app="product.payment-methods" id="formasPagto" class="prodBox" style="display:none;"></div>
 </div>
 {% if product.related_products %}
 <div class="products-related">
@@ -133,9 +122,7 @@
           <div class="related-name" itemprop="name">
             <h3>{{ product.name }}</h3>
           </div>
-          {% if product.upon_request %}
-            {{ Image('upon_request') }}
-          {% else %}
+          {% if product.upon_request %} {{ Image('upon_request') }} {% else %}
           <div class="related-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             {% set price = product.price_offer > 0 ? product.price_offer : product.price %}
             <span itemprop="price">{{ price|currency }}</span>
@@ -146,9 +133,9 @@
       </div>
     </div>
     {% if loop.index is divisible by(4) %}
-        </div><div class="row">
-      {% endif %}
-    {% endfor %}
+  </div>
+  <div class="row">
+    {% endif %} {% endfor %}
   </div>
 </div>
 {% endif %}
