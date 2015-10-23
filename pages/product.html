@@ -45,7 +45,7 @@
         {{ productHelper.icons() }}
       </p>
       {{ productHelper.bonus() }}
-      <form id="form_comprar" method="post" data-app="product.buy-form" action="carrinho.php?loja={{ store.id }}&amp;action=incluir&amp;product_id={{ product.id }}&amp;purchase_origin=catalogo">
+      <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
         {{ productHelper.pricing() }} 
         {{ productHelper.variants() }} 
         {{ product.additional_information }}
