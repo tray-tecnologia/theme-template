@@ -107,35 +107,17 @@
   {{ productTabs.downloads.content }}
 
   <div id="garantia" class="prodBox"><img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" style="display:none;" /></div>
-
   <div data-app="product.payment-methods" id="formasPagto" class="prodBox" style="display:none;"></div>
 </div>
 {% if product.related_products %}
 <div class="products-related">
   <h3 class="related-title">Produtos Relacionados</h3>
   <div class="row">
-    {% for product in product.related_products %}
-    <div class="col-sm-3">
-      <div itemscope itemtype="http://schema.org/Product">
-        <a href="{{ product.link }}" itemprop="url">
-          <div class="related-image">
-            {% set loading = tray.paths.system_image ~ "/loading.gif" %}
-            <img class="img-responsive lazy" data-original="{{ product.images[0].medium }}" src="{{ loading }}" alt="{{ product.name }}">
-          </div>
-          <div class="related-name" itemprop="name">
-            <h3>{{ product.name }}</h3>
-          </div>
-          {% if product.upon_request %} {{ Image('upon_request') }} {% else %}
-          <div class="related-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            {% set price = product.price_offer > 0 ? product.price_offer : product.price %}
-            <span itemprop="price">{{ price|currency }}</span>
-            <meta itemprop="priceCurrency" content="BRL">
-          </div>
-          {% endif %}
-        </a>
+    {% for produto in product.related_products %}
+      <div class="col-sm-4 product">
+          {% element 'snippets/product' {"product": produto} %}
       </div>
-    </div>
-    {% if loop.index is divisible by(4) %}
+    {% if loop.index is divisible by(3) %}
   </div>
   <div class="row">
     {% endif %} {% endfor %}
