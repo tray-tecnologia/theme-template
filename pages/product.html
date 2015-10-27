@@ -23,11 +23,11 @@
             </div>
             <div class="product-links">
                 <span class="produto-recommend">
-                    <a href="#" data-url="{{ links.product_recommend }}&IdProd={{ product.id }}" data-title="{{ product.name }}" class="botao_indique_amigo" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('indique_amigo') }}</a>
+                    <a href="#" data-url="{{ links.product_recommend ~ product.id }}" data-title="{{ product.name }}" class="botao_indique_amigo" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('indique_amigo') }}</a>
                 </span>
           
                 <span class="product-question">
-                    <a href="#" data-url="{{ links.product_question }}&IdProd={{ product.id }}" data-title="{{ product.name }}" class="botao_tire_duvidas" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('tire_duvidas') }}</a>
+                    <a href="#" data-url="{{ links.product_question ~ product.id }}" data-title="{{ product.name }}" class="botao_tire_duvidas" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('tire_duvidas') }}</a>
                 </span>
           
                 <span id="product-compare">
