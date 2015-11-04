@@ -1,0 +1,128 @@
+<div id="product-container" class="produto-wrapper" itemscope itemtype="http://schema.org/Product">
+    <span id="span_erro_carrinho"></span>
+    <div id="loading-product-container">
+        <img src='{{ tray.paths.system_image }}/big-loading.svg' />
+    </div>
+    <div id="title">
+        {% element 'snippets/breadcrumb' { "class": 'produto-breadcrumb'} %}
+        <span class="product-id">
+          {{ Translation('codigo') }}:
+          <strong>
+              {{ product.id }}
+          </strong>
+        </span>
+        <h3 class="product-title">{{ product.name }}</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-6 no-padding">
+            <div id="visualBlock" class="product-gallery">
+                {{ productHelper.gallery() }}
+            </div>
+            <div class="product-social">
+                {{ productHelper.social() }}
+            </div>
+            <div class="product-links">
+                <span class="produto-recommend">
+                    <a href="#" data-url="{{ links.product_recommend ~ product.id }}" data-title="{{ product.name }}" class="botao_indique_amigo" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('indique_amigo') }}</a>
+                </span>
+          
+                <span class="product-question">
+                    <a href="#" data-url="{{ links.product_question ~ product.id }}" data-title="{{ product.name }}" class="botao_tire_duvidas" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('tire_duvidas') }}</a>
+                </span>
+          
+                <span id="product-compare">
+                    <a data-compare="add" href="{{ links.compare_add  ~ product.id }}" class="add-compare {{ product.compare ? compareCSS }}" title='{{ Translation("comparar_produto") }}'>Comparar Produto</a>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            {% element 'product/rating' %}
+            <div class="product-labels">
+                {{ productHelper.labels() }}
+            </div>
+            <p class="product-details">
+                {{ productHelper.details() }} 
+                {{ productHelper.icons() }}
+            </p>
+            {{ productHelper.bonus() }}
+            <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
+                {{ productHelper.pricing() }} 
+                {{ productHelper.variants() }} 
+                {{ product.additional_information }}
+                {{ productHelper.gifts() }} 
+                {{ productHelper.form() }} 
+                {{ productHelper.wishlist() }} 
+                {{ productHelper.shipping() }}
+            </form>
+            <p class="product-message">
+                {{ product.additional_message }}
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="ProdBlock">
+    <div id="loading-tab-container">
+        <img src='{{ tray.paths.system_image }}/big-loading.svg' />
+    </div>
+    <div id="ProdAbas" class="abasProduto">
+        <ul>
+            {% for key, tab in productTabs %} 
+              {% if tab.container_id %}
+              <li id="{{ tab.id }}" {% if key=='description' %}class="aberta" {% endif %}>
+                <a href="#" data-tab-container-id="{{ tab.container_id }}" data-tab-url="{{ tab.url }}">{{ tab.description }}</a>
+              </li>
+              {% endif %} 
+            {% endfor %}
+        </ul>
+    </div>
+  
+    <div id="descricao" class="prodBox">
+        <div class="board">
+            <div class="board_htm description">
+                {{ product.description ? product.description : product.description_small }}
+            </div>
+        </div>
+    </div>
+  
+    <div id="itensInclusos" class="prodBox">
+        <div class="board">
+            {{ product.included_items }}
+        </div>
+    </div>
+  
+    <div id="coments" class="prodBox">
+        <div class="board">
+            {% element 'product/comments' %}
+        </div>
+    </div>
+  
+    <div id="caracteristicas" class="prodBox">
+        <div class='board'>
+            {% element 'product/properties' %}
+        </div>
+    </div>
+  
+    {{ productTabs.custom.content }} 
+    {{ productTabs.downloads.content }}
+  
+    <div id="garantia" class="prodBox">
+        <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" style="display:none;" />
+    </div>
+    <div data-app="product.payment-methods" id="formasPagto" class="prodBox" style="display:none;"></div>
+</div>
+{% if product.related_products %}
+<div class="products-related">
+    <h3 class="related-title">Produtos Relacionados</h3>
+    <div class="row">
+        {% for related in product.related_products %}
+          <div class="col-sm-4 product">
+              {% element 'snippets/product' {"product": related} %}
+          </div>
+        {% if loop.index is divisible by(3) %}
+    </div>
+    <div class="row">
+          {% endif %} {% endfor %}
+    </div>
+</div>
+{% endif %}
