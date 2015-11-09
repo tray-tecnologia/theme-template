@@ -80,7 +80,7 @@
 
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
 
-    {{ html.script('dist/application.min.js?' ~ utils.assets_version) }}
+    {{ html.script(tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version) }}
 
     {% element 'snippets/pageview' %}
 
