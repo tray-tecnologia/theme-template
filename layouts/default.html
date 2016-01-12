@@ -6,9 +6,9 @@
     <!-- [if IE]<meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ tray.styles }}
-    <link rel="stylesheet" href="{{ themePath }}css/bootstrap/bootstrap.min.css?{{ utils.assets_version }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oswald:400,300,700">
-    <link rel="stylesheet" href="{{ themePath }}css/theme.min.css?{{ utils.assets_version }}">
+    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}">
     {{ tray.scripts }}
     {{ tray.analytics }}
     {{ googleTagManager.header(pages.current, tagManagerData) }}
@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="//images.tcdn.com.br/img/arquivos/mobile/css/open-mobilev2.css?{{ utils.assets_version }}">
         <script src="//images.tcdn.com.br/img/arquivos/mobile/scripts/open-mobilev2.js?{{ utils.assets_version }}"></script>
     {% endif %}
-
 </head>
 <body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
