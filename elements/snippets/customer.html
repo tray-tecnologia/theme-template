@@ -1,13 +1,20 @@
+<!-- Esse element é responsavem por toda a parte de cliente da loja -->
 <ul>
+    <!-- verifica se o cliente está logado-->
     {% if customer.logged %}
-    <li>Ol� {{ customer.name }}</li>
+      <!-- Mostra o nome do cliente -->
+    <li>Ol� {{ customer.name }}</li>
     {% else %}
+    <!-- Caso o cliente não esteja logado mostra as opções de login e de criação de conta -->
     <li><a href="{{ links.login }}">Login</a></li>
     <li><a href="{{ links.sign_in }}">Crie sua conta</a></li>
     {% endif %}
     <li>
+      <!-- dados do Carrinho-->
+        <!-- a variavel 'links.cart' é responsavel por referenciar ao carrinho -->
         <a class="glyphicon glyphicon-shopping-cart" href="{{ links.cart }}">
-            <span data-cart="amount">{{ cart.amount }}</span> itens no carrinho
+          <!-- a variavel 'cart.amount' é responsavel por mostrar a quantidade de itens no carrinho-->
+             <span data-cart="amount">{{ cart.amount }}</span> itens no carrinho
         </a>
     </li>
 </ul>
