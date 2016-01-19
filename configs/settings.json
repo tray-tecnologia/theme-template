@@ -1,3 +1,14 @@
+/*
+ *  Essa pagina é responsagem por setar as configurações definidas na área de costumização,
+ *  é atraves dela que definimos as variaveis que serão usadas na edição no tema,
+ *  para mais informações acessar o segunte link:
+ *  http://dev.tray.com.br/hc/pt-br/articles/215283077-Gerando-CSS-e-JS-dinamicamente-utilizando-a-customiza%C3%A7%C3%A3o-de-temas
+ *  e também o link:
+ *  http://dev.tray.com.br/hc/pt-br/articles/206975327-Customiza%C3%A7%C3%A3o-de-temas
+ *
+ */
+
+
 {
     "current": {}
 }
