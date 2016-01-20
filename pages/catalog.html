@@ -1,26 +1,27 @@
-<!-- No Bloco a baixo Ã© verificado se existe algum 'banner.title' cadastrado-->
+<!-- No Bloco a baixo é verificado se existe algum 'banner.title' cadastrado-->
 {% if banner.title %}
     <div class="banner banner-title">
-      <!--Caso exista Ã© referenciado o 'banner.title' -->
+    <!--Caso exista é referenciado o 'banner.title' -->
         {{ banner.title }}
     </div>
 {% endif %}
 
-<!-- No Bloco a baixo Ã© verificado se existe breadcrumb -->
+<!-- No Bloco a baixo é verificado se existe breadcrumb -->
 {% if breadcrumb %}
     <div class="vspace-sm">
-      <!-- Caso exista Ã© referenciado em 'snippets/breadcrumb' -->
+      <!-- Caso exista é referenciado em 'snippets/breadcrumb' -->
         {% element 'snippets/breadcrumb' %}
     </div>
 {% endif %}
 
-<!-- Exibe o Nome da categoria atravÃ©s da variavel 'category.name' -->
+<!-- Exibe o Nome da categoria através da variavel 'category.name' -->
 <h1>{{ category.name }}</h1>
 
-<!-- Verifica se a quantidade de Produtos Ã© maior que 0 -->
+<!-- Verifica se a quantidade de Produtos é maior que 0 -->
 {% if products|length > 0 %}
-    <!-- Caso a condiÃ§Ã£o for verdadeira Ã© referenciado o 'snippets/filters'
-     que no caso Ã© filtrado por marcas referentes a categoria -->
+    <!-- Caso a condição for verdadeira é referenciado o 'snippets/filters'
+     que no caso é filtrado por marcas referentes a categoria -->
+
     <div class="vspace-sm">
         {% element 'snippets/filter' {
             'brands': category.brands
@@ -45,7 +46,7 @@
     </div>
 
 {% else %}
-    <!-- Caso contrario Ã© exibido a seguinte mensagem -->
+    <!-- Caso contrario é exibido a seguinte mensagem -->
     <p>Nenhum produto encontrado nessa categoria.</p>
 
 {% endif %}

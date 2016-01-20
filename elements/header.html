@@ -1,28 +1,28 @@
-<!-- AtenÃ§Ã£o, se a sua loja estiver em implantaÃ§Ã£o nÃ£o apagar a linha a baixo,
- * Ã© atraves dela que Ã© mostrada o aviso em vermelho avisando que a loja ainda nÃ£o estÃ¡ pronta -->
+<!-- Atenção, se a sua loja estiver em implantação não apagar a linha a baixo,
+ É atraves dela que é mostrada o aviso em vermelho avisando que a loja ainda não está implantada -->
 
 {% element 'snippets/messages' %}
 
 <!--
- * Nessa pagina estÃ¡ todo o cÃ³digo do cabeÃ§ario da pagina, nela pode ser definidos
- * links, adicionados 'elements' prÃ© definidos ou atÃ© mesmo editada conforme
- * preferenÃ§a do desenvolvedor.
+ * Nessa pagina está¡ todo o código do cabeçario da pagina, nela pode ser definidos
+ * links, adicionados 'elements' prÃ© definidos ou até mesmo editada conforme
+ * preferencia do desenvolvedor.
  *
  -->
 <header class="header">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-4 text-left">
-              <!-- Na linha Ã¡ baixo Ã© mostrado o nome da loja atravÃ©s da variavel 'store.name' -->
+              <!-- Na linha á baixo é mostrado o nome da loja através da variavel 'store.name' -->
                 <a class="brand" href="{{ links.home }}" title="{{ store.name }}">{{ store.name }}</a>
             </div>
             <div class="hidden-xs col-sm-4 header-customer text-right">
-              <!-- Na linha a baixo hÃ¡ uma chamada ao elememt 'customer',
+              <!-- Na linha a baixo há uma chamada ao elememt 'customer',
                   o arquivo customer.html pode ser encontrado em 'elements/snippets'-->
                 {% element 'snippets/customer' %}
             </div>
             <div class="col-xs-12 col-sm-4 text-right">
-              <!-- Na linha a baixo hÃ¡ uma chamada ao elememt 'search',
+              <!-- Na linha a baixo há uma chamada ao elememt 'search',
                   o arquivo search.html pode ser encontrado em 'elements/snippets'-->
                 {% element 'snippets/search' %}
             </div>

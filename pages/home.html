@@ -1,5 +1,5 @@
-<!-- No bloco de cÃ³digo a baixo Ã© verificado se existe algum 'banner.showcase' cadastrado
-     Caso essa condiÃ§Ã£o for verdadeira Ã© carregado o 'banner.showcase'.
+<!-- No bloco de ódigo a baixo é verificado se existe algum 'banner.showcase' cadastrado
+     Caso essa condição for verdadeira é carregado o 'banner.showcase'.
      Para saber mais sobre banners verfifique os seguintes links :
      http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
      http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners -->
@@ -10,14 +10,14 @@
 {% endif %}
 
 <!-- A chamada a baixo retorna os produtos em destaque
-    Para mais saber mais sobre a fuÃ§Ã£o products() verifique o link a baixo:
+    Para mais saber mais sobre a função products() verifique o link a baixo:
     http://dev.tray.com.br/hc/pt-br/articles/206160507-Products
   -->
 {% set products = Products({
     'filter': 'featured'
 }) %}
 
-<!-- O Bloco a baixo faz referencia a 'snippets/showcase' e Ã© passado pelo parametro
+<!-- O Bloco a baixo faz referencia a 'snippets/showcase' e é passado pelo parametro
       os atributos 'showcaseTitle' e 'products' -->
 {% element 'snippets/showcase' {
     "showcaseTitle": "Destaques",
