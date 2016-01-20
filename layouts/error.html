@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br" data-store="{{ store.id }}">
 <head>
-    <!-- Nesse bloco feito todo o carregamento de arquivos necessario para o tema funcionar corretamente -->
+    {# Nesse bloco feito todo o carregamento de arquivos necessario para o tema funcionar corretamente #}
     {{ html.charset() }}
     {{ tray.meta }}
     <!-- [if IE]<meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}">
 </head>
 <body>
-  <!-- Caso hajá a algum erro será redimenciodo á essa pagina-->
+  {# Caso hajá a algum erro será redimenciodo á essa pagina#}
     <div class="container{% if pages.current == 'home' %}-fluid{% endif %}">
         <div class="content row">
             <div class="col-sm-12">

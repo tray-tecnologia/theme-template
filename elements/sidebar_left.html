@@ -1,32 +1,34 @@
-<!--
+{#
   Nessa pagina está todo o codigo do menu esquerdo, nela pode ser definidos
   links, adicionados 'elements' pré definidos ou até mesmo editada conforme
   preferencia do desenvolvedor.
- -->
+ #}
 <aside class="col-sm-2">
     <div id="dive7rLeftTop"></div>
-    <!-- O bloco de codigo abaixo identifica se o cliente se encontra na pagina
-        da central do cliente, caso esteja, ele faz a chamada do element 'menu_central',
-        o arquivo 'menu_central.html se encontra em elements/snippets', caso contrario
-        ele faz a chamada do element 'categories_list' que se encontra em 'elements/snippets'
-    -->
+
     {% if 'central_' in pages.current %}
+    {# Nesse bloco de codigo identifica se o cliente se encontra na pagina
+        da central do cliente, caso esteja, ele faz a chamada do element 'menu_central',
+        o arquivo 'menu_central.html se encontra em elements/snippets'
+    #}
         {% element 'snippets/menu_central' %}
     {% else %}
+    {# , caso o cliente não estejá na pagina da central do cliente ele faz a chamada do
+        element 'categories_list' que se encontra em 'elements/snippets' #}
         <h3>Categorias</h3>
         {% element 'snippets/categories_list' %}
     {% endif %}
 
     <div id="dive7rLeftMiddle"></div>
     <div id="dive7rLeftBottom"></div>
-<!--
+{#
   O bloco de código a baixo trata a existencia de um banner side (lateral).
   Os banner são pré definidos no painel e são editáveis conforme nescessidade.
   Para mais informações acessar os seguntes links:
   http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
   http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners
   http://atendimento.tray.com.br/hc/pt-br/articles/211175188-Banner-JavaScript
--->
+#}
     {% if banner.side %}
         <div class="banner banner-side">
             {{ banner.side }}

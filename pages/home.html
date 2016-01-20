@@ -1,24 +1,24 @@
-<!-- No bloco de ódigo a baixo é verificado se existe algum 'banner.showcase' cadastrado
+{# No bloco de ódigo a baixo é verificado se existe algum 'banner.showcase' cadastrado
      Caso essa condição for verdadeira é carregado o 'banner.showcase'.
      Para saber mais sobre banners verfifique os seguintes links :
      http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
-     http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners -->
+     http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners #}
 {% if banner.showcase %}
     <div class="banner banner-showcase">
         {{ banner.showcase }}
     </div>
 {% endif %}
 
-<!-- A chamada a baixo retorna os produtos em destaque
+{# A chamada a baixo retorna os produtos em destaque
     Para mais saber mais sobre a função products() verifique o link a baixo:
     http://dev.tray.com.br/hc/pt-br/articles/206160507-Products
-  -->
+  #}
 {% set products = Products({
     'filter': 'featured'
 }) %}
 
-<!-- O Bloco a baixo faz referencia a 'snippets/showcase' e é passado pelo parametro
-      os atributos 'showcaseTitle' e 'products' -->
+{# O Bloco a baixo faz referencia a 'snippets/showcase' e é passado pelo parametro
+      os atributos 'showcaseTitle' e 'products' #}
 {% element 'snippets/showcase' {
     "showcaseTitle": "Destaques",
     "products": products

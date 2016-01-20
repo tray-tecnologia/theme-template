@@ -1,29 +1,29 @@
-<!-- Atenção, se a sua loja estiver em implantação não apagar a linha a baixo,
- É atraves dela que é mostrada o aviso em vermelho avisando que a loja ainda não está implantada -->
+{# Atenção, se a sua loja estiver em implantação não apagar a linha a baixo,
+ É atraves dela que é mostrada o aviso em vermelho avisando que a loja ainda não está implantada #}
 
 {% element 'snippets/messages' %}
 
-<!--
+{#
  * Nessa pagina está¡ todo o código do cabeçario da pagina, nela pode ser definidos
  * links, adicionados 'elements' prÃ© definidos ou até mesmo editada conforme
  * preferencia do desenvolvedor.
  *
- -->
+ #}
 <header class="header">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-4 text-left">
-              <!-- Na linha á baixo é mostrado o nome da loja através da variavel 'store.name' -->
+              {# Na linha á baixo é mostrado o nome da loja através da variavel 'store.name' #}
                 <a class="brand" href="{{ links.home }}" title="{{ store.name }}">{{ store.name }}</a>
             </div>
             <div class="hidden-xs col-sm-4 header-customer text-right">
-              <!-- Na linha a baixo há uma chamada ao elememt 'customer',
-                  o arquivo customer.html pode ser encontrado em 'elements/snippets'-->
+              {# Na linha a baixo há uma chamada ao elememt 'customer',
+                  o arquivo customer.html pode ser encontrado em 'elements/snippets'#}
                 {% element 'snippets/customer' %}
             </div>
             <div class="col-xs-12 col-sm-4 text-right">
-              <!-- Na linha a baixo há uma chamada ao elememt 'search',
-                  o arquivo search.html pode ser encontrado em 'elements/snippets'-->
+              {# Na linha a baixo há uma chamada ao elememt 'search',
+                  o arquivo search.html pode ser encontrado em 'elements/snippets'#}
                 {% element 'snippets/search' %}
             </div>
         </div>

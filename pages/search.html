@@ -1,51 +1,51 @@
-<!-- No Bloco a baixo é verificado se existe algum 'banner.title' cadastrado-->
+{# No Bloco a baixo é verificado se existe algum 'banner.title' cadastrado#}
 {% if banner.title %}
     <div class="banner banner-title">
-          <!--Caso exista é referenciado o 'banner.title' -->
+          {#Caso exista é referenciado o 'banner.title' #}
         {{ banner.title }}
     </div>
 {% endif %}
-<!-- No Bloco a baixo é verificado se existe breadcrumb -->
+{# No Bloco a baixo é verificado se existe breadcrumb #}
 
 {% if breadcrumb %}
     <div class="vspace-sm">
-      <!-- Caso exista é referenciado em 'snippets/breadcrumb' -->
+      {# Caso exista é referenciado em 'snippets/breadcrumb' #}
         {% element 'snippets/breadcrumb' %}
     </div>
 {% endif %}
 
-<!-- verifica de existe palavra a ser buscada -->
+{# verifica de existe palavra a ser buscada #}
 {% if search.word %}
-    <!-- Caso exista mostra o termo buscado com a variavel 'search.word'-->
+    {# Caso exista mostra o termo buscado com a variavel 'search.word'#}
     <h1>Buscando por: {{ search.word }}</h1>
 
 {% endif %}
-<!-- Verifica se a quantidade de produtos é maior que 0 -->
+{# Verifica se a quantidade de produtos é maior que 0 #}
 {% if products|length > 0 %}
-    <!-- faz referencia a snippets/filter e passa como parametro a marca ' brands'
-         do termo pesquisado 'search.brands'  -->
+    {# faz referencia a snippets/filter e passa como parametro a marca ' brands'
+         do termo pesquisado 'search.brands'  #}
     <div class="vspace-sm">
         {% element 'snippets/filter' {
             'brands': search.brands
         } %}
     </div>
-      <!-- Faz referencia a snippets/pagination -->
+      {# Faz referencia a snippets/pagination #}
     <div class="vspace-sm">
         {% element 'snippets/pagination' %}
     </div>
-      <!-- Faz referencia a snippets/showcase  é passado por parametro os produtos -->
+      {# Faz referencia a snippets/showcase  é passado por parametro os produtos #}
     <div class="vspace-sm">
         {% element 'snippets/showcase' {
             "products": products
         } %}
     </div>
-      <!-- Faz referencia a snippets/pagination -->
+      {# Faz referencia a snippets/pagination #}
     <div class="vspace-sm">
         {% element 'snippets/pagination' %}
     </div>
 
 {% else %}
-  <!-- Caso contrario exibe a mensagem a baixo -->
+  {# Caso contrario exibe a mensagem a baixo #}
     <p>Nenhum produto encontrado.</p>
 
 {% endif %}

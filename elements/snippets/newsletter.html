@@ -1,5 +1,5 @@
-<!-- nessa página é feita uma requisiçãoo via método 'POST' para que o cliente possa assinar o
-    newsletter da loja -->
+{# nessa página é feita uma requisição via método 'POST' para que o cliente possa assinar o
+    newsletter da loja #}
 <form action="{{ links.newsletter }}" method="POST">
     <input type="hidden" name="loja" value="{{ store.id }}">
     <input name="email" type="text" placeholder="email@templateshop.com">
