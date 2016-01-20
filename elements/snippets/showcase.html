@@ -1,8 +1,9 @@
 {# Esse elemento é responsavel por exibir produtos e é nele que se define a forma com que
   ele será exibido#}
-{% if products|length > 0 %} {# Nessa condição é verificado se há produtos a serem exibidos #}
-
-    {% if showcaseTitle %}   {# Nesse bloco é verificado se o showcase em questão tem a propriedade 'showcaseTitle' #}
+{% if products|length > 0 %}
+  {# Nessa condição é verificado se há produtos a serem exibidos #}
+    {% if showcaseTitle %}
+     {# Nesse bloco é verificado se o showcase em questão tem a propriedade 'showcaseTitle' #}
         <div class="showcase">
           {# Caso tenha titulo na tag <H4> É exibida o seu titulo através da variavel 'showcaseTitle'#}
             <h4 class="showcase-title">{{ showcaseTitle }} </h4>
@@ -10,8 +11,9 @@
     {% endif %}
 
     <div class="row">
-        {% for product in products %} {# Nesse laço é verificado se ainda existe produtos#}
-            {# no bloco a baixo faz referencia ao element 'product' #}
+        {% for product in products %}
+         {# Nesse laço é verificado se ainda existe produtos#}
+            {# no bloco a baixo faz referencia ao element 'product' que é responsável por trazer as informações do produto. #}
             <div class="col-sm-4 product">
                 {% element 'snippets/product' {"product": product} %}
             </div>

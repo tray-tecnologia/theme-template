@@ -1,7 +1,11 @@
-{# No Bloco a baixo é verificado se existe algum 'banner.title' cadastrado#}
+{# No Bloco a baixo é verificado se existe algum 'banner.title' cadastrado
+  Caso essa condição for verdadeira é carregado o 'banner.title'.
+  Para saber mais sobre banners verfifique os seguintes links :
+  http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
+  http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners #}
 {% if banner.title %}
     <div class="banner banner-title">
-    {#Caso exista é referenciado o 'banner.title' #}
+    {#Caso exista é referenciado o 'banner.title' ele é exibido em todas as páginas antes do título #}
         {{ banner.title }}
     </div>
 {% endif %}
@@ -9,15 +13,20 @@
 {# No Bloco a baixo é verificado se existe breadcrumb #}
 {% if breadcrumb %}
     <div class="vspace-sm">
-      {# Caso exista é referenciado em 'snippets/breadcrumb' #}
+      {# Caso exista é referenciado em 'snippets/breadcrumb'
+         ele é responsável por exibir retornar um array com as informações de localização das categorias relacionadas
+         Mais informações em http://dev.tray.com.br/hc/pt-br/articles/216263187-Breadcrumb  #}
         {% element 'snippets/breadcrumb' %}
     </div>
 {% endif %}
 
-{# Exibe o Nome da categoria através da variavel 'category.name' #}
+{# Exibe o Nome da categoria através da variavel 'category.name'
+   para mais infoemações sobre a variavel category acesse:
+   http://dev.tray.com.br/hc/pt-br/articles/206166517-Category
+#}
 <h1>{{ category.name }}</h1>
 
-{# Verifica se a quantidade de Produtos é maior que 0 #}
+{# Verifica se há produtos a serem exibidos #}
 {% if products|length > 0 %}
     {# Caso a condição for verdadeira é referenciado o 'snippets/filters'
      que no caso é filtrado por marcas referentes a categoria #}
@@ -29,19 +38,21 @@
     </div>
 
     <div class="vspace-sm">
-      {# Faz referencia a snippets/pagination #}
+      {# Faz referencia a snippets/pagination que é o element responsavel por fazer a paginação
+         para saber mais acesse: http://dev.tray.com.br/hc/pt-br/articles/205392018-Paginate #}
         {% element 'snippets/pagination' %}
     </div>
 
     <div class="vspace-sm">
-        {# Faz referencia a snippets/showcase  #}
+        {# Faz referencia a snippets/showcase, esse elemento é responsavel pela forma de exibição dos produtos #}
         {% element 'snippets/showcase' {
             "products": products
         } %}
     </div>
 
     <div class="vspace-sm">
-        {# Faz referencia a snippets/pagination #}
+      {# Faz referencia a snippets/pagination que é o element responsavel por fazer a paginação
+         para saber mais acesse: http://dev.tray.com.br/hc/pt-br/articles/205392018-Paginate #}
         {% element 'snippets/pagination' %}
     </div>
 

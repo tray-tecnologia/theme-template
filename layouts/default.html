@@ -4,7 +4,7 @@
   {# Nesse bloco feito todo o carregamento de arquivos necessario para o tema funcionar corretamente #}
     {{ html.charset() }}
     {{ tray.meta }}
-    {# [if IE]<meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]#}
+    <!-- [if IE]<meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ tray.styles }}
     <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
@@ -13,8 +13,9 @@
     {{ tray.scripts }}
     {{ tray.analytics }}
     {{ googleTagManager.header(pages.current, tagManagerData) }}
-    {# Nesse 'if' é verificado se o dispositivo utilizado é um 'mobile' caso seja é carregado arquivos especificos para o dispositivo #}
+
     {% if utils.is_mobile %}
+        {# Verifica se o dispositivo utilizado é um 'mobile' caso seja é carregado arquivos especificos para o dispositivo #}
         <link rel="stylesheet" href="//images.tcdn.com.br/img/arquivos/identidade_visual/css/sistema.css?{{ utils.assets_version }}">
         <link rel="stylesheet" href="//images.tcdn.com.br/img/arquivos/mobile/css/open-mobilev2.css?{{ utils.assets_version }}">
         <script src="//images.tcdn.com.br/img/arquivos/mobile/scripts/open-mobilev2.js?{{ utils.assets_version }}"></script>
@@ -40,6 +41,8 @@
          http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners #}
     {% if pages.current == 'home' and banner.home %}
         <div class="banner banner-home">
+          {# Exibido apenas na página inicial do site, antes da vitrine.
+             O banner home pode ser utilizado para promoções, exibição de produtos especiais da loja ou alguma comunicação institucional. #}
             {{ banner.home }}
         </div>
     {% endif %}
@@ -59,9 +62,9 @@
 
         </div>
     </div>
-    {# A chamada a baixo faz referencia ao element 'tagcloud' #}
+    {# A chamada a baixo faz referencia ao element 'tagcloud' que é uma nuvem de tags com palavras chaves a loja #}
     {% element 'snippets/tagcloud' %}
-    {# A chamada a baixo faz referencia ao element 'history' #}
+    {# A chamada a baixo faz referencia ao element 'history' que são historicos de produtos visitados pelo usuario #}
     {% element 'snippets/history' %}
 
     {# No bloco de código a baixo é verificado se existe algum 'banner.bottom' cadastrado
@@ -71,12 +74,13 @@
          http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners #}
     {% if banner.bottom %}
         <div class="banner banner-bottom">
+          {# Exibido em todas as páginas, antes do rodapé #}
             {{ banner.bottom }}
         </div>
     {% endif %}
 
     {# No bloco de código a baixo é verificado se o dispositivo é do tipo mobile,
-        caso seja é carregado o element 'mobile/footer que Ã© um 'footer' especifico para essa versão,
+        caso seja é carregado o element 'mobile/footer que é um 'footer' especifico para essa versão,
         caso contrario é carregada a versão Desktop padão que está disponivel em 'elements'#}
     {% if utils.is_mobile %}
       {# Referencia ao mobile/footer  #}
@@ -93,20 +97,24 @@
          http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners #}
     {% if banner.footer %}
         <div class="banner banner-footer">
+          {# Exibido em todas as páginas, no rodapé #}
             {{ banner.footer }}
         </div>
     {% endif %}
     {# No bloco de código a baixo é verificado se o usuario está na pagina 'home',
-        caso esteja é carregado os seguintes banners, 'banner.popup' e o 'banner.floating' #}
+        caso esteja é carregado os seguintes banners, 'banner.popup' ou 'banner.floating' #}
     {% if pages.current == 'home' %}
+    {# O 'Banner.popup é Exibido na vitrine #}
+    {# O 'Banner.floating Exibido na vitrine, apenas arquivos em FLASH) #}
         {{ banner.popup ~ banner.floating }}
     {% endif %}
 
-    {# Referencia ao snippets/credits  #}
+    {# Referencia ao snippets/credits que nada mais é do que os créditos de criação do tema #}
     {% element 'snippets/credits' %}
 
     {# Referencia ao snippets/modal  #}
     {% element 'snippets/modal' %}
+
      {# O bloco de código a baixo faz o carregamento de arquivos nescessarios para o bom funcionamento do tema #}
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
 

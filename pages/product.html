@@ -4,7 +4,10 @@
         <img src='{{ tray.paths.system_image }}/big-loading.svg' />
     </div>
     <div id="title">
-        {# Faz referencia a 'snippets/breadcrump' e passa por parametro uma classe #}
+        {# Faz referencia a 'snippets/breadcrump' e passa por parametro uma classe ,
+           ele é responsável por exibir retornar um array com as informações de localização das categorias relacionadas
+           Mais informações em http://dev.tray.com.br/hc/pt-br/articles/216263187-Breadcrumb #}
+
         {% element 'snippets/breadcrumb' { "class": 'produto-breadcrumb'} %}
         <span class="product-id">
           {# A função Translation() exibe um texto de acordo com o idioma configurado na sua loja no Painel Administrativo.
@@ -20,7 +23,9 @@
               {{ product.id }}
           </strong>
         </span>
-        {# A linha a baixo faz referencia ao nome do produto #}
+        {# A linha a baixo faz referencia ao nome do produto
+           para saber mais sobre a variavel produto acesse:
+           http://dev.tray.com.br/hc/pt-br/articles/208715807-Product #}
         <h3 class="product-title">{{ product.name }}</h3>
     </div>
     <div class="row">
@@ -51,7 +56,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            {# Faz referencia a 'product/breadcrump' #}
+            {# Faz referencia a 'product/rating' #}
             {% element 'product/rating' %}
             <div class="product-labels">
                 {# Exibe os rótulo do produto: destaque, frete grátis, lançamento, etc... #}

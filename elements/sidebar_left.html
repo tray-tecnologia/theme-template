@@ -8,13 +8,15 @@
 
     {% if 'central_' in pages.current %}
     {# Nesse bloco de codigo identifica se o cliente se encontra na pagina
-        da central do cliente, caso esteja, ele faz a chamada do element 'menu_central',
-        o arquivo 'menu_central.html se encontra em elements/snippets'
+       da central do cliente, caso esteja, ele faz a chamada do element 'menu_central',
+       o arquivo 'menu_central.html se encontra em elements/snippets e contém um menu com opções de pedidos,
+       cadastros e atendimento '
     #}
         {% element 'snippets/menu_central' %}
     {% else %}
-    {# , caso o cliente não estejá na pagina da central do cliente ele faz a chamada do
-        element 'categories_list' que se encontra em 'elements/snippets' #}
+    {# Caso o cliente não estejá na pagina da central do cliente ele faz a chamada do
+        element 'categories_list' que se encontra em 'elements/snippets'
+        que mostra as categorias cadastradas na loja #}
         <h3>Categorias</h3>
         {% element 'snippets/categories_list' %}
     {% endif %}
