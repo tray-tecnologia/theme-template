@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-br" data-store="{{ store.id }}">
 <head>
+    <!-- Nesse bloco feito todo o carregamento de arquivos necessario para o tema funcionar corretamente -->
     {{ html.charset() }}
     {{ tray.meta }}
     <!-- [if IE]<meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
@@ -11,12 +12,12 @@
     <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}">
 </head>
 <body>
-
+  <!-- Caso hajÃ¡ a algum erro serÃ¡ redimenciodo Ã  essa pagina-->
     <div class="container{% if pages.current == 'home' %}-fluid{% endif %}">
         <div class="content row">
             <div class="col-sm-12">
                 <h1>:(</h1>
-                <p>Aconteceu um problema, mas não se preocupe, volte para a <a href="{{ links.home }}">página inicial</a>.</p>
+                <p>Aconteceu um problema, mas nï¿½o se preocupe, volte para a <a href="{{ links.home }}">pï¿½gina inicial</a>.</p>
             </div>
         </div>
     </div>
