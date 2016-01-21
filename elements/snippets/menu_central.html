@@ -1,41 +1,41 @@
-{# esse element é geralmente exibido na pagina da central do cliente na sidebar_left e contém um menu com opções de pedidos,
+{# Esse element e geralmente exibido na pagina da central do cliente na 'sidebar_left' e contem um menu com opcoes de pedidos,
     cadastros e atendimento #}
 <ul>
     <li>
-      {# A função Translation() exibe um texto de acordo com o idioma configurado na sua loja no Painel Administrativo.
-          para mais informações acessar os seguntes links:
+      {# A funcao Translation() exibe um texto de acordo com o idioma configurado na sua loja no Painel Administrativo.
+          para mais informacoes acessar os seguntes links:
           http://dev.tray.com.br/hc/pt-br/articles/205385848-Translation
           http://atendimento.tray.com.br/hc/pt-br/articles/211143488-Gerenciamento-de-Textos
         #}
         <h4>{{ Translation('pedidos') }}</h4>
         <ul>
-            {# a variavel link.orders faz referencia a Página de Pedidos #}
+            {# a variavel link.orders faz referencia a Pagina de Pedidos #}
             <li><a href="{{ links.orders }}">{{ Translation('central_anteriores') }}</a></li>
-            {# a variavel link.payment_confirm faz referencia a Página de confirmação de pagamento #}
+            {# a variavel link.payment_confirm faz referencia a Pagina de confirmacao de pagamento #}
             <li><a href="{{ links.payment_confirm }}">{{ Translation('confirma_pag') }}</a></li>
-            {# a variavel link.orders_tracking faz referencia a Página de rastreio de pedidos #}
+            {# a variavel link.orders_tracking faz referencia a Pagina de rastreio de pedidos #}
             <li><a href="{{ links.orders_tracking }}">{{ Translation('rastrear_pedido') }}</a></li>
-            {# a variavel link.orders_return faz referencia a Página de trocas/devoluções #}
+            {# a variavel link.orders_return faz referencia a Pagina de trocas/devolucoes #}
             <li><a href="{{ links.orders_return }}">{{ Translation('central_troca_devolucao') }}</a></li>
         </ul>
     </li>
     <li>
         <h4>{{ Translation('seu_cadastro') }}</h4>
         <ul>
-            {# a variavel link.account faz referencia a Página central do cliente #}
+            {# a variavel link.account faz referencia a Pagina central do cliente #}
             <li><a href="{{ links.account }}">{{ Translation('alterar_cadastro') }}</a></li>
-            {# a variavel link.account_password faz referencia a Página de alteração de senha #}
+            {# a variavel link.account_password faz referencia a Pagina de alteracao de senha #}
             <li><a href="{{ links.account_password }}">{{ Translation('central_alterar_senha') }}</a></li>
         </ul>
     </li>
     <li>
         <h4>{{ Translation('atendimento') }}</h4>
         <ul>
-            {# a variavel link.contact faz referencia a Página de contato #}
+            {# a variavel link.contact faz referencia a Pagina de contato #}
             <li><a href="{{ links.contact }}">{{ Translation('fale_conosco') }}</a></li>
         </ul>
     </li>
 </ul>
 
-{# Para mais detalhes sobre a variável 'links' acessar o segunte link:
+{# Para mais detalhes sobre a variavel 'links' acessar o segunte link:
   http://dev.tray.com.br/hc/pt-br/articles/206166507-Links #}

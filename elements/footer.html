@@ -1,45 +1,36 @@
-{#
-  Nessa pagina está todo o código do rodapé da pagina, nela pode ser definidos
-  links, adicionados 'elements' pré definidos ou até mesmo editada conforme
-  preferencia do desenvolvedor.
- #}
+{#  Nessa pagina esta todo o codigo do rodape da pagina #}
 
 <footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
                 <h4 class="footer-title">Loja</h4>
-                {# Na linha a baixo há uma chamada ao elememt 'categories_list'
-                    e passando nessa chamada um limite de 6 categorias, o arquivo
-                    categories_list.html pode ser encontrado em 'elements/snippets'
-                    e mostra uma lista com as categorias cadastradas #}
+                {#  Chamada ao elememt 'categories_list' e passando nessa chamada um limite de 6 categorias,
+                    o arquivo 'categories_list.html' pode ser encontrado em 'elements/snippets'e mostra uma lista
+                    com as categorias cadastradas #}
                 {% element 'snippets/categories_list' {'limit': 6} %}
             </div>
             <div class="col-sm-3">
                 <h4 class="footer-title">Ajuda</h4>
-                {# Na linha a baixo há uma chamada ao elememt 'help_links',
-                    o arquivo help_links.html pode ser encontrado em 'elements/snippets'
+                {# Chamada ao elememt 'help_links', o arquivo 'help_links.html' pode ser encontrado em 'elements/snippets'
                     e mostra uma lista com links de ajuda #}
                 {% element 'snippets/help_links' %}
             </div>
             <div class="col-sm-3">
                 <h4 class="footer-title">Siga-nos</h4>
-                {# Na linha a baixo há uma chamada ao elememt 'contact_links',
-                    o arquivo contact_links.html pode ser encontrado em 'elements/snippets'
+                {# Chamada ao elememt 'contact_links', o arquivo 'contact_links.html' pode ser encontrado em 'elements/snippets'
                     e mostra uma lista com as redes sociais da loja#}
                 {% element 'snippets/contact_links' %}
             </div>
             <div class="col-sm-3">
                 <h4 class="footer-title">Inscreva-se</h4>
-                {# Na linha a baixo há uma chamada ao elememt 'newsletter',
-                    o arquivo newsletter.html pode ser encontrado em 'elements/snippets'
-                    e trás um formulario para que o usuario posso receber e-mail de novidades da loja#}
+                {# Chamada ao elememt 'newsletter',o arquivo 'newsletter.html' pode ser encontrado em 'elements/snippets'
+                    e tras um formulario para que o usuario posso receber e-mail de novidades da loja#}
                 {% element 'snippets/newsletter' %}
             </div>
         </div>
-        {# Na linha a baixo há uma chamada ao elememt 'address',
-            o arquivo address.html pode ser encontrado em 'elements/snippets'
-            e trás o nome e o endereço da loja#}
+        {#  Chamada ao elememt 'address',o arquivo 'address.html' pode ser encontrado em 'elements/snippets'
+            e tras o nome e o endereï¿½o da loja#}
         {% element 'snippets/address' %}
     </div>
 </footer>

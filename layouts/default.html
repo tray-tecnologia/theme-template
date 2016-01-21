@@ -14,8 +14,8 @@
     {{ tray.analytics }}
     {{ googleTagManager.header(pages.current, tagManagerData) }}
 
+    {# Verifica se o dispositivo utilizado e um 'mobile' caso seja e carregado arquivos especificos para o dispositivo #}
     {% if utils.is_mobile %}
-        {# Verifica se o dispositivo utilizado é um 'mobile' caso seja é carregado arquivos especificos para o dispositivo #}
         <link rel="stylesheet" href="//images.tcdn.com.br/img/arquivos/identidade_visual/css/sistema.css?{{ utils.assets_version }}">
         <link rel="stylesheet" href="//images.tcdn.com.br/img/arquivos/mobile/css/open-mobilev2.css?{{ utils.assets_version }}">
         <script src="//images.tcdn.com.br/img/arquivos/mobile/scripts/open-mobilev2.js?{{ utils.assets_version }}"></script>
@@ -23,9 +23,9 @@
 </head>
 <body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
-    {# No bloco de código a baixo é verificado se o dispositivo é do tipo mobile,
-        caso seja é carregado o element 'mobile/header que é um 'header' especifico para essa versão,
-        caso contrario é carregada a versão Desktop padão que está disponivel em 'elements'#}
+
+    {# Verifica-se se o dispositivo e do tipo mobile, caso seja e carregado o element 'mobile/header'
+       que e um 'header' especifico para essa versao, caso contrario e carregada a versao Desktop padao que esta disponivel em 'elements' #}
     {% if utils.is_mobile %}
         {# Referencia ao mobile/header  #}
         {% element 'mobile/header' %}
@@ -34,54 +34,56 @@
         {% element 'header' %}
     {% endif %}
 
-    {# No bloco de código a baixo é verificado se o usuario está na pagina 'home' e se existe algum banner.home cadastrado
-         Caso essa condição for verdadeira é carregado o 'banner.home'.
+    {#  Verifica-se se o usuario esta na pagina 'home' e se existe algum banner.home cadastrado
+         Caso essa condicao for verdadeira e carregado o 'banner.home'.
          Para saber mais sobre banners verfifique os seguintes links :
          http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
          http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners #}
     {% if pages.current == 'home' and banner.home %}
         <div class="banner banner-home">
-          {# Exibido apenas na página inicial do site, antes da vitrine.
-             O banner home pode ser utilizado para promoções, exibição de produtos especiais da loja ou alguma comunicação institucional. #}
+          {# Exibido apenas na pagina inicial do site, antes da vitrine.
+             O banner home pode ser utilizado para promocoes, exibicao de produtos especiais da loja ou alguma comunicacao institucional. #}
             {{ banner.home }}
         </div>
     {% endif %}
 
     <div class="container">
         <div class="content row">
-            {# A chamada a baixo faz referencia ao element 'sidebar_left' disponivel para edição em 'elements/snippets/sidebar_left' #}
+
+            {# A chamada a baixo faz referencia ao element 'sidebar_left' disponivel para edicao em 'elements/snippets/sidebar_left' #}
             {% element 'sidebar_left' %}
 
             <section class="page-content col-sm-8">
-              {# ATENÇÃO, em hipótese alguma deve ser removida a linha a baixo,
-                  ela é responsavel por carregar todas as outras subpaginas em seu layout como a de catalog e a de search por exemplo.#}
+
+              {# ATENCAO, em hipotese alguma deve ser removida a linha a baixo,
+                  ela e responsavel por carregar todas as outras subpaginas em seu layout como a de catalog e a de search por exemplo. #}
                 {{ content_for_layout }}
             </section>
-            {# A chamada a baixo faz referencia ao element 'sidebar_right' disponivel para edição em 'elements/snippets/sidebar_right' #}
+
+            {# A chamada a baixo faz referencia ao element 'sidebar_right' disponivel para edicao em 'elements/snippets/sidebar_right' #}
             {% element 'sidebar_right' %}
 
         </div>
     </div>
-    {# A chamada a baixo faz referencia ao element 'tagcloud' que é uma nuvem de tags com palavras chaves a loja #}
+    {# A chamada a baixo faz referencia ao element 'tagcloud' que e uma nuvem de tags com palavras chaves a loja #}
     {% element 'snippets/tagcloud' %}
-    {# A chamada a baixo faz referencia ao element 'history' que são historicos de produtos visitados pelo usuario #}
+    {# A chamada a baixo faz referencia ao element 'history' que sao historicos de produtos visitados pelo usuario #}
     {% element 'snippets/history' %}
 
-    {# No bloco de código a baixo é verificado se existe algum 'banner.bottom' cadastrado
-         Caso essa condição for verdadeira é carregado o 'banner.bottom'.
+    {# Verifica-se se existe algum 'banner.bottom' cadastrado
+         Caso essa condicao for verdadeira e carregado o 'banner.bottom'.
          Para saber mais sobre banners verfifique os seguintes links :
          http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
          http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners #}
     {% if banner.bottom %}
         <div class="banner banner-bottom">
-          {# Exibido em todas as páginas, antes do rodapé #}
+          {# Exibido em todas as paginas, antes do rodape #}
             {{ banner.bottom }}
         </div>
     {% endif %}
 
-    {# No bloco de código a baixo é verificado se o dispositivo é do tipo mobile,
-        caso seja é carregado o element 'mobile/footer que é um 'footer' especifico para essa versão,
-        caso contrario é carregada a versão Desktop padão que está disponivel em 'elements'#}
+    {# Verifica-se se o dispositivo e do tipo mobile,caso seja e carregado o element 'mobile/footer'
+       que e um 'footer' especifico para essa versao, caso contrario e carregada a versao Desktop padao que esta disponivel em 'elements' #}
     {% if utils.is_mobile %}
       {# Referencia ao mobile/footer  #}
         {% element 'mobile/footer' %}
@@ -90,32 +92,32 @@
         {% element 'footer' %}
     {% endif %}
 
-    {# No bloco de código a baixo é verificado se existe algum 'banner.footer' cadastrado
-         Caso essa condição for verdadeira é carregado o 'banner.footer'.
+    {# Verifica-se se existe algum 'banner.footer' cadastrado
+         Caso essa condicao for verdadeira e carregado o 'banner.footer'.
          Para saber mais sobre banners verfifique os seguintes links :
          http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
          http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners #}
     {% if banner.footer %}
         <div class="banner banner-footer">
-          {# Exibido em todas as páginas, no rodapé #}
+          {# Exibido em todas as paginas, no rodape #}
             {{ banner.footer }}
         </div>
     {% endif %}
-    {# No bloco de código a baixo é verificado se o usuario está na pagina 'home',
-        caso esteja é carregado os seguintes banners, 'banner.popup' ou 'banner.floating' #}
+    {# No bloco de codigo a baixo e verificado se o usuario esta na pagina 'home',
+        caso esteja e carregado os seguintes banners, 'banner.popup' ou 'banner.floating' #}
     {% if pages.current == 'home' %}
-    {# O 'Banner.popup é Exibido na vitrine #}
-    {# O 'Banner.floating Exibido na vitrine, apenas arquivos em FLASH) #}
+    {# O 'Banner.popup e exibido na vitrine #}
+    {# O 'Banner.floating e exibido na vitrine, apenas arquivos em FLASH) #}
         {{ banner.popup ~ banner.floating }}
     {% endif %}
 
-    {# Referencia ao snippets/credits que nada mais é do que os créditos de criação do tema #}
+    {# Referencia ao snippets/credits que nada mais e do que os creditos de criacao do tema #}
     {% element 'snippets/credits' %}
 
     {# Referencia ao snippets/modal  #}
     {% element 'snippets/modal' %}
 
-     {# O bloco de código a baixo faz o carregamento de arquivos nescessarios para o bom funcionamento do tema #}
+     {# O bloco de codigo a baixo faz o carregamento de arquivos nescessarios para o bom funcionamento do tema #}
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
 
     {{ html.script('dist/application.min.js?' ~ utils.assets_version) }}

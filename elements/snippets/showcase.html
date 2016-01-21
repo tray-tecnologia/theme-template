@@ -1,26 +1,27 @@
-{# Esse elemento é responsavel por exibir produtos e é nele que se define a forma com que
-  ele será exibido#}
+{# Esse elemento e responsavel por exibir produtos e e nele que se define a forma com que
+   ele sera exibido#}
+
+{# A baixo e verificado se ha produtos a serem exibidos e
+   se o showcase em questao tem a propriedade 'showcaseTitle',
+   Caso tenha na tag ''<H4>' e exibida o seu titulo atraves da variavel 'showcaseTitle' #}
 {% if products|length > 0 %}
-  {# Nessa condição é verificado se há produtos a serem exibidos #}
     {% if showcaseTitle %}
-     {# Nesse bloco é verificado se o showcase em questão tem a propriedade 'showcaseTitle' #}
         <div class="showcase">
-          {# Caso tenha titulo na tag <H4> É exibida o seu titulo através da variavel 'showcaseTitle'#}
             <h4 class="showcase-title">{{ showcaseTitle }} </h4>
         </div>
     {% endif %}
 
     <div class="row">
+        {# verifica-se se ainda existe produtos#}
         {% for product in products %}
-         {# Nesse laço é verificado se ainda existe produtos#}
-            {# no bloco a baixo faz referencia ao element 'product' que é responsável por trazer as informações do produto. #}
             <div class="col-sm-4 product">
+                {# a linha a baixo faz referencia ao element 'product' que e responsavel por trazer as informacoes do produto. #}
                 {% element 'snippets/product' {"product": product} %}
             </div>
 
+            {# Verifica-se se a variavel 'loop.index' e divisivel por 3,
+              caso seja ele cria uma nova linha ('row') na estrutura da pagina  #}
             {% if loop.index is divisible by(3) %}
-            {#Nesse bloco é verificado se a variavel 'loop.index É divisivel por 3,
-              caso sejá ele cria uma nova linha ('row') na estrutura da pagina ' #}
                 </div><div class="row">
             {% endif %}
 
