@@ -1,11 +1,11 @@
-{# Atenï¿½ï¿½o, se a sua loja estiver em implantaï¿½ï¿½o nï¿½o apagar a linha a baixo,
- ï¿½ atraves dela que ï¿½ mostrada o aviso em vermelho avisando que a loja ainda nï¿½o estï¿½ implantada #}
+{# Atenção, se a sua loja estiver em implantação não apagar a linha a baixo,
+ é atraves dela que é mostrada o aviso em vermelho avisando que a loja ainda não está implantada #}
 
 {% element 'snippets/messages' %}
 
 {#
-  Nessa pagina estï¿½ todo o cï¿½digo do cabeï¿½ario da pagina, nela pode ser definidos
- links, adicionados 'elements' prï¿½ definidos ou atï¿½ mesmo editada conforme
+  Nessa pagina está todo o código do cabeçario da pagina, nela pode ser definidos
+ links, adicionados 'elements' pré definidos ou até mesmo editada conforme
  preferencia do desenvolvedor.
  #}
 
@@ -13,19 +13,19 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-4 text-left">
-              {# Na linha ï¿½ baixo ï¿½ mostrado o nome da loja atravï¿½s da variavel 'store.name' #}
+              {# Na linha á baixo é mostrado o nome da loja através da variavel 'store.name' #}
                 <a class="brand" href="{{ links.home }}" title="{{ store.name }}">{{ store.name }}</a>
             </div>
             <div class="hidden-xs col-sm-4 header-customer text-right">
-              {# Na linha a baixo hï¿½ uma chamada ao elememt 'customer',
+              {# Na linha a baixo é uma chamada ao elememt 'customer',
                   o arquivo customer.html pode ser encontrado em 'elements/snippets'
                   e mostra dados como o carrinho do usuario, nome, email, etc... #}
                 {% element 'snippets/customer' %}
             </div>
             <div class="col-xs-12 col-sm-4 text-right">
-              {# Na linha a baixo hï¿½ uma chamada ao elememt 'search',
+              {# Na linha a baixo é uma chamada ao elememt 'search',
                   o arquivo search.html pode ser encontrado em 'elements/snippets'
-                  ï¿½ atravï¿½s dele que ï¿½ exibido a caixa de pesquisa#s}
+                  é através dele que é exibido a caixa de pesquisa#s}
                 {% element 'snippets/search' %}
             </div>
         </div>
