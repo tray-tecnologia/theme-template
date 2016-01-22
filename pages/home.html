@@ -1,4 +1,4 @@
-{# Verifica-se se existe algum 'banner.showcase' cadastrado,
+{# Verefica se existe algum 'banner.showcase' cadastrado,
    caso essa condicao for verdadeira e carregado o 'banner.showcase'.
    Para saber mais sobre banners verfifique os seguintes links :
    http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
@@ -6,7 +6,7 @@
 
 {% if banner.showcase %}
     <div class="banner banner-showcase">
-      {# Exibido somente na pagina inicial do site, ao lado do menu de categorias no painel e encontrado com o nome de 'Banner Vitrine'#}
+      {# Exibido somente na pagina inicial do site, ao lado do menu de categorias no painel e encontrado com o nome de 'Banner Vitrine' #}
         {{ banner.showcase }}
     </div>
 {% endif %}
@@ -18,8 +18,8 @@
     'filter': 'featured'
 }) %}
 
-{# O Bloco a baixo faz referencia a 'snippets/showcase' e e passado pelo parametro
-      os atributos 'showcaseTitle' e 'products' #}
+{# O Bloco a baixo faz referencia a 'snippets/showcase' e e passado pelo parametro os atributos 'showcaseTitle' e 'products'.
+   O arquivo showcase.html pode ser encontrado em 'elements/snippets' e tras forma como será exibido produtos #}
 {% element 'snippets/showcase' {
     "showcaseTitle": "Destaques",
     "products": products

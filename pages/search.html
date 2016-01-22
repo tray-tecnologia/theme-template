@@ -1,4 +1,4 @@
-{# Verifica-se se existe algum 'banner.title' cadastrado,
+{# Verefica se existe algum 'banner.title' cadastrado,
   caso essa condicao for verdadeira e carregado o 'banner.title'.
   Para saber mais sobre banners verfifique os seguintes links :
   http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
@@ -28,7 +28,7 @@
 {# Verifica se existe produtos referentes a essa palavra #}
 {% if products|length > 0 %}
     {# faz referencia a snippets/filter e passa como parametro a marca ' brands'
-         do termo pesquisado 'search.brands'  #}
+     que exibe os filtros de subcategoria e classificação #}
     <div class="vspace-sm">
         {% element 'snippets/filter' {
             'brands': search.brands
@@ -52,7 +52,7 @@
     </div>
 
 {% else %}
-  {# Caso contrario exibe a mensagem a baixo #}
+  {# Caso não exista produto e exibido a seguinte mensagem #}
     <p>Nenhum produto encontrado.</p>
 
 {% endif %}

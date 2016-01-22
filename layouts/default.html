@@ -24,17 +24,17 @@
 <body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
 
-    {# Verifica-se se o dispositivo e do tipo mobile, caso seja e carregado o element 'mobile/header'
-       que e um 'header' especifico para essa versao, caso contrario e carregada a versao Desktop padao que esta disponivel em 'elements' #}
+    {# Verifica se o dispositivo e do tipo mobile, caso seja e carregado o element 'mobile/header' que e um 'header'
+       especifico para essa versao, caso contrario e carregada a versao Desktop padrao que esta disponivel em 'elements' #}
     {% if utils.is_mobile %}
         {# Referencia ao mobile/header  #}
         {% element 'mobile/header' %}
     {% else %}
-    {# referencia a elements/header #}
+      {# referencia a elements/header #}
         {% element 'header' %}
     {% endif %}
 
-    {#  Verifica-se se o usuario esta na pagina 'home' e se existe algum banner.home cadastrado
+    {# Verefica se o usuario esta na pagina 'home' e se existe algum banner.home cadastrado
          Caso essa condicao for verdadeira e carregado o 'banner.home'.
          Para saber mais sobre banners verfifique os seguintes links :
          http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
@@ -50,7 +50,8 @@
     <div class="container">
         <div class="content row">
 
-            {# A chamada a baixo faz referencia ao element 'sidebar_left' disponivel para edicao em 'elements/snippets/sidebar_left' #}
+            {# A chamada a baixo faz referencia ao element 'sidebar_left' disponivel para edicao em 'elements/snippets/sidebar_left',
+               que nada mais é do que o menu esquerdo #}
             {% element 'sidebar_left' %}
 
             <section class="page-content col-sm-8">
@@ -60,7 +61,8 @@
                 {{ content_for_layout }}
             </section>
 
-            {# A chamada a baixo faz referencia ao element 'sidebar_right' disponivel para edicao em 'elements/snippets/sidebar_right' #}
+            {# A chamada a baixo faz referencia ao element 'sidebar_right' disponivel para edicao em 'elements/snippets/sidebar_right',
+               que nada mais é do que o menu direito #}
             {% element 'sidebar_right' %}
 
         </div>
@@ -70,7 +72,7 @@
     {# A chamada a baixo faz referencia ao element 'history' que sao historicos de produtos visitados pelo usuario #}
     {% element 'snippets/history' %}
 
-    {# Verifica-se se existe algum 'banner.bottom' cadastrado
+    {# Verefica se existe algum 'banner.bottom' cadastrado
          Caso essa condicao for verdadeira e carregado o 'banner.bottom'.
          Para saber mais sobre banners verfifique os seguintes links :
          http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
@@ -82,7 +84,7 @@
         </div>
     {% endif %}
 
-    {# Verifica-se se o dispositivo e do tipo mobile,caso seja e carregado o element 'mobile/footer'
+    {# Verefica se o dispositivo e do tipo mobile,caso seja e carregado o element 'mobile/footer'
        que e um 'footer' especifico para essa versao, caso contrario e carregada a versao Desktop padao que esta disponivel em 'elements' #}
     {% if utils.is_mobile %}
       {# Referencia ao mobile/footer  #}
@@ -92,7 +94,7 @@
         {% element 'footer' %}
     {% endif %}
 
-    {# Verifica-se se existe algum 'banner.footer' cadastrado
+    {# Verefica se existe algum 'banner.footer' cadastrado
          Caso essa condicao for verdadeira e carregado o 'banner.footer'.
          Para saber mais sobre banners verfifique os seguintes links :
          http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
@@ -111,7 +113,7 @@
         {{ banner.popup ~ banner.floating }}
     {% endif %}
 
-    {# Referencia ao snippets/credits que nada mais e do que os creditos de criacao do tema #}
+    {# Referencia ao snippets/credits para exibir os creditos de criacao do tema #}
     {% element 'snippets/credits' %}
 
     {# Referencia ao snippets/modal  #}

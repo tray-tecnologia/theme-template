@@ -10,7 +10,7 @@
 
         {% element 'snippets/breadcrumb' { "class": 'produto-breadcrumb'} %}
         <span class="product-id">
-          {# A funcao Translation() exibe um texto de acordo com o idioma configurado na sua loja no Painel Administrativo.
+          {# {# A funcao Translation() exibe um texto de acordo com o configurado na sua loja no Painel Administrativo.
               para mais informacoes acessar os seguntes links:
               http://dev.tray.com.br/hc/pt-br/articles/205385848-Translation
               http://atendimento.tray.com.br/hc/pt-br/articles/211143488-Gerenciamento-de-Textos
@@ -31,7 +31,7 @@
     <div class="row">
         <div class="col-md-6 no-padding">
             <div id="visualBlock" class="product-gallery">
-              {# Exibe as fotos e o videos do produto#}
+              {# Exibe as fotos e o videos do produto #}
               {# Para saber mais sobre Helpers veja o link a seguir:
                   http://dev.tray.com.br/hc/pt-br/articles/208715807-Product#helpers #}
                 {{ productHelper.gallery() }}
@@ -63,7 +63,7 @@
                 {{ productHelper.labels() }}
             </div>
             <p class="product-details">
-              {#  Exibe algumas informacoes como modelo, referencia, marca, disponibilidade, garantia #}
+              {# Exibe algumas informacoes como modelo, referencia, marca, disponibilidade, garantia #}
                 {{ productHelper.details() }}
               {# Exibe as caracteristicas do produto em formato de icone, as possives disponiveis sao:
                     top| right | bottom  #}
@@ -93,17 +93,19 @@
         </div>
     </div>
 </div>
-{# Tabs#}
+{# Tabs #}
 <div id="ProdBlock">
     <div id="loading-tab-container">
         <img src='{{ tray.paths.system_image }}/big-loading.svg' />
     </div>
     <a name="formaPagto"></a>
-    {# Aba produto #}
+    {# Aba produto onde sao exibidas as caracteristicas do produto #}
     <div id="ProdAbas" class="abasProduto">
         <ul>
+          {# verifica se a aba de produto esta ativa}
             {% for key, tab in productTabs %}
               {% if tab.container_id %}
+              {Verifica se a aba é igual a 'description', caso verdadeira ela se torna a aba ativa e é exibido o conteudo }
               <li id="{{ tab.id }}" {% if key=='description' %}class="aberta" {% endif %}>
                 <a href="#" data-tab-container-id="{{ tab.container_id }}" data-tab-url="{{ tab.url }}">{{ tab.description }}</a>
               </li>
@@ -115,6 +117,7 @@
     <div id="descricao" class="prodBox">
         <div class="board">
             <div class="board_htm description">
+                {# Mostra a Descricao do produto #}
                 {{ product.description ? product.description : product.description_small }}
             </div>
         </div>
@@ -122,13 +125,14 @@
       {# Aba Item incluso #}
     <div id="itensInclusos" class="prodBox">
         <div class="board">
+            {# Mostra a os itens inclusos no produto #}
             {{ product.included_items }}
         </div>
     </div>
     {#Aba de comentarios #}
     <div id="coments" class="prodBox">
         <div class="board">
-          {# Faz referencia a 'product/comments'#}
+          {# Faz referencia a 'product/comments' #}
             {% element 'product/comments' %}
         </div>
     </div>
@@ -139,9 +143,11 @@
             {% element 'product/properties' %}
         </div>
     </div>
-
+    {# Faz dinamicamente a chamada do conteudo da aba #}
     {{ productTabs.custom.content }}
+    {# Disponibiliza conteudo para downlod #}
     {{ productTabs.downloads.content }}
+
     {# Aba de caracteristicas #}
     <div id="garantia" class="prodBox">
         <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" style="display:none;" />
@@ -156,7 +162,7 @@
       {# Caso tenha , mostra todos os produtos enquando houver produtos relacionados #}
         {% for related in product.related_products %}
           <div class="col-sm-4 product">
-            {# Faz referencia a 'snippets/product' e passa colo parametro os produtos que forem relacionados#}
+            {# Faz referencia a 'snippets/product' e passa colo parametro os produtos que forem relacionados #}
               {% element 'snippets/product' {"product": related} %}
           </div>
         {# Caso for divisivel por 3 adiciona mais uma linha(row) na estrutura da pagina #}

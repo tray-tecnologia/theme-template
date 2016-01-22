@@ -1,4 +1,4 @@
-{# Esse element e responsavel por mostrar as informacoes de cliente da loja #}
+{# Essa pagina e responsavel por mostrar as informacoes de cliente da loja #}
 <ul>
     {# verifica se o cliente esta logado,caso esteja, é exibido seu nome,
        caso contrario são mostra as opcoes de login e de criacao de conta #}
@@ -13,7 +13,9 @@
       {# dados do Carrinho #}
       {# a variavel 'links.cart' e responsavel por referenciar ao carrinho #}
       <a class="glyphicon glyphicon-shopping-cart" href="{{ links.cart }}">
-        {# a variavel 'cart.amount' a responsavel por mostrar a quantidade de itens no carrinho #}
+        {# O data attribute data-cart="amount" a responsavel por mostrar a quantidade de itens no carrinho
+          Para mais informacoes acesse o seguinte link:
+          http://dev.tray.com.br/hc/pt-br/articles/205392108-Cart #}
         <span data-cart="amount">{{ cart.amount }}</span> itens no carrinho
       </a>
     </li>
