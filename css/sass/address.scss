@@ -1,0 +1,15 @@
+/**
+ * Endereco
+ */
+.address {
+    color: #666;
+    font: 300 0.9em $primary-font;
+    padding: 70px 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    .address-name {
+        color: $primary-color;
+        font-size: 1.3em;
+    }
+}

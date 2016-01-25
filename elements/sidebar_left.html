@@ -1,0 +1,27 @@
+{# Nessa pagina esta todo o codigo do menu esquerdo #}
+<aside class="col-sm-2">
+    <div id="dive7rLeftTop"></div>
+
+    {# identifica-se se o cliente se encontra na pagina da central do cliente,
+       caso esteja, ele faz a chamada do element 'menu_central', caso contrario
+       ele faz a chamada do element 'categories_list' #}
+    {% if 'central_' in pages.current %}
+        {% element 'snippets/menu_central' %}
+    {% else %}
+        <h3>Categorias</h3>
+        {% element 'snippets/categories_list' %}
+    {% endif %}
+
+    <div id="dive7rLeftMiddle"></div>
+    <div id="dive7rLeftBottom"></div>
+    {# A baixo é verificado se existe um banner side (lateral).
+       Os banner sao pre definidos no painel e sao editaveis conforme nescessidade.
+       Para mais informacoes acessar os seguntes links:
+       http://dev.tray.com.br/hc/pt-br/articles/206166537-Banners
+       http://atendimento.tray.com.br/hc/pt-br/articles/211174318-Cadastrar-Banners #}
+    {% if banner.side %}
+        <div class="banner banner-side">
+            {{ banner.side }}
+        </div>
+    {% endif %}
+</aside>

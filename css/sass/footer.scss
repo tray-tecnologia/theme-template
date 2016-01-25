@@ -1,0 +1,19 @@
+/**
+ * Rodapé
+ */
+
+.footer {
+    border-top: 1px solid $primary-color;
+    margin-top: 30px;
+    padding-top: 30px;
+
+    a {
+        font: 300 0.9em $primary-font;
+        text-transform: uppercase;
+    }
+
+    .footer-title {
+        font: bold 1.1em $primary-font;
+        text-transform: uppercase;
+    }
+}

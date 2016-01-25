@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-br" data-store="{{ store.id }}">
+<head>
+    {# Nesse bloco feito todo o carregamento de arquivos necessario para o tema funcionar corretamente #}
+    {{ html.charset() }}
+    {{ tray.meta }}
+    <!-- [if IE]<meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ tray.styles }}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oswald:400,300,700">
+    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}">
+</head>
+<body>
+  {# Caso haja a algum erro sera redimenciodo a essa pagina #}
+    <div class="container{% if pages.current == 'home' %}-fluid{% endif %}">
+        <div class="content row">
+            <div class="col-sm-12">
+                <h1>:(</h1>
+                <p>Aconteceu um problema, mas nao se preocupe, volte para a <a href="{{ links.home }}">pagina inicial</a>.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

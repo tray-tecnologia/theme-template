@@ -1,0 +1,16 @@
+{# Essa pagina e responsavel pelo campo de busca do site #}
+<form role="form" action="{{ links.search }}">
+    <input type="hidden" name="loja" value="{{ store.id }}">
+    <div class="row">
+      {# nesse bloco temos o imput que recebe a palavra a ser buscada #}
+        <div class="col-xs-10">
+            <input type="search" placeholder="Buscar na loja" name="palavra_busca">
+        </div>
+      {# nesse bloco temos o botao de pesquisa #}
+        <div class="col-xs-2">
+            <button class="search-button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </div>
+    </div>
+</form>

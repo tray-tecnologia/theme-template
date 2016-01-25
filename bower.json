@@ -1,0 +1,28 @@
+{
+  "name": "Tray OpenCode Template",
+  "homepage": "https://github.com/tray-tecnologia/theme-template",
+  "authors": [
+    "Richard Santos <rsantos@tray.com.br>"
+  ],
+  "description": "Template para desenvolver temas da plataforma de e-commerce Tray",
+  "keywords": [
+    "tray",
+    "temas",
+    "opencode",
+    "ecommerce",
+    "design",
+    "frontend",
+    "ux"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": ">=3.2.0"
+  }
+}

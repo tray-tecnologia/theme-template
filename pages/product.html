@@ -1,0 +1,175 @@
+<div id="product-container" class="produto-wrapper" itemscope itemtype="http://schema.org/Product">
+    <span id="span_erro_carrinho"></span>
+    <div id="loading-product-container">
+        <img src='{{ tray.paths.system_image }}/big-loading.svg' />
+    </div>
+    <div id="title">
+        {# Faz referencia a 'snippets/breadcrump' e passa por parametro uma classe ,
+           ele e responsavel por exibir retornar um array com as informacoes de localizacao das categorias relacionadas
+           Mais informacoes em http://dev.tray.com.br/hc/pt-br/articles/216263187-Breadcrumb #}
+
+        {% element 'snippets/breadcrumb' { "class": 'produto-breadcrumb'} %}
+        <span class="product-id">
+          {# {# A funcao Translation() exibe um texto de acordo com o configurado na sua loja no Painel Administrativo.
+              para mais informacoes acessar os seguntes links:
+              http://dev.tray.com.br/hc/pt-br/articles/205385848-Translation
+              http://atendimento.tray.com.br/hc/pt-br/articles/211143488-Gerenciamento-de-Textos
+            #}
+          {{ Translation('codigo') }}:
+          <strong>
+              {# A linha a baixo faz referencia ao id do produto
+                 para saber mais sobre a variavel produto acesse:
+                 http://dev.tray.com.br/hc/pt-br/articles/208715807-Product #}
+              {{ product.id }}
+          </strong>
+        </span>
+        {# A linha a baixo faz referencia ao nome do produto
+           para saber mais sobre a variavel produto acesse:
+           http://dev.tray.com.br/hc/pt-br/articles/208715807-Product #}
+        <h3 class="product-title">{{ product.name }}</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-6 no-padding">
+            <div id="visualBlock" class="product-gallery">
+              {# Exibe as fotos e o videos do produto #}
+              {# Para saber mais sobre Helpers veja o link a seguir:
+                  http://dev.tray.com.br/hc/pt-br/articles/208715807-Product#helpers #}
+                {{ productHelper.gallery() }}
+            </div>
+            <div class="product-social">
+              {# Exibe o bloco de redes sociais para que o produto seja compartilhado #}
+                {{ productHelper.social() }}
+            </div>
+            <div class="product-links">
+              {# Botao indique a um amigo #}
+                <span class="produto-recommend">
+                    <a href="#" data-url="{{ links.product_recommend ~ product.id }}" data-title="{{ product.name }}" class="botao_indique_amigo" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('indique_amigo') }}</a>
+                </span>
+                {# Botao Tire duvidas #}
+                <span class="product-question">
+                    <a href="#" data-url="{{ links.product_question ~ product.id }}" data-title="{{ product.name }}" class="botao_tire_duvidas" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('tire_duvidas') }}</a>
+                </span>
+                {# Botao compare #}
+                <span id="product-compare">
+                    <a data-compare="add" href="{{ links.compare_add  ~ product.id }}" class="add-compare {{ product.compare ? compareCSS }}" title='{{ Translation("comparar_produto") }}'>Comparar Produto</a>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            {# Faz referencia a 'product/rating' #}
+            {% element 'product/rating' %}
+            <div class="product-labels">
+                {# Exibe os rotulo do produto: destaque, frete gratis, lancamento, etc... #}
+                {{ productHelper.labels() }}
+            </div>
+            <p class="product-details">
+              {# Exibe algumas informacoes como modelo, referencia, marca, disponibilidade, garantia #}
+                {{ productHelper.details() }}
+              {# Exibe as caracteristicas do produto em formato de icone, as possives disponiveis sao:
+                    top| right | bottom  #}
+                {{ productHelper.icons() }}
+            </p>
+            {# Exibe a quantidade de pontos que o cliente ganha ao comprar o produto #}
+            {{ productHelper.bonus() }}
+            <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
+              {#Exibe informacoes de preco, detalhes de pagamento (o conteudo muda de acordo com algumas configuracoes no Painel Administrativo) #}
+                {{ productHelper.pricing() }}
+              {# Exibe um bloco com as variacoes do produto #}
+                {{ productHelper.variants() }}
+              {#Exibe um bloco com as informacoes adicionais do produto #}
+                {{ product.additional_information }}
+              {#Exibe os brindes do produto #}
+                {{ productHelper.gifts() }}
+              {# Exibe o input com a quantidade de produtos e tambem o botao comprar #}
+                {{ productHelper.form() }}
+              {# Exibe a lista de desejos #}
+                {{ productHelper.wishlist() }}
+              {# Exibe o calculo de frete #}
+                {{ productHelper.shipping() }}
+            </form>
+            <p class="product-message">
+                {{ product.additional_message }}
+            </p>
+        </div>
+    </div>
+</div>
+{# Tabs #}
+<div id="ProdBlock">
+    <div id="loading-tab-container">
+        <img src='{{ tray.paths.system_image }}/big-loading.svg' />
+    </div>
+    <a name="formaPagto"></a>
+    {# Aba produto onde sao exibidas as caracteristicas do produto #}
+    <div id="ProdAbas" class="abasProduto">
+        <ul>
+          {# verifica se a aba de produto esta ativa}
+            {% for key, tab in productTabs %}
+              {% if tab.container_id %}
+              {Verifica se a aba é igual a 'description', caso verdadeira ela se torna a aba ativa e é exibido o conteudo }
+              <li id="{{ tab.id }}" {% if key=='description' %}class="aberta" {% endif %}>
+                <a href="#" data-tab-container-id="{{ tab.container_id }}" data-tab-url="{{ tab.url }}">{{ tab.description }}</a>
+              </li>
+              {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    {# Aba descricao #}
+    <div id="descricao" class="prodBox">
+        <div class="board">
+            <div class="board_htm description">
+                {# Mostra a Descricao do produto #}
+                {{ product.description ? product.description : product.description_small }}
+            </div>
+        </div>
+    </div>
+      {# Aba Item incluso #}
+    <div id="itensInclusos" class="prodBox">
+        <div class="board">
+            {# Mostra a os itens inclusos no produto #}
+            {{ product.included_items }}
+        </div>
+    </div>
+    {#Aba de comentarios #}
+    <div id="coments" class="prodBox">
+        <div class="board">
+          {# Faz referencia a 'product/comments' #}
+            {% element 'product/comments' %}
+        </div>
+    </div>
+    {#Aba de caracteristicas #}
+    <div id="caracteristicas" class="prodBox">
+        <div class='board'>
+            {# Faz referencia a 'product/properties'#}
+            {% element 'product/properties' %}
+        </div>
+    </div>
+    {# Faz dinamicamente a chamada do conteudo da aba #}
+    {{ productTabs.custom.content }}
+    {# Disponibiliza conteudo para downlod #}
+    {{ productTabs.downloads.content }}
+
+    {# Aba de caracteristicas #}
+    <div id="garantia" class="prodBox">
+        <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" style="display:none;" />
+    </div>
+    <div data-app="product.payment-methods" id="formasPagto" class="prodBox" style="display:none;" ></div>
+</div>
+{# Verifica se existe algum produto relacionado #}
+{% if product.related_products %}
+<div class="products-related">
+    <h3 class="related-title">Produtos Relacionados</h3>
+    <div class="row">
+      {# Caso tenha , mostra todos os produtos enquando houver produtos relacionados #}
+        {% for related in product.related_products %}
+          <div class="col-sm-4 product">
+            {# Faz referencia a 'snippets/product' e passa colo parametro os produtos que forem relacionados #}
+              {% element 'snippets/product' {"product": related} %}
+          </div>
+        {# Caso for divisivel por 3 adiciona mais uma linha(row) na estrutura da pagina #}
+        {% if loop.index is divisible by(3) %}
+    </div>
+    <div class="row">
+          {% endif %} {% endfor %}
+    </div>
+</div>
+{% endif %}

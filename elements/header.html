@@ -1,0 +1,27 @@
+{# Atencao, se a sua loja estiver em implantacao nao apagar a linha a baixo,
+   e atraves dela que e mostrada o aviso em vermelho avisando que a loja ainda nao esta implantada #}
+
+{% element 'snippets/messages' %}
+
+{# Nessa pagina esta todo o codigo do cabecario da pagina #}
+
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 text-left">
+              {# Na linha a baixo e mostrado o nome da loja atraves da variavel 'store.name' #}
+                <a class="brand" href="{{ links.home }}" title="{{ store.name }}">{{ store.name }}</a>
+            </div>
+            <div class="hidden-xs col-sm-4 header-customer text-right">
+              {# Chamada ao elememt 'customer',o arquivo 'customer.html' pode ser encontrado em 'elements/snippets'
+                  e mostra dados como o carrinho do usuario, nome, email, etc... #}
+                {% element 'snippets/customer' %}
+            </div>
+            <div class="col-xs-12 col-sm-4 text-right">
+              {# Chamada ao elememt 'search', o arquivo 'search.html' pode ser encontrado em 'elements/snippets'
+                   e atraves dele que e exibido o campo de busca #}
+                {% element 'snippets/search' %}
+            </div>
+        </div>
+    </div>
+</header>

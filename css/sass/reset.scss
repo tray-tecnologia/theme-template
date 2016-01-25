@@ -1,0 +1,72 @@
+/*
+ * Tray Commerce Reset
+ */
+
+// bootstrap .container conflict
+.page-content .container {
+    width: auto;
+}
+
+// hiding elements
+.bottom,
+.topBorder,
+.leftCorner2,
+.bLeft,
+.bRight,
+#miniad,
+.stripe {
+    display: none;
+}
+
+// cleaning elements
+.container,
+.container2,
+.container3,
+#title,
+#esquerda,
+#direita,
+#visualAbas,
+#visualAbas li,
+#visualAbas li a,
+#foto_p,
+#colFotos,
+#colVideo,
+#col3D,
+#ProdAbas,
+.prodBox,
+#ProdAbas li,
+#ProdAbas .aberta,
+#ProdAbas li a,
+#ProdAbas .aberta a,
+.visitados {
+    background: none;
+    border: 0;
+}
+
+// fixing display: table
+#visualAbas {
+    display: block;
+    width: auto;
+}
+
+#visualAbas li{
+    display: inline-block;
+    float: none;
+}
+
+#colFotos,
+#colVideo,
+#col3D{
+    display: block;
+    width: auto;
+}
+
+#foto_p{
+    width: auto;
+}
+
+#ProdAbas,
+#ProdBlock{
+    display: block;
+    width: auto;
+}

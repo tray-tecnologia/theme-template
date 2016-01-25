@@ -1,0 +1,124 @@
+/**
+ * Produto
+ */
+.product {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    text-align: center;
+    -webkit-transition: opacity 0.4s;
+         -o-transition: opacity 0.4s;
+            transition: opacity 0.4s;
+    margin-bottom: 30px;
+
+    &:hover {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+
+    > a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .product-image {
+        img {
+            margin: 0 auto;
+            width: 180px;
+        }
+
+        img[src*='loading'] {
+            width: 48px;
+        }
+    }
+
+    .product-name {
+        color: #333;
+        width: 100%;
+
+        h3 {
+            font: 400 1em $primary-font;
+            text-transform: uppercase;
+            -ms-text-overflow: clip;
+                text-overflow: clip;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+
+    .product-price span {
+        background: #000;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 0.8em;
+        padding: 3px 17px;
+    }
+}
+.page-product{
+    .breadcrumb{
+        display: inline-block;
+        text-align: left;
+    }
+    .product-safe{
+        text-align: right;
+        margin-top: -20px;
+    }
+    .product-id{
+        float: right;
+    }
+    .product-title{
+        margin: 10px 0 0;
+    }
+    .product-links{
+        text-align: center;
+
+        > a{
+            display: block;
+            border-right: 1px #ccc solid;
+            border-bottom: 1px #ccc solid;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 3px;
+        }
+    }
+    .product-labels, .product-details{
+        clear: both;
+    }
+    .products-related{
+        text-align: center;
+        margin: 10px 0;
+
+        .related-title{
+            text-align: left;
+            margin: 0 0 10px;
+        }
+        .related-image{
+            display: inline-block;
+        }
+    }
+    .no-padding{
+        padding: 0;
+    }
+    @media screen and (max-width: 600px) {
+        .product-id {
+            float: none;
+        }
+        .produto-calcular-frete{
+            display: none;
+        }
+        #ProdAbas{
+            background: #f1f1f1;
+            li, .aberta{
+                float: none;
+            }
+            li+li{
+                border-top: 1px solid #ccc;
+            }
+        }
+        #formasPagto{
+            img{
+                max-width: 60px;
+            }
+        }
+    }
+}

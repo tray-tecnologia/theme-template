@@ -1,0 +1,15 @@
+/**
+ * Assinaturas de E-mail
+ */
+
+.news-button {
+    background: $primary-color;
+    color: #fff;
+    font: 300 1em $primary-font;
+    text-transform: uppercase;
+
+    &:hover {
+        background: #000;
+        color: #fff;
+    }
+}

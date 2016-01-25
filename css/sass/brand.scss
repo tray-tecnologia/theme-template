@@ -1,0 +1,14 @@
+/**
+ * Marcas
+ */
+.brand {
+    display: block;
+    font: bold 2em/1em $primary-font;
+    text-transform: uppercase;
+    padding: 0 0 10px 10px;
+
+    &:hover,
+    &:active {
+        text-decoration: none;
+    }
+}
