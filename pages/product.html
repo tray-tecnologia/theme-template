@@ -30,9 +30,14 @@
                     <a href="#" data-url="{{ links.product_question ~ product.id }}" data-title="{{ product.name }}" class="botao_tire_duvidas" data-toggle="modal" data-target="#modal-form" data-modal-width="600px">{{ Translation('tire_duvidas') }}</a>
                 </span>
 
-                <span id="product-compare">
-                    <a data-compare="add" href="{{ links.compare_add  ~ product.id }}" class="add-compare {{ product.compare ? compareCSS }}" title='{{ Translation("comparar_produto") }}'>Comparar Produto</a>
-                </span>
+                {% if settings.compare %}
+                  <span id="comparar">
+                      {% element 'product/compare' {
+                          'product': product,
+                          'links': links
+                      } %}
+                  </span>
+                {% endif %}
             </div>
         </div>
         <div class="col-md-6">
